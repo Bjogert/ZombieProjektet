@@ -1,33 +1,28 @@
-# ZombieProjektet - project skeleton
+# ZombieProjektet — Småland i Project Zomboid
 
-A Swedish survival-world project inspired by the *design goals* of realistic survival games.
+**Status (2026-10-11): design beslutad; teknisk kartintegration ännu inte verifierad i spelet.**
 
-**Status:** research and technical spikes. No game or working Project Zomboid mod is included.
-**Decision pending:** extend Project Zomboid as a mod, or build an original standalone game.
+Ett öppet hobbyprojekt för att bygga en igenkännbar svensk spelvärld som en **kartmod till Project Zomboid Build 42 Stable**. Första testområdet är **Getaboda mellan Agunnaryd och Södra Ljunga**, cirka 4–5 hus. Sedan kan världen växa mot Ljungbytrakten.
 
-## Why this repository exists
+**Princip:** enklaste fungerande och skalbara lösningen. Verkliga huslägen, vägar och marktyper från tillåtna geodata; vanliga byggnader och detaljer genereras med svenska standardregler. Enskilda hus kan senare förbättras via separata datafiler utan att deras ändringar skrivs över.
 
-We want the player to ask: "What would I do in real life?" and have a consistent simulation reward reasonable decisions. The long-term world concept is based on Ljungby, Ryssby, Kanna, Agunnaryd and rural Smaland, with house locations preserved where feasible and large empty distances selectively shortened.
+## Börja här
+- **För dig:** [Projektöversikt (HTML)](docs/PROJECT_OVERVIEW.html) — ladda ner filen och öppna den i en webbläsare för klickbara vägval och kommentarer. Den skickar inte ändringar direkt till GitHub.
+- **För agenter:** [Specifikation](docs/PROJECT_SPEC.md), [beslut](docs/DECISIONS.md), [roadmap](docs/ROADMAP.md) och [agentinstruktioner](AGENTS.md).
+- **Första tekniska testet:** [Build 42-spike](docs/BUILD42_SPIKE.md).
 
-The starter contains:
-- Vision, scope boundaries, phased milestones, engineering decision record, data-policy notes.
-- Independent world-data preparation experiment: converts OSM-like GeoJSON building features into a reproducible *style manifest*. This is NOT a map compiler and does NOT generate in-game tiles.
-- Placeholder directories for the two mutually exclusive delivery tracks.
-- Agent instructions for Codex/Claude Code, automated Python tests.
+## Nuläge och ärliga begränsningar
+Det finns ett Python-experiment som tilldelar reproducerbara stilar till GeoJSON-byggnader. Det skapar **inte** fungerande Project Zomboid-kartor, tiles, inredningar eller modpaket. Getabodas verkliga geometri är ännu **inte** inläst eller verifierad. Ingen speltestad Build 42-karta finns ännu i detta repo.
 
-## Quick start (Python 3.10+; no third-party packages)
-
-```shell
+## Lokala kontroller (Python 3.10+, inga tredjepartsberoenden)
+```sh
 python -m unittest discover -s tests -v
+python tools/check_agent_setup.py
+python tools/render_dashboard.py --check
 python tools/building_styles.py --input data/sample/buildings.geojson --output build/building-styles.json
 ```
 
-Check `docs/ROADMAP.md` and `docs/decisions/0001-mod-or-game.md` before adding engine-specific code.
+Håll `docs/HUMAN_OVERVIEW.md` och den manuellt formgivna `docs/PROJECT_OVERVIEW.html` i takt. `python tools/render_dashboard.py --check` kontrollerar ett fåtal gemensamma nyckelord; automatisk HTML-generering är ett senare förbättringssteg.
 
-## Legal boundaries
-
-No Project Zomboid game files, copyrighted graphics, trademarks, or code are included. This repository does not claim official affiliation. Review third-party tool and geographic-data licenses before redistribution.
-
-## Ownership and licensing
-
-All newly written code here is presented as an initial private-project draft; choose a license after checking each contributor's rights. Do not automatically apply a permissive license to copied tools or third-party assets.
+## Juridiskt
+Endast eget material och tillåtna data får distribueras. Egna kodfiler licensieras enligt [MIT](LICENSE); varje extern datakälla, importerad resurs och eventuell grafik har sina respektive villkor. Se [DATA_AND_RIGHTS.md](docs/DATA_AND_RIGHTS.md). Projektet är inte knutet till The Indie Stone.

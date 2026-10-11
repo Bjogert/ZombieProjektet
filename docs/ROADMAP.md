@@ -1,27 +1,36 @@
-# Roadmap: evidence-gated milestones
+# Roadmap — evidence-based small milestones
 
-## Gate 0: Choose first delivery path
-Decide between a Project Zomboid map mod or an original Godot vertical slice. Record the decision in an ADR.
+**Chosen:** Project Zomboid Build 42 Stable map mod. **Not building:** standalone game.
 
-## Gate 1: Verify geographic data pipeline
-- Process a small, legally usable OSM extract into normalized road, water, building data.
-- Compare rural building coverage against permitted Swedish geodata.
-- Preserve source IDs and coordinates and generate deterministic style assignments.
+## M0 — Prove a custom Build 42 map really loads (NEXT)
+See [BUILD42_SPIKE.md](BUILD42_SPIKE.md).
+- Identify the exact installed Build 42 Stable version and supported official/community mapping toolchain using current primary sources and local proof.
+- Create minimal separate test map, a usable door and one simple building.
+- Launch game, select/spawn on map, walk into house, check collision and errors.
+- Save proof: tool versions, commands/manual steps, logs/screenshots, paths and limitations.
+- If blocked: smallest reproduction, precise blocker, then choose an alternative. Do not invent a working exporter.
 
-## Gate 2A: Mod spike
-- Build a Build 42 test map with legal and compatible tooling.
-- Render a Swedish red wooden wall with white corner boards.
-- Test player access, collisions, interiors and saving in-game.
+## M1 — Source-backed Getaboda data
+- Retrieve permissible real source geometries for Getaboda (without guessing coordinates); inspect all expected houses and roads against available data.
+- Preserve source CRS, IDs, license/provenance and normalized projections.
+- Add tests for repeatability, invalid/missing geometries and attribution.
+- Establish small manually correctable data file and compare run to baseline.
 
-## Gate 2B: Standalone game spike
-- Fixed orthographic 3D camera, player, house, zombie.
-- Door/window interactions, sound, line of sight, inventory and save/load.
-- Verify one realistic cause-effect chain through playtesting.
+## M2 — Swedish style/interior library
+- Expand deterministic style manifest into a minimal typed Swedish exterior/interior template library.
+- Add one simple custom original red wall/white-corner asset only after its usage pipeline is verified; reuse permitted game resources meanwhile.
+- Implement a simple playable rule-based interior, validated via game.
+- Add individual override keyed by building ID with regression test showing it survives regeneration.
 
-## Gate 3: Evaluate
-Compare implementation effort, performance, playability, asset rights and maintenance.
+## M3 — Getaboda POC
+- Combine 4–5 source-confirmed buildings, nearby roads and land cover in separate Swedish map.
+- Confirm Getaboda local 1:1 within grid constraints.
+- Prove load/entry/collision in current Build 42, rerun/override persistence, reproducible mod package and setup instructions.
 
-## Gate 4: Expand only verified systems
-Ljungby region, Swedish architecture, carefully controlled geographic compression, later Swedish items, vehicles and clothes.
+## M4 — Small public test
+- Generate zip for GitHub Releases; test installation and errors with friends.
+- Later confirm Steam Workshop rules, multiplayer and save file behavior.
+- Begin settlements around Agunnaryd/Södra Ljunga; implement constrained rural-distance compression only with continuity tests.
 
-Completion requires reproducible in-engine/in-game proof, not plausible generated source code.
+## Completion rules
+A milestone is not done until its acceptance evidence is documented. Python unit tests support data-stage claims but **cannot** prove working in-game maps. Keep source geodata independent from world projection and game assets. Do not commit copyrighted proprietary content.

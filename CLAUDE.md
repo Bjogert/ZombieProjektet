@@ -1,7 +1,9 @@
-# Claude Code entrypoint
+# Claude Code — ZombieProjektet
 
-**Read [AGENTS.md](AGENTS.md) first.** It is the single source of project rules for both Claude Code and Codex. AGENTS.md also points here for entrypoint discovery; do **not** recursively reread it.
+**Läs [AGENTS.md](AGENTS.md) först.** Den är gemensam källa för Codex och Claude Code. Läs inte om dessa två filer i en loop.
 
-Use project-local skills from `.claude/skills/<name>/SKILL.md` when their task applies. The authoritative workflow and skill selection is [docs/AGENT_WORKFLOW.md](docs/AGENT_WORKFLOW.md). Codex uses mirrored copies in `.agents/skills/`.
+Project Zomboid **Build 42 Stable-kartmod** är beslutad. Ingen fristående motor utreds eller byggs nu.
 
-Do not silently install external plugins, enable hooks, or change the pending mod-versus-standalone decision. State what you tested and what you did not.
+Läs [docs/PROJECT_SPEC.md](docs/PROJECT_SPEC.md), [docs/ROADMAP.md](docs/ROADMAP.md) och den aktuella [Build 42-spiken](docs/BUILD42_SPIKE.md) före arbetet. Projekt-skills finns i `.claude/skills/<name>/SKILL.md`; Codex har motsvarande filer i `.agents/skills/`.
+
+Skriv agentplaner och reviews i Markdown. Håll `docs/HUMAN_OVERVIEW.md` och den manuellt utformade `docs/PROJECT_OVERVIEW.html` i takt; `python tools/render_dashboard.py --check` kontrollerar bara utvalda nyckelord, inte full synkronisering. Utge aldrig unit tests för faktiska speltester. Installera inte externa agenter, hooks eller pluginpaket utan godkännande.
