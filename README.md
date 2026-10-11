@@ -22,7 +22,7 @@ python tools/render_dashboard.py --check
 python tools/building_styles.py --input data/sample/buildings.geojson --output build/building-styles.json
 ```
 
-Ändra statusöversikten i `docs/HUMAN_OVERVIEW.md`; kör `python tools/render_dashboard.py` för att uppdatera HTML-vyn.
+Håll `docs/HUMAN_OVERVIEW.md` och den manuellt formgivna `docs/PROJECT_OVERVIEW.html` i takt. `python tools/render_dashboard.py --check` kontrollerar ett fåtal gemensamma nyckelord; automatisk HTML-generering är ett senare förbättringssteg.
 
 ## Juridiskt
 Endast eget material och tillåtna data får distribueras. Egna kodfiler licensieras enligt [MIT](LICENSE); varje extern datakälla, importerad resurs och eventuell grafik har sina respektive villkor. Se [DATA_AND_RIGHTS.md](docs/DATA_AND_RIGHTS.md). Projektet är inte knutet till The Indie Stone.
