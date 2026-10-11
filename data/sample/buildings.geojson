@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature", "id": "demo-house-1",
+      "properties": {"building": "house", "name": "Demo house, NOT a real address"},
+      "geometry": {"type": "Polygon", "coordinates": [[[0.0,0.0],[0.002,0.0],[0.002,0.002],[0.0,0.002],[0.0,0.0]]]}
+    },
+    {
+      "type": "Feature", "id": "demo-barn-2",
+      "properties": {"building": "barn"},
+      "geometry": {"type": "Polygon", "coordinates": [[[0.004,0.0],[0.006,0.0],[0.006,0.002],[0.004,0.002],[0.004,0.0]]]}
+    }
+  ]
+}
