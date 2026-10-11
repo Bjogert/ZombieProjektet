@@ -1,0 +1,34 @@
+# ZombieProjektet – din projektöversikt
+
+**Status:** Planeringen klar. Nu väntar det första riktiga karttestet i Project Zomboid Build 42.
+
+## Vad bygger vi?
+Ett svenskt zombie-Småland som en Project Zomboid-mod. Vi börjar i Getaboda med cirka 4–5 hus, vägar och natur. Husen ska ligga ungefär där de finns i verkligheten, men vi använder enkla svenska standardhus där detaljer saknas. På sikt vill vi att du och dina vänner ska kunna spela tillsammans runt Ljungby.
+
+## Så arbetar vi
+AI-agenterna bygger, testar och dokumenterar tekniken. Du får korta instruktioner när vi behöver provspela något. Ingen egen spelmotor eller avancerad editor just nu.
+
+## Projektets fyra steg
+1. **Nästa steg: Få ett enda testhus att fungera i Build 42.** Vi har ännu ingen verifierad spelbar karta.
+2. **Lägg in Getabodas verkliga huslägen.** Vi verifierar och använder tillåtna kartdata.
+3. **Skapa enkla svenska hus och interiörer automatiskt.** Biblioteket kan växa när vi vill.
+4. **Generera om utan att förlora manuella ändringar.** Bevisa det i lilla Getaboda.
+
+## Viktiga beslut
+- Nutida kartor med svensk 1990-talskänsla.
+- Getaboda och andra bebyggda platser behåller verkliga avstånd; långa skogsvägar kan kortas ned senare.
+- Skog och åkrar hämtas ur kartunderlag, träd och detaljer genereras.
+- Detaljerade enskilda hus kan byggas om senare och granskas före publicering.
+- Öppen kod, gratis verktyg som standard, GitHub-paket först och Steam Workshop senare.
+- Vi får börja om med sparfiler under utveckling; målet är att ha roligt och komma framåt.
+
+## Hur fungerar denna sida?
+Du kan klicka på förslag, lämna kommentarer och kopiera dina synpunkter eller öppna ett **förifyllt** GitHub-ärende. Dina val sparas **endast i den här webbläsaren** tills du skickar dem till GitHub eller till en agent. Sidan ändrar **inte** repositoryts Markdown-filer av sig själv.
+
+## Öppna vägval för människan
+- **Vägval A – godkänn första Build 42-spiken:** detta är rekommenderat och kräver ingen extra budget. AI bygger en minimal karta och du provspelar.
+- **Vägval B – ändra omfattning innan vi startar:** skriv vilken del du vill lägga till eller ta bort.
+- **Vägval C – begär en genomgång:** be om en enklare visuell presentation innan arbetet börjar.
+
+## Nästa mänskliga aktivitet
+När agenterna kan visa ett konkret modpaket behöver vi ett kort test i det installerade spelet. Innan dess har vi inte lovat att någon karta fungerar.
