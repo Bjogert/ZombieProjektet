@@ -1,0 +1,17 @@
+name: Feature proposal
+description: Propose a small testable addition
+labels: [enhancement]
+body:
+  - type: textarea
+    id: value
+    attributes:
+      label: Player value
+      description: What real-life expectation should this feature support?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: How will we test it?
+    validations:
+      required: true
