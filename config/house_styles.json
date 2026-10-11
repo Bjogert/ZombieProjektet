@@ -1,0 +1,11 @@
+{
+  "default_styles": ["falu_red_white_corners", "pale_yellow_wood", "white_plaster"],
+  "building_styles": {
+    "barn": ["falu_red_white_corners"],
+    "farm_auxiliary": ["falu_red_white_corners"],
+    "industrial": ["grey_metal"],
+    "garage": ["red_wood", "grey_metal"],
+    "house": ["falu_red_white_corners", "pale_yellow_wood", "white_plaster"],
+    "detached": ["falu_red_white_corners", "pale_yellow_wood", "white_plaster"]
+  }
+}
