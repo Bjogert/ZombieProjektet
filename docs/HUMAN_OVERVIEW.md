@@ -18,6 +18,9 @@ Routine updates and design previews preserve surprises. Full developer evidence 
 
 Agents resolve technical issues before requesting milestone playtests. Creator playtests focus on feel and usability; acceptance is recorded only after actual feedback.
 
+## Getaboda data research
+The source audit found 2025 aerial imagery catalog coverage at 16 cm pixel size and a municipal building download from Lantmäteriet. Access to these products still needs Geotorget setup and review. OSM has roads but no building objects in the checked 750 m radius. Actual house dimensions and facade colors remain unverified. The [automation workflow](GEODATA_WORKFLOW.md) preserves source facts, assumptions and individual corrections separately.
+
 ## Established direction
 - Modern source geography with Swedish 1990s atmosphere.
 - Getaboda at local 1:1 scale; countryside distance compression later.

@@ -13,6 +13,7 @@ Real Getaboda geometry has **not** been imported or verified. The deterministic 
 - Creator: [project overview](docs/PROJECT_OVERVIEW.html), with local feedback controls; it does not automatically submit anything to GitHub.
 - Agents: [AGENTS.md](AGENTS.md), [workflow](docs/AGENT_WORKFLOW.md), [specification](docs/PROJECT_SPEC.md), [decisions](docs/DECISIONS.md) and [roadmap](docs/ROADMAP.md).
 - Integration: [Build 42 test plan](docs/BUILD42_SPIKE.md).
+- World data: [Getaboda source audit and automation workflow](docs/GEODATA_WORKFLOW.md), including verified 2025 imagery catalog coverage and remaining access/appearance gaps.
 
 Conversation with the creator is in Swedish. Project documentation, code, identifiers and authored UI are in English. Routine updates preserve surprises; developer evidence remains available for inspection.
 
