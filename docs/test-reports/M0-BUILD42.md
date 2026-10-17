@@ -1,6 +1,11 @@
 # M0 evidence — 2026-10-17
 
-**AGENT SMOKE TESTED / HUMAN ACCEPTANCE PENDING. Issue #2 remains open.**
+**AGENT TECHNICAL CHECKS PASSED / HUMAN ACCEPTANCE PENDING. Issue #2 remains open.**
+
+Current artifact: lighting revision r4, SHA-256
+`d68edd9e90eee0c563577ffa42cee5769ca98087040efc0d80705d9acc309982`.
+The latest evidence is in **Lighting and structural follow-up** below. Earlier
+sections preserve the initial failure and repair history.
 
 ## Environment
 
@@ -12,7 +17,7 @@ Fresh `C:\Users\rober\Zomboid\console.txt`, line 58:
 [42.21 Stable announcement](https://projectzomboid.com/blog/news/2026/09/42-21-stable-released/).
 The old 2024 log was not used to establish this version. Started the game from
 its installation working directory; automation launcher initially exposed no window.
-The later agent-driven map tests are recorded below. No pre-existing user save was loaded or modified; two new test saves were created.
+The later agent-driven map tests are recorded below. No pre-existing user save was loaded or modified; three new test saves were created across these experiments.
 
 ## Downloads and configuration
 
@@ -79,7 +84,7 @@ It does not validate every LOT byte or certify runtime compatibility.
 [TIS versioned design](https://theindiestone.com/forums/topic/72103-tidy-up-time/)
 and installed game's spawnpoint examples. Menu selection was verified after the shared-directory fix below.
 
-Generated: build/m0 and final build/package-m0-r3 (Git ignored). Installed:
+Generated: original build/m0 and latest build/m0-lighting; final build/package-m0-r4 (Git ignored). Installed:
 `C:\Users\rober\Zomboid\mods\ZombieProjektetM0`. Activated for the authorized test; only this test mod is enabled.
 ZIP excludes graphics PNGs, TileDefs, game code and editor binaries.
 
@@ -94,12 +99,13 @@ ZIP excludes graphics PNGs, TileDefs, game code and editor binaries.
 | Mod discovered / separate world selectable | PASS after shared-directory fix, real game UI |
 | Spawn, ground, road | PASS, second fresh save with indoor spawn |
 | Door and entering/leaving | PASS, open/close inside, walk outside and back in |
-| Direct wall collision / roof behavior | Not established by this smoke test |
-| Interior visibility | FAIL with closed door: windowless/unlit room becomes black; visible with door open |
+| Wall collision | PASS: actual engine queries block four sampled outer edges and allow two clear control edges |
+| Roof coverage / rendering | PASS: 80/80 upper floor squares; 80/80 ground squares indoors; roof visible outdoors and cut away for interior view |
+| Interior visibility | PASS in r4: daylight with closed door, light switch turns on and off |
 | Critical map loading errors | No crash or critical map-load error observed; warnings discussed below |
 | Human screenshot/log | Agent screenshots/log captured; human acceptance pending |
 
-Checks: python -m unittest discover -s tests -v (11 tests),
+Checks: python -m unittest discover -s tests -v (12 tests),
 python tools/check_agent_setup.py, python tools/render_dashboard.py --check,
 git diff --check. Tests do not establish gameplay acceptance.
 
@@ -117,8 +123,8 @@ was installed or run; functionality and generated OSM quality are unverified.
 Evaluate a small synthetic example there after M0 before creating our own exporter.
 Existing Python style manifests remain design data only.
 
-Next: [human playtest](../PLAYTEST_M0.html). Direct wall collision, roof behavior,
-lighting improvement and human acceptance remain. Keep M0 and Issue #2 open.
+Next: [human playtest](../PLAYTEST_M0.html) and the first cottage's separate
+game integration. Keep M0 and Issue #2 open for creator acceptance and independent reproduction.
 
 ## Review and remaining risk
 
@@ -181,3 +187,79 @@ Screenshots retained as task outputs: 01-testmod-aktiverad.png,
 10-pausat-infor-ditt-test.png. These are raw game captures, not concept images.
 The second-save source fixes are packaged in build/package-m0-r3; exported lots
 are unchanged from the successfully loaded WorldEd export.
+
+## Lighting and structural follow-up (2026-10-17)
+
+The original house had neither windows nor a light switch. Added two closed
+stock windows with matching window-wall openings: west (120,122), north
+(125,120), plus the west-wall light switch at (120,123). No opening was left
+as a collision-free wall gap. The regression test first failed against the old
+wall tile, then passed after implementation. No custom lighting scripts or
+changes to the game installation were needed.
+
+Generated `build/m0-lighting` and exported through the same official WorldEd
+8x8 path, again 1 building / 1 room / 1 rectangle / 2 room objects, with no
+export error. Packaged as `build/package-m0-r4`. Verified the existing r3 mod
+before updating only its files; verified every new file byte-for-byte afterward.
+The package ZIP hash is recorded at the top of this report.
+
+Fresh Sandbox save `2026-10-17_15-33-19`, character Annie Diehl, Custom Occupation,
+zombies None, default morning conditions. Loaded in 22 seconds. With the entrance
+closed, the floor and furniture are now visible in daylight. The context-menu
+Light Switch > Turn on action completed; the room brightened and the next menu
+offered Turn off. Turning it off left daylight visibility with the door closed.
+The door opened and Walk to moved the player outside normally.
+
+To test actual collision without relying on very short automated key presses,
+temporarily installed the original, read-only `tools/qa_m0.lua` in the test mod.
+It runs at OnGameStart and queries loaded engine squares. Reload took 19 seconds.
+Fresh log results:
+
+```text
+PASS west wall actual=true expected=true
+PASS north wall actual=true expected=true
+PASS east wall actual=true expected=true
+PASS south wall actual=true expected=true
+PASS clear interior actual=false expected=false
+PASS clear outdoor path actual=false expected=false
+PASS roof squares above room actual=80 expected=80
+PASS room squares classified indoors actual=80 expected=80
+```
+
+The exact probe coordinates are in the script. These are runtime engine queries,
+not a claim that keyboard wall-pushing or every perimeter edge was tested.
+The script does not alter player position, map objects, weather or lighting.
+It was removed from the installed mod after a clean save/exit and is deliberately
+excluded from the distributable source tree.
+
+Initially, the outside view still showed the interior through cutaway walls and
+roof. Walking around the south side caused the full walls and flat wooden roof
+to render, confirming the earlier view was cutaway behavior. The existing -3
+TMX level offset already placed all 80 upper squares correctly; no roof geometry
+change was needed. Natural rain, snow, night-time/power-failure lighting and
+multiplayer were not tested. No new exception or critical map-load error was
+observed; baseline warnings remain as described above.
+
+Raw evidence in the task workspace:
+- `outputs/11-room-light-on.png`
+- `outputs/12-room-daylight-door-closed.png`
+- `outputs/13-roof-check-before-correction.png` (diagnostic cutaway view; the
+  historical filename does not imply a later geometry correction)
+- `outputs/14-roof-visible-outdoors.png`
+- `work/playtest/lighting-first-console.txt`
+- `work/playtest/lighting-runtime-qa-console.txt`
+
+The latest test save was saved and the game closed cleanly. Existing user saves
+and the two earlier test saves remain. Load the new 15-33-19 save or start a
+fresh world to see the windows; old saves cache the old map.
+
+## First cottage authoring prototype
+
+After the test-house checks passed, created the original
+`assets/buildings/swedish_cottage_01.tbx`. Loaded and visually inspected it in
+official BuildingEd: timber exterior, light corner posts, closed windows,
+pitched roof, three generic rooms, switches and placeholder furniture.
+Corrected one corner post's sprite alignment during preview. No real Getaboda
+layout or artwork was imported. See the asset README for its next checks.
+This editor prototype is not included in the r4 game package and has not yet
+been exported or verified in the game.

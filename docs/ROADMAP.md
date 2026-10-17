@@ -5,7 +5,7 @@
 ## M0 — Prove a custom Build 42 map really loads (IN PROGRESS)
 See [BUILD42_SPIKE.md](BUILD42_SPIKE.md).
 
-As of 2026-10-17, world selection, loading, indoor spawn and walking through the doorway have been agent-tested in 42.21.0. Closed-door darkness, direct wall collision, roof behavior and creator acceptance remain open. Finish those checks before declaring M0 complete. Then validate one reusable Swedish cottage as an early M2 prototype before scaling to source-backed Getaboda; real geography has not yet been verified.
+As of 2026-10-17, world selection, indoor spawn, doorway traversal, closed-door daylight and the light switch have been agent-tested in 42.21.0. All four wall collision probes pass in the running game. All 80 room squares have an upper floor and are classified indoors; the roof renders outdoors. Creator acceptance and independent reproduction remain open. The first reusable cottage is now an early M2 BuildingEd prototype; game integration, furnishing and design review remain. Real geography has not yet been verified.
 
 - Identify the exact installed Build 42 Stable version and supported official/community mapping toolchain using current primary sources and local proof.
 - Create minimal separate test map, a usable door and one simple building.

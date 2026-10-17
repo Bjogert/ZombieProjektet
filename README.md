@@ -5,9 +5,9 @@ A hobby project building a recognizable Swedish world as a **Project Zomboid Bui
 Use lawful source data for actual building locations, roads and land cover. Generate ordinary buildings and details from a small Swedish template library, with separate stable-ID overrides that survive regeneration. Aim for Swedish 1990s atmosphere and a world the creator can enjoy discovering.
 
 ## Current state (2026-10-17)
-A synthetic test map has been exported with the official mapping tools and smoke-tested in **42.21.0**. World selection, loading, indoor spawn and walking out/in were verified. Closed-door darkness, direct wall collision, roof behavior and human acceptance remain open. See the [M0 report](docs/test-reports/M0-BUILD42.md) for evidence and limitations.
+A synthetic test map has been exported with the official mapping tools and tested in **42.21.0**. World selection, indoor spawn, doorway traversal, closed-door daylight and the light switch work. Runtime collision probes pass on all four walls; the roof covers all 80 room squares and renders outdoors. Human acceptance remains open. See the [M0 report](docs/test-reports/M0-BUILD42.md) for evidence and limits.
 
-Real Getaboda geometry has **not** been imported or verified. The deterministic GeoJSON style manifest is a separate data experiment, not a playable Getaboda map. A reusable Swedish cottage remains the next visual prototype after closing the technical test-house gaps.
+Real Getaboda geometry has **not** been imported or verified. The deterministic GeoJSON style manifest is a separate data experiment. The first [reusable cottage](assets/buildings/README.md) is an original BuildingEd prototype with timber walls, light corner posts and a pitched roof; its game export and furnishing are next.
 
 ## Start here
 - Creator: [project overview](docs/PROJECT_OVERVIEW.html), with local feedback controls; it does not automatically submit anything to GitHub.

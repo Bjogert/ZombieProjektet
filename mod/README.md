@@ -26,8 +26,18 @@ Packager checks header signatures/chunk size and required files, not runtime cor
 Keep `common/media/maps/.gitkeep`: Build 42.21 skips the versioned map directory
 when that shared maps directory does not exist. The final spawn is indoors at
 (121,124,0), so a randomized locked door can be opened normally from inside.
-Agent smoke test verified separate-world selection, loading and walking out/in.
-Closed-door interior lighting, direct wall collision and roof behavior still need
-follow-up; human acceptance remains open.
+Agent game tests verified separate-world selection, loading, walking out/in,
+daylight with the door closed and a working light switch. Runtime collision
+queries block all four walls and allow clear floor/path movement. All 80 room
+squares have an upper floor; the flat roof renders from outdoors. Human
+acceptance remains open. The tested lighting package is `build/package-m0-r4`,
+exported from `build/m0-lighting`; older saves cache the older house.
+
+Optional diagnostics: copy `tools/qa_m0.lua` into the installed test mod's
+`42/media/lua/client/` while the game is closed, then load the M0 test save.
+The `[ZombieProjektet QA]` log lines query the actual loaded squares without
+changing gameplay. Remove this temporary copy after QA. It is excluded from
+normal packages. These checks supplement visual testing; they do not test rain,
+night-time lighting after power loss, multiplayer or every possible wall edge.
 See [editor setup and evidence](../docs/test-reports/M0-BUILD42.md) and
 [HTML playtest instructions](../docs/PLAYTEST_M0.html).

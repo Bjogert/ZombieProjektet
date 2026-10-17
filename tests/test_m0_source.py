@@ -8,6 +8,16 @@ from tools import build_m0
 
 
 class TestM0Source(unittest.TestCase):
+    def test_room_has_daylight_and_an_accessible_light_switch(self):
+        layers = build_m0.make_layers()
+        # Two closed stock windows admit daylight without leaving an empty wall.
+        for x, y, wall, window in ((120, 122, 8, 0), (125, 120, 9, 1)):
+            self.assertEqual(layers['0_Walls'][y * 300 + x], ('walls_exterior_house_01', wall))
+            self.assertEqual(layers['0_Windows'][y * 300 + x], ('fixtures_windows_01', window))
+        # The west-facing stock switch controls room lighting from inside.
+        self.assertEqual(layers['0_WallFurniture'][123 * 300 + 120], ('lighting_indoor_01', 1))
+        self.assertEqual(layers['0_Furniture'][123 * 300 + 121], None)
+
     def test_spawn_is_in_the_authored_room(self):
         # Starting indoors lets the player unlock a normally randomized house door.
         path = Path(__file__).resolve().parents[1] / 'mod/ZombieProjektetM0/42/media/maps/M0Sweden/spawnpoints.lua'

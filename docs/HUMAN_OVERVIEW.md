@@ -1,6 +1,6 @@
 # ZombieProjektet — project overview
 
-**Status (2026-10-17):** the synthetic map has been smoke-tested in Project Zomboid Build 42.21.0. World selection, indoor spawn and walking out/in work. Closed-door darkness, wall collision, roof behavior and creator acceptance remain open. This is not yet the Getaboda map.
+**Status (2026-10-17):** the synthetic map has been tested in Project Zomboid Build 42.21.0. Lighting is fixed; wall collision and roof coverage/rendering pass agent checks. Creator acceptance remains open. The first reusable cottage is now a BuildingEd prototype; its game test is next. This is not yet the Getaboda map.
 
 ## What are we building?
 A recognizable Swedish world in Project Zomboid. Start with about 4–5 source-confirmed Getaboda buildings, nearby roads and nature, with Swedish 1990s styling and generic interiors where details are unavailable. Later, expand toward Ljungby and test multiplayer with friends.
@@ -11,8 +11,8 @@ The creator sets creative direction and important choices. The lead agent implem
 Routine updates and design previews preserve surprises. Full developer evidence remains available, and bugs are always disclosed. The creator should be able to enjoy playing without reviewing every room or implementation detail.
 
 ## Next deliveries
-1. Finish technical QA on the test house: darkness, collision and roof behavior.
-2. Build one reusable Swedish cottage and present a representative exterior for design feedback.
+1. Creator playtest of the repaired test house; agent lighting, collision and roof checks have passed.
+2. Refine and game-test the first reusable Swedish cottage, then review its representative exterior together.
 3. Verify lawful Getaboda data and integrate the first real buildings.
 4. Demonstrate that individual corrections survive regeneration.
 

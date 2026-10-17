@@ -15,12 +15,14 @@ TILESETS = (
     'blends_natural_01', 'blends_street_01', 'floors_interior_tilesandwood_01',
     'walls_exterior_house_01', 'fixtures_doors_01',
     'furniture_tables_low_01', 'furniture_seating_indoor_01',
+    'fixtures_windows_01', 'lighting_indoor_01',
 )
 
 
 def make_layers():
     layers = {name: [None] * SIZE ** 2 for name in (
-        '0_Floor', '0_Walls', '0_Doors', '0_Furniture', '1_Floor')}
+        '0_Floor', '0_Walls', '0_Doors', '0_Windows',
+        '0_Furniture', '0_WallFurniture', '1_Floor')}
     ground = layers['0_Floor']
     for y in range(SIZE):
         for x in range(SIZE):
@@ -47,6 +49,11 @@ def make_layers():
     walls[128 * SIZE + 130] = ('walls_exterior_house_01', 3)
     walls[124 * SIZE + 120] = ('walls_exterior_house_01', 10)
     layers['0_Doors'][124 * SIZE + 120] = ('fixtures_doors_01', 0)
+    walls[122 * SIZE + 120] = ('walls_exterior_house_01', 8)
+    walls[120 * SIZE + 125] = ('walls_exterior_house_01', 9)
+    layers['0_Windows'][122 * SIZE + 120] = ('fixtures_windows_01', 0)
+    layers['0_Windows'][120 * SIZE + 125] = ('fixtures_windows_01', 1)
+    layers['0_WallFurniture'][123 * SIZE + 120] = ('lighting_indoor_01', 1)
     layers['0_Furniture'][123 * SIZE + 126] = ('furniture_tables_low_01', 0)
     layers['0_Furniture'][125 * SIZE + 126] = ('furniture_seating_indoor_01', 56)
     return layers

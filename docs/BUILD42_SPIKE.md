@@ -1,6 +1,6 @@
 # M0 test plan — first playable separate Build 42 map
 
-**State: AGENT SMOKE TESTED / HUMAN ACCEPTANCE PENDING (2026-10-17).** Separate-world selection, loading, indoor spawn and walking out/in verified in 42.21.0. Closed-door interior is black; direct wall collision and roof behavior remain unverified. See [evidence](test-reports/M0-BUILD42.md) and [playtest instructions](PLAYTEST_M0.html).
+**State: AGENT TECHNICAL CHECKS PASSED / HUMAN ACCEPTANCE PENDING (2026-10-17).** Separate-world selection, indoor spawn, doorway traversal, closed-door daylight and the light switch work in 42.21.0. Four wall collision probes and full roof coverage pass in the actual game; exterior roof rendering was observed. See [evidence](test-reports/M0-BUILD42.md) and [playtest instructions](PLAYTEST_M0.html).
 
 ## Goal
 Using legally permitted, currently compatible mapping tools, ship the smallest separate Swedish-world test map loading on **Project Zomboid Build 42 Stable**. At least one building should have a working entrance, basic inside space, correct player collision, and a documented spawn point.
@@ -25,9 +25,9 @@ Using legally permitted, currently compatible mapping tools, ship the smallest s
 - [x] Map appears as **separate selectable/playable** world (agent test).
 - [x] Character spawns where expected (agent test).
 - [x] Ground and test road render (agent test).
-- [ ] Door, wall collision, and entering/leaving the house work.
-- [ ] No unexplained critical game loading errors.
-- [ ] Licensing/reuse of all files verified.
+- [x] Door, wall collision, and entering/leaving the house work (agent runtime checks).
+- [x] No unexplained critical map loading errors observed; baseline warnings documented.
+- [x] Original layout and references only; proprietary graphics and tools excluded.
 - [ ] Human game test logs/screenshots linked.
 
 ## Agent work ticket

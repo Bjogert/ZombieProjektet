@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="sv">
+<html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Provspela vårt första testhus</title>
+<title>Try the repaired test house</title>
 <style>
 body{font:18px/1.65 system-ui,sans-serif;background:#101d19;color:#e7eee7;margin:0}
 main{max-width:760px;margin:40px auto;padding:24px}h1{line-height:1.15;font-size:42px}
@@ -11,37 +11,25 @@ a{color:#a9e6b8}li{margin:12px 0}code{overflow-wrap:anywhere;font-size:15px}
 .status{color:#e6d299}small{color:#b5c8ba}
 </style>
 <main>
-<p>ZombieProjektet · M0 · 17 oktober 2026</p>
-<h1>Dags att prova testhuset.</h1>
-<p class="status">Codex har provat kartan i spelet: världsval, startpunkt, dörr och gång ut/in fungerar. M0 är ännu inte godkänt; belysning, väggkollision och tak behöver följas upp.</p>
-<section><h2>Spelet väntar på dig</h2><p>Testomgången <strong>2026-10-17_09-20-56</strong> är öppen och pausad, med dörren öppen. Tryck på spelknappen uppe till höger för att fortsätta. Spelet körs i fönster, 1280 × 720, för detta test.</p><p><strong>Känd brist:</strong> interiören blir svart med stängd dörr. Huset saknar ännu fönster och belysning. Öppna dörren med högerklick → Door → Open Door för att se golv och möbler.</p></section>
-<section><h2>Det här är klart</h2>
-<p>En liten påhittad testvärld med gräs, kort väg och ett hus med dörr, golv,
-väggar, bord och stol. Den använder spelets vanliga material. Detaljerad svensk
-fasad och Getabodas verkliga hus kommer senare.</p>
-<p>Installerat spel har verifierats som <strong>42.21.0 Stable</strong>.
-Inget behöver laddas ner för att prova på den här datorn.</p></section>
-<section><h2>Starta en ny testomgång</h2><ol>
-<li>Starta Project Zomboid genom Steam om det inte redan är öppet.</li>
-<li>Öppna <strong>Mods</strong>. Aktivera <strong>ZombieProjektet M0 - testhuset</strong>
-och bekräfta ändringen. Låt spelet läsa om innehållet om det ber om det.</li>
-<li>Välj <strong>Solo</strong> och skapa en <strong>ny</strong> sparfil, gärna med
-<strong>Custom Sandbox</strong> och få eller inga zombier för första kontrollen.
-Aktivera testmodden även för den nya sparfilen om modval visas där.</li>
-<li>Välj kartan/startområdet <strong>ZombieProjektet - M0 testhuset</strong>.
-Behåll <strong>Custom Occupation</strong> som yrke för detta första test.</li>
-<li>Starta. Du ska stå inne i huset strax innanför entrén.
-Öppna dörren med högerklick → <strong>Door → Open Door</strong>, eller prova <strong>E</strong> intill dörren. Prova att gå in och ut och
-gå mot en vägg. Kontrollera att bordet och stolen syns.</li>
-</ol><p>Om kartan saknas eller inte laddar: avbryt den nya testomgången och berätta
-vad som visas. Använd ingen gammal sparfil.</p></section>
-<section><h2>Återkoppla med tre saker</h2><ul>
-<li>En skärmbild av huset och var du startade.</li>
-<li>Om dörren öppnas, väggarna stoppar dig och du kan gå in och ut.</li>
-<li>Eventuellt felmeddelande eller röd felräknare. Loggen finns i
-<code>C:\Users\rober\Zomboid\console.txt</code>.</li>
-</ul><p>Först när det fungerar i spelet kan M0 godkännas.</p></section>
-<small>Modmapp: <code>C:\Users\rober\Zomboid\mods\ZombieProjektetM0</code>.
-Spelets Steam-filer och dina befintliga sparfiler har inte ändrats av modinstallationen.</small>
+<p>ZombieProjektet · M0 · 17 October 2026</p>
+<h1>Try the repaired test house.</h1>
+<p class="status">Lighting, wall collision probes and roof checks passed in the actual game. Your playtest feedback is still welcome; creator acceptance remains open.</p>
+<section><h2>Your updated test save</h2><p>The latest test is <strong>2026-10-17_15-33-19</strong>, character Annie Diehl. It was saved and the game closed normally after testing. Start Project Zomboid and use <strong>Load</strong> to select it. The character is outside the house.</p><p>The earlier morning saves contain the older house. Use the latest save or create a fresh world to see the windows and light switch.</p></section>
+<section><h2>What now works</h2>
+<p>Two closed windows admit daylight with the door closed. The wall switch turns the room light on and off. Doorway movement works, four sampled outer wall edges block collision, and all room squares have a ceiling. The flat roof appears when viewed from outside and cuts away to reveal the interior.</p>
+<p>Tested in <strong>42.21.0 Stable</strong>, windowed at 1280 × 720. The updated mod is installed on this computer. This small synthetic map uses stock materials. The Swedish cottage is a separate editor prototype and is not yet in this test world.</p></section>
+<section><h2>Start a fresh test instead</h2><ol>
+<li>Start Project Zomboid through Steam.</li>
+<li>In <strong>Mods</strong>, enable <strong>ZombieProjektet M0 - testhuset</strong>. Confirm and allow the content reload if requested.</li>
+<li>Select <strong>Solo</strong> and make a <strong>new</strong> save. Use <strong>Custom Sandbox</strong> and few or no zombies for this check. Enable the test mod for the save if the mod selector appears.</li>
+<li>Select <strong>ZombieProjektet - M0 testhuset</strong> and keep <strong>Custom Occupation</strong>.</li>
+<li>You should start inside, near the entrance. Try the light switch, close/open the door, walk outside and return. The room should remain visible during daylight with the door closed.</li>
+</ol><p>If the map does not appear or load, stop this new test and describe what you see. Do not use a valuable existing save.</p></section>
+<section><h2>Useful feedback</h2><ul>
+<li>Does movement and entering the house feel normal?</li>
+<li>Can you see indoors and operate the light switch?</li>
+<li>Share any unexpected behavior, error counter or screenshot. The log is <code>C:\Users\rober\Zomboid\console.txt</code>.</li>
+</ul><p>Technical investigation remains with the agent. You do not need to inspect every tile or future interior.</p></section>
+<small>Mod folder: <code>C:\Users\rober\Zomboid\mods\ZombieProjektetM0</code>. The Steam installation and valuable existing saves were not changed. Weather, power failure and multiplayer have not been tested.</small>
 </main>
 </html>
