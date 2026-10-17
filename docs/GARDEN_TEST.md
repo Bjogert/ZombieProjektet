@@ -106,7 +106,10 @@ They can be translated and edited without altering house or geographic source.
 Real Getaboda dimensions, orientation, entrances and permitted source data must
 guide later adaptation. This fictional garden is not evidence about any property.
 
-Rotation, fitting arbitrary footprints/parcels and connecting stable-ID garden
-choices to playable generation remain future work. The existing style-override
-manifest is separate. Creator approval of the stock exterior and landscaping,
-and independent reproduction in the game, remain open.
+At the time of this garden test, rotation and stable-ID garden selection were
+future work. The later **TOOLS-01** run on 2026-10-17 verifies quarter-turns and
+saved house/garden choices in a separate playable four-house fixture; see
+[PLACEMENT_TEST](PLACEMENT_TEST.md). Fitting arbitrary footprints/parcels and
+connecting the broader style-override palette remain future work. Creator
+approval of the stock exterior and landscaping, and independent reproduction
+in the game, remain open.

@@ -11,8 +11,12 @@ house. `0_Floor` changes ground surfaces and `0_Furniture` places outdoor object
 around the house, including its corners. Ground surfaces may occupy these routes;
 decorative objects may not.
 
-`tools.garden_source.garden_layers(template, origin)` translates the layout to a
-house origin, validates bounds/overlap/access, and returns new terrain layers.
+`tools.garden_source.garden_layers(template, origin, rotation=0)` places the layout
+at a house origin, validates bounds/overlap/access, and returns new terrain layers.
+Rotation is clockwise in map coordinates and accepts 0, 90, 180 or 270 degrees.
+The origin remains the rotated house's northwest bounding corner. Directional
+furniture declares `rotation_indices` in that order; other tiles remain aligned
+to the world. Reserved routes rotate with the house.
 The cottage builder accepts `--garden assets/gardens/cottage_garden_01.json` and
 keeps the source TBX unchanged. Omitting the option preserves the bare cottage.
 See [the game test report](../../docs/GARDEN_TEST.md) for export and installation.
@@ -23,7 +27,9 @@ layer. Flower colors, bed lengths, furniture and deck size can be edited here
 without changing the house model or geographic source. Unknown real gardens must
 remain labeled as design assumptions.
 
-Translation is implemented and tested at two origins. Rotation, fitting arbitrary
-house sizes/parcels and connecting stable-ID overrides to playable garden output
-are not yet implemented. Do not automatically attach this identical garden to
-every house. No proprietary tile artwork or real geodata is stored here.
+Translation and quarter-turn rotation are implemented. The separate placement
+builder connects saved stable-ID choices to authoring output; see
+[the contract](../../docs/specs/building-placement-tools.md). Fitting arbitrary
+house sizes/parcels remains unsupported. Do not automatically attach this
+identical garden to every real house. No proprietary tile artwork or real
+geodata is stored here.

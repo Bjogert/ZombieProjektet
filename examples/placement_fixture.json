@@ -1,0 +1,9 @@
+{
+  "defaults": {"house": "swedish_cottage_01", "rotation": 0, "garden": "cottage_garden_01"},
+  "buildings": [
+    {"id": "fixture-west", "origin": [120, 120]},
+    {"id": "fixture-north", "origin": [138, 120]},
+    {"id": "fixture-east", "origin": [120, 140]},
+    {"id": "fixture-south", "origin": [138, 140]}
+  ]
+}

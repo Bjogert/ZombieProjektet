@@ -1,8 +1,17 @@
-"""Translate original garden layout data into ground-level WorldEd layers."""
+"""Place original garden layout data into ground-level WorldEd layers."""
 import re
 
 
-def garden_layers(template, origin, size=300):
+def rotate_square(x, y, width, height, rotation):
+    """Clockwise cell rotation, also defined for points outside the footprint."""
+    if type(rotation) is not int or rotation not in (0, 90, 180, 270):
+        raise ValueError('Rotation must be 0, 90, 180 or 270 degrees')
+    for _ in range(rotation // 90):
+        x, y, width, height = height - y - 1, x, height, width
+    return x, y
+
+
+def garden_layers(template, origin, size=300, rotation=0):
     """Return new layers; reject placements that obstruct the house or access."""
     if len(origin) != 2 or any(type(v) is not int for v in origin):
         raise ValueError('Garden origin must contain two integers')
@@ -10,17 +19,22 @@ def garden_layers(template, origin, size=300):
     if len(house) != 2 or any(type(v) is not int or v < 1 for v in house):
         raise ValueError('Garden house_size must contain two positive integers')
     ox, oy = origin
-    if not (0 <= ox < ox + house[0] <= size and 0 <= oy < oy + house[1] <= size):
+    rotate_square(0, 0, *house, rotation)
+    width, height = house if rotation in (0, 180) else house[::-1]
+    if not (0 <= ox < ox + width <= size and 0 <= oy < oy + height <= size):
         raise ValueError('House outside the authoring cell')
 
     def squares(rect):
         if len(rect) != 4 or any(type(v) is not int for v in rect):
             raise ValueError('Garden rectangle must contain four integers')
         x, y, w, h = rect
-        if not (w > 0 and h > 0 and 0 <= ox + x < ox + x + w <= size
-                and 0 <= oy + y < oy + y + h <= size):
+        if not (0 < w <= size and 0 < h <= size):
             raise ValueError('Garden rectangle outside the authoring cell or empty')
-        return [(x + dx, y + dy) for dy in range(h) for dx in range(w)]
+        points = [rotate_square(x + dx, y + dy, *house, rotation)
+                  for dy in range(h) for dx in range(w)]
+        if any(not (0 <= ox + px < size and 0 <= oy + py < size) for px, py in points):
+            raise ValueError('Garden rectangle outside the authoring cell')
+        return points
 
     routes = {point for rect in template['clear_routes'] for point in squares(rect)}
     layers = {name: [None] * size ** 2 for name in ('0_Floor', '0_Furniture')}
@@ -32,8 +46,13 @@ def garden_layers(template, origin, size=300):
                 or not re.fullmatch(r'[A-Za-z0-9_]+', tile[0])
                 or type(tile[1]) is not int or tile[1] < 0):
             raise ValueError(f'Invalid garden tile reference: {tile}')
+        indices = patch.get('rotation_indices', [tile[1]] * 4)
+        if (len(indices) != 4 or any(type(i) is not int or i < 0 for i in indices)
+                or indices[0] != tile[1]):
+            raise ValueError('rotation_indices must contain four valid tile indices, starting with tile')
+        tile = (tile[0], indices[rotation // 90])
         for x, y in squares(patch['rect']):
-            if 0 <= x < house[0] and 0 <= y < house[1]:
+            if 0 <= x < width and 0 <= y < height:
                 raise ValueError('Garden overlaps the house')
             if layer != '0_Floor' and (x, y) in routes:
                 raise ValueError('Garden object obstructs a reserved route')

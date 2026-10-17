@@ -22,6 +22,12 @@ The separate [garden template](../gardens/README.md) adds a wooden deck, outdoor
 furniture and flowerbeds around this unchanged house. Its own package and game
 checks are recorded in [GARDEN_TEST](../../docs/GARDEN_TEST.md).
 
+The newer [four-orientation library](cottage_rotations/README.md) adds fully
+assembled directional furniture and restored ceiling/trim layers for native
+BuildingEd quarter-turns. It leaves this earlier source unchanged. Stable-ID
+house and garden choices now generate a separate four-house playable fixture;
+see [PLACEMENT_TEST](../../docs/PLACEMENT_TEST.md) for game evidence and limits.
+
 The file contains original layout data and stock tile names, with no copied
 textures or game code. Tile references resolve from the user's permitted game
 mapping resources; the referenced artwork remains The Indie Stone's property.

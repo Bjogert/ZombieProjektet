@@ -9,7 +9,9 @@ A synthetic test map has been exported with the official mapping tools and teste
 
 The first [reusable cottage](assets/buildings/README.md) is furnished, exported and agent-tested in a separate playable map. Entrance traversal, a window, a light switch, indoor daylight, wall collision and roof coverage/rendering pass; see [COTTAGE_TEST](docs/COTTAGE_TEST.md). A separate [garden template](assets/gardens/README.md) now adds a wooden deck, outdoor furniture and three flowerbeds, with game checks recorded in [GARDEN_TEST](docs/GARDEN_TEST.md). Its stock exterior palette and landscaping still await creator review.
 
-Real Getaboda geometry has **not** been imported or verified. The deterministic GeoJSON style manifest now preserves separate manual style overrides by stable ID, with automated regression checks. Connecting those choices to regenerated playable maps remains future work.
+The [building placement workflow](docs/PLACEMENT_TEST.md) now generates four cottage orientations with matching gardens from separate stable-ID choices. All 92 runtime probes and manual entry/exit checks passed; repeating the official WorldEd export produced the same package bytes. It supports one rectangular cottage, quarter-turns and an optional garden. Creator design review remains open.
+
+Real Getaboda geometry has **not** been imported or verified. The deterministic GeoJSON style manifest preserves separate style overrides by stable ID; its broader color palette and fitting templates to real footprints remain future integration work.
 
 ## Start here
 - Creator: [project overview](docs/PROJECT_OVERVIEW.html), with local feedback controls; it does not automatically submit anything to GitHub.
@@ -31,7 +33,7 @@ python tools/building_styles.py --input data/sample/buildings.geojson --override
 
 Keep `docs/HUMAN_OVERVIEW.md` and the manually maintained `docs/PROJECT_OVERVIEW.html` consistent. The dashboard check validates selected markers; it does not render or fully compare the documents.
 
-The [style override contract](docs/specs/building-style-overrides.md) preserves manual style choices by stable ID while leaving source geometry unchanged. Its automated tests prove manifest behavior; playable map regeneration is a later integration step.
+The [style override contract](docs/specs/building-style-overrides.md) preserves manual style choices without changing source geometry. The separate [placement contract](docs/specs/building-placement-tools.md) covers the smaller, now playable house/rotation/garden choice workflow. Reproduction commands and exact tool/game evidence are in [PLACEMENT_TEST](docs/PLACEMENT_TEST.md).
 
 ## Rights
 Distribute only original material and permitted data. Original code uses [MIT](LICENSE); external data, resources and art retain their own terms. See [DATA_AND_RIGHTS](docs/DATA_AND_RIGHTS.md). This project is not affiliated with The Indie Stone.

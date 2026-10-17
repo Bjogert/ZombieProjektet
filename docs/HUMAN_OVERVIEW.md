@@ -1,6 +1,6 @@
 # ZombieProjektet — project overview
 
-**Status (2026-10-17):** the synthetic test house and furnished cottage have been agent-tested in Project Zomboid Build 42.21.0. The cottage now also has a playable wooden deck, outdoor furniture and three flowerbeds in a separate garden test package. Access routes, outdoor floors, object counts and table collision pass runtime checks. Daylight, a light switch, walls, roof and cottage entrance/window interactions have passed their recorded tests. Creator acceptance and exterior approval remain open. This is not yet the Getaboda map.
+**Status (2026-10-17):** the synthetic test house and furnished cottage have been agent-tested in Project Zomboid Build 42.21.0. A new four-house test map now rotates the cottage, wooden deck, outdoor furniture and three flowerbeds together. All 92 runtime checks and manual entry/exit checks passed. Saved house, orientation and optional garden choices survive regeneration; repeated official export produced an identical package. Creator acceptance and exterior approval remain open. This is not yet the Getaboda map.
 
 ## What are we building?
 A recognizable Swedish world in Project Zomboid. Start with about 4–5 source-confirmed Getaboda buildings, nearby roads and nature, with Swedish 1990s styling and generic interiors where details are unavailable. Later, expand toward Ljungby and test multiplayer with friends.
@@ -10,13 +10,13 @@ The creator sets creative direction and important choices. The lead agent implem
 
 Getaboda and the worldbuilding tools are developed openly with the creator. Updates can show layouts, houses, gardens and screenshots, and explain how source data becomes a playable map. The lead handles routine work while the creator participates in design and important choices. Later areas retain surprise by default. Full developer evidence remains available, and bugs are always disclosed.
 
-The lead assigns bounded work, checks the results and integrates changes. The fictional cottage is playable, and individual style corrections survive regenerated manifests in automated tests using synthetic data. Both changes received an independent code review. Applying those corrections to regenerated playable maps is a later integration check. The mapping tools and game have one operator at a time.
+The lead assigns bounded work, checks the results and integrates changes. Separate stable-ID house, orientation and garden choices now produce a reproducible playable synthetic map. Independent code/source review found no blockers. The older style-only manifest's broader palette and fitting templates to real geometry remain future integration work. The mapping tools and game have one operator at a time.
 
 ## Next deliveries
 1. Creator playtest of the repaired test house; agent lighting, collision and roof checks have passed.
-2. Review the cottage's playable deck, seating and flowerbeds in the new in-game screenshots. The relative-coordinate garden template supports repeatable placement; rotation and fitting arbitrary Getaboda houses remain future work. See [GARDEN_TEST](GARDEN_TEST.md).
+2. Review the cottage, deck, seating and flowerbeds in the new in-game screenshots. Four orientations are game-tested; the current library supports one rectangular cottage and one optional garden. See [PLACEMENT_TEST](PLACEMENT_TEST.md).
 3. Verify lawful Getaboda data and integrate the first real buildings.
-4. Connect the tested style overrides to generated playable buildings and prove their persistence there.
+4. Adapt the tested placement workflow to verified house geometry and extend the visual library after creator review. Broader facade colors are not yet playable.
 
 Agents resolve technical issues before requesting milestone playtests. Creator playtests focus on feel and usability; acceptance is recorded only after actual feedback.
 

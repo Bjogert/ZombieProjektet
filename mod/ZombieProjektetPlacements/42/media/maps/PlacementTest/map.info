@@ -1,0 +1,6 @@
+title=ZombieProjektet - Building tools test
+description=Separate synthetic fixture for building choices, rotation and gardens. Requires a new save.
+fixed2x=true
+zoomX=130
+zoomY=130
+zoomS=4

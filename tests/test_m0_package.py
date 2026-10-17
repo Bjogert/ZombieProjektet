@@ -59,3 +59,10 @@ class TestM0Package(unittest.TestCase):
                 self.assertIn('ZombieProjektetGarden/42/media/maps/CottageGardenTest/spawnpoints.lua', names)
                 self.assertIn('ZombieProjektetGarden/common/media/maps/.gitkeep', names)
                 self.assertFalse(any('ZombieProjektetCottage/' in n or 'qa_' in n for n in names))
+
+            package_m0.package(export, root / 'placements', profile='placements')
+            with zipfile.ZipFile(root / 'placements/ZombieProjektetPlacements.zip') as archive:
+                names = archive.namelist()
+                self.assertIn('ZombieProjektetPlacements/42/media/maps/PlacementTest/spawnpoints.lua', names)
+                self.assertIn('ZombieProjektetPlacements/common/media/maps/.gitkeep', names)
+                self.assertFalse(any('qa_' in n or n.endswith('.tiles') for n in names))

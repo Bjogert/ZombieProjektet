@@ -10,6 +10,23 @@ TEMPLATE = Path(__file__).resolve().parents[1] / 'assets/gardens/cottage_garden_
 
 
 class TestGardenSource(unittest.TestCase):
+    def test_quarter_turns_move_deck_and_directional_chairs_together(self):
+        template = json.loads(TEMPLATE.read_text())
+        # Original chair (-4,5), around a 6x10 footprint, anchored at (20,20).
+        expected = [(16, 25, 16), (24, 16, 17), (29, 24, 19), (25, 29, 18)]
+        before = copy.deepcopy(template)
+        for rotation, (x, y, sprite) in zip((0, 90, 180, 270), expected):
+            with self.subTest(rotation=rotation):
+                layers = garden_layers(template, (20, 20), size=64, rotation=rotation)
+                self.assertEqual(layers['0_Furniture'][y * 64 + x],
+                                 ('furniture_seating_outdoor_01', sprite))
+                self.assertEqual(sum(t == ('carpentry_02', 56)
+                                     for t in layers['0_Floor']), 24)
+        self.assertEqual(template, before)
+        for rotation in (45, -90, 360, True):
+            with self.assertRaises(ValueError):
+                garden_layers(template, (20, 20), size=64, rotation=rotation)
+
     def test_template_translates_repeatably_and_keeps_access_clear(self):
         original = TEMPLATE.read_bytes()
         template = json.loads(original)
