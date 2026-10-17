@@ -1,4 +1,5 @@
 import tempfile
+import re
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -7,6 +8,12 @@ from tools import build_m0
 
 
 class TestM0Source(unittest.TestCase):
+    def test_spawn_is_in_the_authored_room(self):
+        # Starting indoors lets the player unlock a normally randomized house door.
+        path = Path(__file__).resolve().parents[1] / 'mod/ZombieProjektetM0/42/media/maps/M0Sweden/spawnpoints.lua'
+        x, y, z = map(int, re.search(r'posX\s*=\s*(\d+),\s*posY\s*=\s*(\d+),\s*posZ\s*=\s*(\d+)', path.read_text()).groups())
+        self.assertTrue(120 <= x < 130 and 120 <= y < 128 and z == 0)
+
     def test_house_has_room_floor_and_clear_entrance(self):
         layers = build_m0.make_layers()
         # West door at (120, 124); both sides must be walkable floor.

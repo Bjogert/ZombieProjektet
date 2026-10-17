@@ -1,6 +1,6 @@
 # M0 test plan — first playable separate Build 42 map
 
-**State: EXPORTED / NOT VERIFIED IN GAME (2026-10-17).** Official 8x8 export and local mod package exist. Gameplay acceptance remains open; see [evidence](test-reports/M0-BUILD42.md) and [playtest instructions](PLAYTEST_M0.html).
+**State: AGENT SMOKE TESTED / HUMAN ACCEPTANCE PENDING (2026-10-17).** Separate-world selection, loading, indoor spawn and walking out/in verified in 42.21.0. Closed-door interior is black; direct wall collision and roof behavior remain unverified. See [evidence](test-reports/M0-BUILD42.md) and [playtest instructions](PLAYTEST_M0.html).
 
 ## Goal
 Using legally permitted, currently compatible mapping tools, ship the smallest separate Swedish-world test map loading on **Project Zomboid Build 42 Stable**. At least one building should have a working entrance, basic inside space, correct player collision, and a documented spawn point.
@@ -20,11 +20,11 @@ Using legally permitted, currently compatible mapping tools, ship the smallest s
 6. Package source project and documented reproduction steps. If blocked, stop and write `BLOCKED` with minimal repro and one recommended next action.
 
 ## Acceptance checklist
-- [ ] Exact build and verified compatible mapping tools documented.
+- [x] Exact build and verified compatible mapping tools documented.
 - [ ] Test level/map can be reproduced by a second developer.
-- [ ] Map appears as **separate selectable/playable** world.
-- [ ] Character spawns where expected.
-- [ ] Ground and test road render.
+- [x] Map appears as **separate selectable/playable** world (agent test).
+- [x] Character spawns where expected (agent test).
+- [x] Ground and test road render (agent test).
 - [ ] Door, wall collision, and entering/leaving the house work.
 - [ ] No unexplained critical game loading errors.
 - [ ] Licensing/reuse of all files verified.

@@ -1,6 +1,6 @@
 # M0 evidence — 2026-10-17
 
-**EXPORTED / NOT TESTED IN GAME. Issue #2 remains open.**
+**AGENT SMOKE TESTED / HUMAN ACCEPTANCE PENDING. Issue #2 remains open.**
 
 ## Environment
 
@@ -12,7 +12,7 @@ Fresh `C:\Users\rober\Zomboid\console.txt`, line 58:
 [42.21 Stable announcement](https://projectzomboid.com/blog/news/2026/09/42-21-stable-released/).
 The old 2024 log was not used to establish this version. Started the game from
 its installation working directory; automation launcher initially exposed no window.
-Startup is not a map test. No existing save was loaded or modified.
+The later agent-driven map tests are recorded below. No pre-existing user save was loaded or modified; two new test saves were created.
 
 ## Downloads and configuration
 
@@ -74,13 +74,13 @@ One 300-square authoring cell overlaps four 256-square runtime cells. Export inc
 0_0, 0_1, 1_0, 1_1 lotheaders, world_*.lotpack and chunkdata_*.bin: 12 files.
 Packager checks LOTH v1 signatures, 8x8 dimensions and required nonempty files.
 It does not validate every LOT byte or certify runtime compatibility.
-`42/mod.info`, `common/`, map.info and absolute-coordinate spawnpoint
-(posX=118,posY=124,posZ=0) use the
+`42/mod.info`, `common/media/maps/`, map.info and absolute-coordinate spawnpoint
+(posX=121,posY=124,posZ=0) use the
 [TIS versioned design](https://theindiestone.com/forums/topic/72103-tidy-up-time/)
-and installed game's spawnpoint examples. Menu selection still needs verification.
+and installed game's spawnpoint examples. Menu selection was verified after the shared-directory fix below.
 
-Generated: build/m0 and build/package-m0 (Git ignored). Installed without overwrite:
-`C:\Users\rober\Zomboid\mods\ZombieProjektetM0`. No mod automatically enabled.
+Generated: build/m0 and final build/package-m0-r3 (Git ignored). Installed:
+`C:\Users\rober\Zomboid\mods\ZombieProjektetM0`. Activated for the authorized test; only this test mod is enabled.
 ZIP excludes graphics PNGs, TileDefs, game code and editor binaries.
 
 ## Acceptance
@@ -91,13 +91,15 @@ ZIP excludes graphics PNGs, TileDefs, game code and editor binaries.
 | Tool startup/source load | Verified in official WorldEd |
 | B42 binary export | Verified, final export without errors |
 | Reproducible source/package | Automated; manual export documented; second developer pending |
-| Mod discovered / separate world selectable | NOT TESTED |
-| Spawn, ground, road | NOT TESTED |
-| Door, collision, entering/leaving, roof | NOT TESTED |
-| Critical map loading errors | NOT TESTED |
-| Human screenshot/log | Pending |
+| Mod discovered / separate world selectable | PASS after shared-directory fix, real game UI |
+| Spawn, ground, road | PASS, second fresh save with indoor spawn |
+| Door and entering/leaving | PASS, open/close inside, walk outside and back in |
+| Direct wall collision / roof behavior | Not established by this smoke test |
+| Interior visibility | FAIL with closed door: windowless/unlit room becomes black; visible with door open |
+| Critical map loading errors | No crash or critical map-load error observed; warnings discussed below |
+| Human screenshot/log | Agent screenshots/log captured; human acceptance pending |
 
-Checks: python -m unittest discover -s tests -v (10 tests),
+Checks: python -m unittest discover -s tests -v (11 tests),
 python tools/check_agent_setup.py, python tools/render_dashboard.py --check,
 git diff --check. Tests do not establish gameplay acceptance.
 
@@ -115,8 +117,8 @@ was installed or run; functionality and generated OSM quality are unverified.
 Evaluate a small synthetic example there after M0 before creating our own exporter.
 Existing Python style manifests remain design data only.
 
-Next: [human playtest](../PLAYTEST_M0.html). Record screenshot and post-test console
-log, spawn, entrance/collision and error results here. Keep M0 and Issue #2 open.
+Next: [human playtest](../PLAYTEST_M0.html). Direct wall collision, roof behavior,
+lighting improvement and human acceptance remain. Keep M0 and Issue #2 open.
 
 ## Review and remaining risk
 
@@ -125,8 +127,57 @@ against Issue #2: no full GIS pipeline or unverified custom binary exporter adde
 Both generation and packaging refuse existing output directories. Tests cover
 repeatability, room coordinate units, doorway placement, legacy header rejection,
 missing export refusal and exclusion of external TileDefs. Source assets remain
-external references. The next review gate is actual gameplay, not broader Python tests.
+external references. Agent gameplay evidence follows; it does not close the human acceptance gate.
 
 Startup baseline also logged SQLITE_ERROR (8 values for 7 columns) and a Lua color
 warning before this mod was enabled. These are not attributed to the test map;
 if a new test save is blocked, inspect the fresh log before changing old user data.
+
+## Agent-driven game test (2026-10-17)
+
+The creator authorized Codex to operate the real game and capture screenshots.
+This is real runtime evidence, not a human playtest or Python-only verification.
+Fullscreen did not accept automated mouse input reliably. Options were backed up
+outside the Steam installation and the game restarted at 1280x720 windowed.
+
+Initial runtime checks: mod discovery and activation PASS; original package's
+separate-world selection FAIL. Root cause confirmed from installed 42.21.0
+MapGroups.class: createGroups checks common/media/maps and continues to the next
+mod when it is absent, before scanning the version directory. Adding the empty
+common/media/maps directory immediately made a second, separate world selectable.
+Regression assertion added to ZIP contents. No vanilla lots dependency was added.
+
+First new Sandbox save: 2026-10-17_09-13-38, zombies None. World loaded in 23 seconds;
+player spawned on authored path, grass and road rendered. Original outdoor spawn
+at (118,124,0) logged the expected no-room warning and the default randomized house
+door was locked. Context menu explicitly reported Door Is Locked. Move the spawn
+inside the authored livingroom to (121,124,0), allowing normal inside-door opening;
+no unlocking cheat or new game mechanic. A regression test checks spawn-in-room.
+Second fresh Sandbox save: `2026-10-17_09-20-56`, character Mickey Bowles,
+Custom Occupation, zombies None. Fresh console reports loading took 10 seconds;
+no no-room spawn warning. Player starts indoors. Initial scene is black inside
+the house. Opening the door through its context menu makes the floor, walls,
+player, table and chair visible. Walk to successfully leaves through the doorway
+onto the path and returns inside. Close Door works and reproduces the black room;
+Open Door restores visibility. The house currently has no windows/light objects;
+the precise engine lighting cause has not been isolated. Do not claim the dark
+interior is fixed. Direct wall pushing and roof visibility from outside were not
+independently verified. No combat, zombie balance or multiplayer test was run.
+
+Fresh log includes baseline font/script messages and a warning that M0Sweden has
+no objects.lua (this minimal map has no authored zones). No map-load crash,
+exception or critical LOT loading error was observed during this test. Full log
+preserved outside Git as work/playtest/second-map-console.txt in the task workspace.
+
+Game left running, paused with door open in the second save, at 1280x720 windowed
+for immediate user testing. Original display options backup is retained at
+work/playtest/options-before.ini in the task workspace; fullscreen was not restored
+because that would interrupt the ready test. No original saves were removed.
+
+Screenshots retained as task outputs: 01-testmod-aktiverad.png,
+02-kartval-fore-fix.png, 03-separat-testvarld.png, 04-startposition.png,
+05-dorren-last-fore-startpunktsfix.png, 06-inomhus-renderingsfel.png,
+07-inne-oppen-dorr.png, 08-utanfor-huset.png, 09-tillbaka-inne.png,
+10-pausat-infor-ditt-test.png. These are raw game captures, not concept images.
+The second-save source fixes are packaged in build/package-m0-r3; exported lots
+are unchanged from the successfully loaded WorldEd export.

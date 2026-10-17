@@ -1,6 +1,6 @@
 # ZombieProjektet – din projektöversikt
 
-**Status:** Testhus med väg är exporterade med officiella verktyg och modden är installerad lokalt. Project Zomboid 42.21.0 är verifierat. Kartans speltest återstår. Följ [provspelningsguiden](PLAYTEST_M0.html).
+**Status:** Codex har testat kartan i Project Zomboid 42.21.0: världsval, start inne i huset, dörr och att gå ut och in fungerar. Stängd dörr ger fortfarande svart interiör; väggkollision och tak behöver fortsatt kontroll. Spelet är pausat för ditt test. Följ [provspelningsguiden](PLAYTEST_M0.html).
 
 ## Vad bygger vi?
 Ett svenskt zombie-Småland som en Project Zomboid-mod. Vi börjar i Getaboda med cirka 4–5 hus, vägar och natur. Husen ska ligga ungefär där de finns i verkligheten, men vi använder enkla svenska standardhus där detaljer saknas. På sikt vill vi att du och dina vänner ska kunna spela tillsammans runt Ljungby.
@@ -9,7 +9,7 @@ Ett svenskt zombie-Småland som en Project Zomboid-mod. Vi börjar i Getaboda me
 AI-agenterna bygger, testar och dokumenterar tekniken. Du får korta instruktioner när vi behöver provspela något. Ingen egen spelmotor eller avancerad editor just nu.
 
 ## Projektets fyra steg
-1. **Nästa steg: Få ett enda testhus att fungera i Build 42.** Vi har ännu ingen verifierad spelbar karta.
+1. **Nästa steg: Slutför testhuset i Build 42.** Det laddar och går att gå in och ut ur. Belysning, väggkollision, tak och din egen provspelning återstår innan M0 godkänns.
 2. **Lägg in Getabodas verkliga huslägen.** Vi verifierar och använder tillåtna kartdata.
 3. **Skapa enkla svenska hus och interiörer automatiskt.** Biblioteket kan växa när vi vill.
 4. **Generera om utan att förlora manuella ändringar.** Bevisa det i lilla Getaboda.
@@ -31,4 +31,4 @@ Du kan klicka på förslag, skriva din kommentar och kopiera dina synpunkter ell
 - **Vägval C – begär en genomgång:** be om en enklare visuell presentation innan arbetet börjar.
 
 ## Nästa mänskliga aktivitet
-Provspela det installerade testpaketet enligt HTML-guiden. Kontrollera startposition, dörr, väggar och att gå in och ut. Skicka en skärmbild och eventuella fel. Ingen karta är ännu verifierad i spelet.
+Fortsätt i den pausade testomgången eller följ HTML-guiden för en ny omgång. Kontrollera särskilt väggkollision och tak. Huset saknar fönster och belysning; håll dörren öppen för att se interiören i detta test. Agentens speltest är dokumenterat, men ditt godkännande återstår.

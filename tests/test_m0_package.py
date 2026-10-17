@@ -41,5 +41,7 @@ class TestM0Package(unittest.TestCase):
             with zipfile.ZipFile(root / 'one/ZombieProjektetM0.zip') as archive:
                 self.assertFalse(any(n.endswith('.tiles') for n in archive.namelist()))
                 self.assertIn('ZombieProjektetM0/42/media/maps/M0Sweden/spawnpoints.lua', archive.namelist())
+                # B42 MapGroups skips versioned maps unless this shared directory exists.
+                self.assertIn('ZombieProjektetM0/common/media/maps/.gitkeep', archive.namelist())
             with self.assertRaises(FileExistsError):
                 package_m0.package(export, root / 'one')

@@ -23,5 +23,11 @@ python tools/package_m0.py --export build/m0/export --output build/package-m0
 The ZIP contains `ZombieProjektetM0` for `%USERPROFILE%/Zomboid/mods`.
 Stop if that destination already exists; do not overwrite an unknown installation.
 Packager checks header signatures/chunk size and required files, not runtime correctness.
+Keep `common/media/maps/.gitkeep`: Build 42.21 skips the versioned map directory
+when that shared maps directory does not exist. The final spawn is indoors at
+(121,124,0), so a randomized locked door can be opened normally from inside.
+Agent smoke test verified separate-world selection, loading and walking out/in.
+Closed-door interior lighting, direct wall collision and roof behavior still need
+follow-up; human acceptance remains open.
 See [editor setup and evidence](../docs/test-reports/M0-BUILD42.md) and
 [HTML playtest instructions](../docs/PLAYTEST_M0.html).
