@@ -33,6 +33,7 @@ Summary from questions 1–28; accepted user comments override any overly broad 
 | Language (2026-10-17) | Swedish conversation; English documentation, code, identifiers and authored UI; preserve proper names |
 | Autonomy (2026-10-17) | Agent proceeds within agreed scope; creator participates in design and consequential decisions |
 | Discovery (2026-10-17) | Spoiler-free routine updates and representative design previews; full evidence remains available |
+| Initial geodata processing (2026-10-17) | Raw geodata and source imagery stay and are processed locally in Sweden (EU/EEA); cloud/AI upload waits until conditions and access scope are clarified |
 
 **Priority rule:** hobby fun and working proof over exhaustive completeness, but avoid unnecessary traps by preserving source data and clean minimal interfaces. Do not create premature abstractions or gold-plate compatibility.
 

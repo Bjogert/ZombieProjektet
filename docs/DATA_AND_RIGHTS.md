@@ -15,6 +15,10 @@ Every imported dataset or building needs provenance, version/date and relevant t
 
 The dated [Getaboda source audit and workflow](GEODATA_WORKFLOW.md) links official documentation and records coverage checks. It is a discovery report, not authorization to download restricted products or release the mod.
 
+## Initial processing boundary (creator decision, 2026-10-17)
+
+Store and process raw geodata and source imagery locally on the creator's computer in Sweden, within the EU/EEA. Do not upload those inputs to cloud storage or AI services until the applicable terms and access decision have been clarified. This includes attaching source imagery or exposing raw geometry in model-visible tool output. Agents may develop local processing code without receiving the restricted inputs; review permitted derived outputs separately before sharing. Keep applicant identifiers, account details and private correspondence outside the repository.
+
 ## Private homes and contributions
 
 Detailed replicas of private homes, real floor plans and information that could expose private residential details require review before public release. Generic interiors are the default. Do not import residents, ownership or security-system information. Review contributions through GitHub before integrating them into the main branch.
