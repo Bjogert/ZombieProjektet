@@ -9,7 +9,7 @@ Summary from questions 1–28; accepted user comments override any overly broad 
 | Recognition | Accurate footprint/placement where legitimate geodata supports it; generic Swedish house exteriors/interiors now; detailed individual homes later |
 | Override approach | Keep per-building overrides separately from generated defaults; reruns preserve corrections |
 | Geodata | OSM plus legitimately usable Swedish datasets, with manual gap corrections and provenance |
-| Scale | Getaboda 1:1. Later local settlements 1:1, compress suitable countryside road sections between them; preserve topology |
+| Scale (updated 2026-10-17) | Start at 1:1, including the Getaboda–Agunnaryd road trial. Preserve source coordinates. Reconsider countryside compression only after driving and performance tests; this supersedes the earlier assumption that connecting countryside would be compressed |
 | Game target | Build 42 Stable; record tested exact version in every integration test |
 | World | Separate Swedish world, expandable toward Ljungby |
 | Assets | Small original Swedish tile library supplementing permitted use of built-in game resources; no copied proprietary art |

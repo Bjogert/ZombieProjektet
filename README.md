@@ -11,7 +11,9 @@ The first [reusable cottage](assets/buildings/README.md) is furnished, exported 
 
 The [building placement workflow](docs/PLACEMENT_TEST.md) now generates four cottage orientations with matching gardens from separate stable-ID choices. All 92 runtime probes and manual entry/exit checks passed; repeating the official WorldEd export produced the same package bytes. It supports one rectangular cottage, quarter-turns and an optional garden. Creator design review remains open.
 
-Real Getaboda geometry has **not** been imported or verified. The deterministic GeoJSON style manifest preserves separate style overrides by stable ID; its broader color palette and fitting templates to real footprints remain future integration work.
+A separate [1:1 road prototype](docs/ROAD_TEST.md) now follows 5.09 km of locally processed OSM roads toward Agunnaryd. Vehicle motion and 52 sampled runtime road positions were verified; continuous end-to-end driving remains open.
+
+Real Getaboda **building** geometry and appearance have not been imported or verified. The deterministic GeoJSON style manifest preserves separate style overrides by stable ID; its broader color palette and fitting templates to real footprints remain future integration work.
 
 ## Start here
 - Creator: [project overview](docs/PROJECT_OVERVIEW.html), with local feedback controls; it does not automatically submit anything to GitHub.

@@ -23,10 +23,15 @@ Agents resolve technical issues before requesting milestone playtests. Creator p
 ## Getaboda data research
 The source audit found 2025 aerial imagery catalog coverage at 16 cm pixel size and a municipal building download from Lantmäteriet. The Geotorget account is active; both building and orthophoto applications have been received and are being processed. Access decisions are pending. Raw geodata and imagery will initially be processed locally in Sweden; cloud/AI uploads await clarification of the conditions. OSM has roads but no building objects in the checked 750 m radius. Actual house dimensions and facade colors remain unverified. The [automation workflow](GEODATA_WORKFLOW.md) preserves source facts, assumptions and individual corrections separately.
 
+## Municipality planning draft
+A first geographic overview of the whole Ljungby municipality is available for creator review, using SCB's generalized boundary and locally processed OpenStreetMap roads, lakes and settlement points. It preserves actual distances and proposes Getaboda, nearby settlements and Ljungby as successive development anchors. This is a planning view, not a playable map or an approved whole-municipality delivery. The [source audit and scale proposal](research/ljungby-world-draft-2026-10-17.md) compares additional data channels and records the remaining choices.
+
+The [road-first scale study](research/road-first-scale-study-2026-10-17.md) compares the installed vanilla map's approximately 20 × 16 km bounding extent with the municipality's 61 × 51 km extent, using one game square as approximately one metre. The creator approved a 1:1 Getaboda–Agunnaryd driving corridor. Its 5.09 km road geometry is installed as a separate test map. Vehicle start/motion and 52 sampled road positions passed game checks; continuous end-to-end driving remains open. See the [road test evidence](ROAD_TEST.md). Road widths are provisional, and surrounding terrain is plain. Compression is deferred until driving evidence supports a decision.
+
 ## Established direction
 - Modern source geography with Swedish 1990s atmosphere.
 - Decks/patios and gardens with flowerbeds as part of residential character, varied between houses.
-- Getaboda at local 1:1 scale; countryside distance compression later.
+- Start at 1:1, including connecting roads; reconsider countryside compression after driving and performance tests.
 - Source-backed land cover with deterministic detail placement.
 - Generic interiors; review detailed private homes before publication.
 - Free tools by default; GitHub packages first, Steam Workshop later.

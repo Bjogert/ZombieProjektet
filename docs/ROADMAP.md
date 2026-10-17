@@ -8,6 +8,9 @@ This queue refines the milestones below. `Ready` means the task has no known ext
 
 | Task | State | Role and delivery | Completion evidence |
 | --- | --- | --- | --- |
+| WORLD-DRAFT-01 | Geographic draft prepared; creator review open | Municipality overview and alternative-source audit requested by the creator | SCB boundary and local OSM extract, geographic scale retained; [research and open scale choices](research/ljungby-world-draft-2026-10-17.md). This does not expand the next playable milestone to the whole municipality |
+| ROAD-SCALE-01 | Scale study complete; 1:1 driving pilot approved | Compare installed vanilla-map extent with the municipality and preview the mapped road network | [Road-first study](research/road-first-scale-study-2026-10-17.md): local game metadata, same-scale road preview, missing attributes recorded. The creator selected 1:1; compression remains deferred |
+| ROAD-TEST-01 | Playable prototype installed; continuous driving QA open | Lead: 5.09 km Getaboda–Agunnaryd corridor in a separate map | 37 tests, official export, vehicle start/motion, 52 road-floor probes across 25 runtime cells and game screenshots. Reliable steering and a continuous end-to-end trip remain open; [ROAD_TEST](ROAD_TEST.md) |
 | TOOLS-01 | Agent checks passed; creator review open | Four cottage orientations, rotated gardens and stable per-building choices in a separate synthetic map | 32 automated tests, 92 runtime probes, manual entry/exit in all four orientations and byte-identical repeated WorldEd export/package; [PLACEMENT_TEST](PLACEMENT_TEST.md) |
 | COTTAGE-01 | Agent checks passed; creator review open | Furnished fictional cottage in its own synthetic test package | Official WorldEd export, 11 runtime probes, entrance/window/light interaction and exterior roof checks pass in 42.21.0; [COTTAGE_TEST](COTTAGE_TEST.md) |
 | COTTAGE-02 | Agent checks passed; creator review open | Wooden deck, seating and three flowerbeds in a separate fictional cottage test | Deterministic relative-coordinate layout, official export, 7 garden and 11 cottage runtime probes, manual walking and screenshots in 42.21.0; [GARDEN_TEST](GARDEN_TEST.md) |
@@ -26,7 +29,7 @@ This queue refines the milestones below. `Ready` means the task has no known ext
 ## M0 — Prove a custom Build 42 map really loads (IN PROGRESS)
 See [BUILD42_SPIKE.md](BUILD42_SPIKE.md).
 
-As of 2026-10-17, world selection, indoor spawn, doorway traversal, closed-door daylight and the light switch have been agent-tested in 42.21.0. All four wall collision probes pass in the running game. All 80 room squares have an upper floor and are classified indoors; the roof renders outdoors. Creator acceptance and independent reproduction remain open. The first reusable cottage is now a furnished, separately playable early M2 prototype with agent game checks passed; design review remains. Real geography has not yet been verified.
+As of 2026-10-17, world selection, indoor spawn, doorway traversal, closed-door daylight and the light switch have been agent-tested in 42.21.0. All four wall collision probes pass in the running game. All 80 room squares have an upper floor and are classified indoors; the roof renders outdoors. Creator acceptance and independent reproduction remain open. The first reusable cottage is now a furnished, separately playable early M2 prototype with agent game checks passed; design review remains. Real building geometry has not yet been verified. The separate road prototype is tracked in ROAD-TEST-01.
 
 - Identify the exact installed Build 42 Stable version and supported official/community mapping toolchain using current primary sources and local proof.
 - Create minimal separate test map, a usable door and one simple building.
@@ -54,7 +57,7 @@ As of 2026-10-17, world selection, indoor spawn, doorway traversal, closed-door 
 ## M4 — Small public test
 - Generate zip for GitHub Releases; test installation and errors with friends.
 - Later confirm Steam Workshop rules, multiplayer and save file behavior.
-- Begin settlements around Agunnaryd/Södra Ljunga; implement constrained rural-distance compression only with continuity tests.
+- Begin settlements around Agunnaryd/Södra Ljunga at the approved 1:1 scale. Reconsider compression only after driving evidence and a new creator decision.
 
 ## Completion rules
 A milestone is not done until its acceptance evidence is documented. Python unit tests support data-stage claims but **cannot** prove working in-game maps. Keep source geodata independent from world projection and game assets. Do not commit copyrighted proprietary content.
