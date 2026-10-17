@@ -1,5 +1,65 @@
 # Agent workflow — Codex + Claude Code
 
+## Working agreement (2026-10-17)
+The creator owns creative direction and consequential decisions. The lead agent owns implementation, routine technical choices, integration, testing and documentation within approved scope. The goal is a playable world the creator can discover without supervising every implementation detail.
+
+Conversation is in Swedish. Documentation, code, identifiers, comments, commits, PRs and authored UI text are in English; retain proper place names and source identifiers. Bring existing documents into English when updating them without rewriting historical evidence or external names.
+
+| Proceed independently | Bring a concrete proposal to the creator |
+| --- | --- |
+| Bug investigation, tests, reversible fixes and refactoring within scope | Changes to atmosphere, visual direction, world layout policy or gameplay balance |
+| Generic interiors and procedural variation within approved style | New mechanics, major features, target regions or material milestone changes |
+| Tool experiments, reproducible exports and local test packages | Purchases, paid services, public releases and PR merges |
+| Evidence capture, documentation and small draft PRs | Destructive actions affecting valuable saves or source data |
+
+Continue useful independent work while a design answer is pending. Separate provisional prototypes from accepted design. Ask one consequential question at a time, with an example, a recommendation and its tradeoff. Do not make routine implementation details approval gates. Existing explicit authorization takes precedence over this default table.
+
+## Specialist roles
+Use a small team structure when parallel work is explicitly authorized and useful. These are task roles, not installed agents or a claim of distinct model expertise. The lead can perform any role without spawning another agent.
+
+| Role | Responsibility | Required handoff |
+| --- | --- | --- |
+| Lead / integration | Priorities, scope, integration, user decisions and delivery | State, tested artifact, open decisions and next step |
+| World / data | Source geometry, provenance, projections and overrides | Source/license record, assumptions and repeatability checks |
+| Buildings / art | Swedish templates, compatible assets and interiors | Reusable source, attribution and representative preview |
+| QA / review | Actual game checks, regressions and evidence review | Exact version/artifact, passes, failures and unverified behavior |
+
+Give delegated tasks a bounded result, acceptance criteria and file ownership. Use separate worktrees for concurrent writers; review and integrate sequentially. Worktrees do not share uncommitted changes. Only the integration owner installs test mods, drives WorldEd/BuildingEd or controls the game: these resources remain shared even with separate Git worktrees. Do not create persistent chats or schedules merely to fill roles. Use the current model unless the user requests another.
+
+## Dispatch and integration
+
+The execution queue lives in [ROADMAP](ROADMAP.md); keep task state there instead of creating a second backlog. Select one main deliverable. When delegation is authorized and useful, start with one implementation task and one independent review task; split further only for genuinely independent work. A role is a focused task with context and evidence, not a permanent model identity.
+
+Each assignment includes this compact brief:
+
+```text
+Task ID and outcome:
+Repository/worktree and base commit:
+Inputs and relevant instructions:
+Owned files; shared files reserved for the lead:
+Acceptance criteria and required evidence:
+Dependencies, exclusions and data-handling boundary:
+Return: changed files/commit, checks, unresolved risks and next action.
+```
+
+Workers report to the lead. The lead reviews the actual diff and evidence, integrates one result at a time, and runs the affected checks. Read-only reviewers do not edit the implementation. Shared documentation, packaging, mod installation, mapping-tool UI and game execution remain with the lead unless explicitly handed over. Record a new owner before transferring those resources.
+
+For each delivery, report separately what is implemented, what has passed automated/editor/game checks, and what still needs creator acceptance. If a dependency blocks one task, choose another ready task rather than repeatedly polling or inventing success. Raw Lantmäteriet data must not enter agent prompts or model-visible tool output under the current local-processing decision.
+
+## Open development and later discovery
+The creator explicitly wants to participate in developing Getaboda and the worldbuilding tools. Getaboda has no spoiler restriction: show house and garden layouts, screenshots, placements, implementation progress and useful technical explanations. Explain the path from source data through templates and overrides to official export and game testing. Invite feedback on design and consequential technical tradeoffs while continuing routine implementation independently. The agreed product remains a Project Zomboid map mod with supporting generation tools.
+
+Preserve surprises in later areas by default. Avoid their exact floor plans, loot, seeds and discovery locations in routine updates, task titles and unsolicited screenshots unless requested. Use Getaboda or a representative test building for design reviews. Keep detailed evidence in developer reports and identify spoilers for later areas before opening them. Always disclose bugs and material risks. Follow `DATA_AND_RIGHTS.md` for source-data handling and publication of detailed private interiors.
+
+## Delivery rhythm
+1. Read the current milestone and evidence; choose the smallest useful next slice.
+2. Build, test and repair it before asking the creator to play it.
+3. Review acceptance criteria; record tool and game checks separately.
+4. Give a short Swedish update at meaningful milestones during active work: playable change, validation, limitation and any decision required. Include in-game screenshots and useful technical explanations for Getaboda and the tools; preserve surprises in later areas. Identify older test images and distinguish playable results from proposals. The creator explicitly requested regular visual progress updates.
+5. Request brief milestone playtests for feel and usability. Keep unresolved technical QA with the agent. Never mark human acceptance without feedback.
+
+Repository instructions and handoffs carry durable context. A Codex project groups work; it does not itself keep agents running or automatically share every chat's state. This agreement configures no unattended schedule.
+
 ## Selected skills (same SKILL.md mirrored in two directories)
 
 | Task | Skill | Expected result |
@@ -19,7 +79,7 @@ The skills are **adaptations** inspired by [Matt Pocock's skills](https://github
 1. Read [AGENTS.md](../AGENTS.md) and affected code. Read only the relevant docs or skill, not every file.
 2. For a material unknown: ask one essential question or prove it with a small experiment. Do not invent a decision.
 3. Plan the thinnest vertical slice; write a spec/tickets only if complexity warrants them.
-4. Branch from current main, make narrow changes with tests, execute checks.
+4. Inspect the current branch and work first. Continue the relevant feature branch when appropriate; start a new branch/worktree for independent work. Make narrow changes and execute relevant checks.
 5. Review the actual diff against specification **and** code quality. Record manual game tests when required.
 6. Open a small PR with actual evidence and remaining risks; request human review for gameplay/engine/rights decisions.
 7. Update docs or the glossary when an actual decision changes. Handoff using committed paths, not vague session memory.

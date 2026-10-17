@@ -1,0 +1,6 @@
+{
+  "fixture-west": {"rotation": 0},
+  "fixture-north": {"rotation": 90},
+  "fixture-east": {"rotation": 180},
+  "fixture-south": {"rotation": 270}
+}

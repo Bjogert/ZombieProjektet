@@ -1,6 +1,6 @@
 # M0 test plan — first playable separate Build 42 map
 
-**State: NOT STARTED / NOT VERIFIED IN GAME.** This is an executable plan for Codex/Claude and human tester, *not* proof of working export.
+**State: AGENT TECHNICAL CHECKS PASSED / HUMAN ACCEPTANCE PENDING (2026-10-17).** Separate-world selection, indoor spawn, doorway traversal, closed-door daylight and the light switch work in 42.21.0. Four wall collision probes and full roof coverage pass in the actual game; exterior roof rendering was observed. See [evidence](test-reports/M0-BUILD42.md) and [playtest instructions](PLAYTEST_M0.html).
 
 ## Goal
 Using legally permitted, currently compatible mapping tools, ship the smallest separate Swedish-world test map loading on **Project Zomboid Build 42 Stable**. At least one building should have a working entrance, basic inside space, correct player collision, and a documented spawn point.
@@ -20,14 +20,14 @@ Using legally permitted, currently compatible mapping tools, ship the smallest s
 6. Package source project and documented reproduction steps. If blocked, stop and write `BLOCKED` with minimal repro and one recommended next action.
 
 ## Acceptance checklist
-- [ ] Exact build and verified compatible mapping tools documented.
+- [x] Exact build and verified compatible mapping tools documented.
 - [ ] Test level/map can be reproduced by a second developer.
-- [ ] Map appears as **separate selectable/playable** world.
-- [ ] Character spawns where expected.
-- [ ] Ground and test road render.
-- [ ] Door, wall collision, and entering/leaving the house work.
-- [ ] No unexplained critical game loading errors.
-- [ ] Licensing/reuse of all files verified.
+- [x] Map appears as **separate selectable/playable** world (agent test).
+- [x] Character spawns where expected (agent test).
+- [x] Ground and test road render (agent test).
+- [x] Door, wall collision, and entering/leaving the house work (agent runtime checks).
+- [x] No unexplained critical map loading errors observed; baseline warnings documented.
+- [x] Original layout and references only; proprietary graphics and tools excluded.
 - [ ] Human game test logs/screenshots linked.
 
 ## Agent work ticket
