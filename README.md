@@ -17,7 +17,7 @@ Real Getaboda geometry has **not** been imported or verified. The deterministic 
 - Integration: [Build 42 test plan](docs/BUILD42_SPIKE.md).
 - World data: [Getaboda source audit and automation workflow](docs/GEODATA_WORKFLOW.md), including verified 2025 imagery catalog coverage and remaining access/appearance gaps.
 
-Conversation with the creator is in Swedish. Project documentation, code, identifiers and authored UI are in English. Routine updates preserve surprises; developer evidence remains available for inspection.
+Conversation with the creator is in Swedish. Project documentation, code, identifiers and authored UI are in English. Getaboda and the worldbuilding tools are developed openly with the creator; later areas retain surprise by default. Developer evidence remains available for inspection.
 
 ## Local checks (Python 3.10+, standard library)
 ```sh

@@ -8,7 +8,7 @@ A recognizable Swedish world in Project Zomboid. Start with about 4–5 source-c
 ## How we work
 The creator sets creative direction and important choices. The lead agent implements, tests, fixes and coordinates technical work. Specialist tasks cover world data, buildings/art and QA when useful and authorized. Conversation is in Swedish; project material is in English.
 
-Routine updates and design previews preserve surprises. Full developer evidence remains available, and bugs are always disclosed. The creator should be able to enjoy playing without reviewing every room or implementation detail.
+Getaboda and the worldbuilding tools are developed openly with the creator. Updates can show layouts, houses, gardens and screenshots, and explain how source data becomes a playable map. The lead handles routine work while the creator participates in design and important choices. Later areas retain surprise by default. Full developer evidence remains available, and bugs are always disclosed.
 
 The lead assigns bounded work, checks the results and integrates changes. The fictional cottage is playable, and individual style corrections survive regenerated manifests in automated tests using synthetic data. Both changes received an independent code review. Applying those corrections to regenerated playable maps is a later integration check. The mapping tools and game have one operator at a time.
 

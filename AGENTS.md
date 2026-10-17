@@ -9,7 +9,8 @@ Read [PROJECT_SPEC](docs/PROJECT_SPEC.md), [DECISIONS](docs/DECISIONS.md), [ROAD
 
 ## Language and player experience
 - Communicate with the user in **Swedish**. Write documentation, code, identifiers, comments, commit messages, PR text and authored UI text in **English**. Preserve proper place names, source identifiers and external tool names.
-- Keep normal updates spoiler-free. Describe capability, quality and progress; avoid exposing exact interiors, placements, seeds, loot or discoveries unless needed for the user's requested design review. Use a representative test house for visual decisions.
+- Develop Getaboda and the worldbuilding tools openly with the creator. Show layouts, houses, gardens, screenshots, technical steps and tradeoffs as useful; Getaboda does not need spoiler protection. Explain how source data, templates, overrides, export and game testing connect, while handling routine implementation independently.
+- Preserve surprises in later areas by default. Avoid exposing their exact interiors, placements, seeds, loot or discoveries unless requested. Use Getaboda or a representative test house for visual decisions. Follow the data-handling and publication rules in `docs/DATA_AND_RIGHTS.md`.
 - Keep full evidence in developer documentation. Spoiler avoidance is a presentation preference, not repository secrecy. Never hide bugs, costs, failed checks or material limitations.
 
 ## Autonomy and decisions

@@ -46,14 +46,16 @@ Workers report to the lead. The lead reviews the actual diff and evidence, integ
 
 For each delivery, report separately what is implemented, what has passed automated/editor/game checks, and what still needs creator acceptance. If a dependency blocks one task, choose another ready task rather than repeatedly polling or inventing success. Raw Lantmäteriet data must not enter agent prompts or model-visible tool output under the current local-processing decision.
 
-## Preserve discovery
-Normal updates report what is playable, what improved, what remains uncertain and the next design decision. Avoid exact floor plans, loot, seeds, discovery locations and future surprises in updates, task titles and unsolicited screenshots. Use a representative test building for visual decisions. Keep necessary detailed evidence in clearly labelled developer reports and warn before opening spoiler-bearing material for the creator. This does not add quests, secrets or other new scope. Always disclose bugs and material risks.
+## Open development and later discovery
+The creator explicitly wants to participate in developing Getaboda and the worldbuilding tools. Getaboda has no spoiler restriction: show house and garden layouts, screenshots, placements, implementation progress and useful technical explanations. Explain the path from source data through templates and overrides to official export and game testing. Invite feedback on design and consequential technical tradeoffs while continuing routine implementation independently. The agreed product remains a Project Zomboid map mod with supporting generation tools.
+
+Preserve surprises in later areas by default. Avoid their exact floor plans, loot, seeds and discovery locations in routine updates, task titles and unsolicited screenshots unless requested. Use Getaboda or a representative test building for design reviews. Keep detailed evidence in developer reports and identify spoilers for later areas before opening them. Always disclose bugs and material risks. Follow `DATA_AND_RIGHTS.md` for source-data handling and publication of detailed private interiors.
 
 ## Delivery rhythm
 1. Read the current milestone and evidence; choose the smallest useful next slice.
 2. Build, test and repair it before asking the creator to play it.
 3. Review acceptance criteria; record tool and game checks separately.
-4. Give a short Swedish, spoiler-free update at meaningful milestones during active work: playable change, validation, limitation and any decision required. Include representative in-game screenshots for visual changes; identify older test images and distinguish playable results from proposals. The creator explicitly requested regular visual progress updates.
+4. Give a short Swedish update at meaningful milestones during active work: playable change, validation, limitation and any decision required. Include in-game screenshots and useful technical explanations for Getaboda and the tools; preserve surprises in later areas. Identify older test images and distinguish playable results from proposals. The creator explicitly requested regular visual progress updates.
 5. Request brief milestone playtests for feel and usability. Keep unresolved technical QA with the agent. Never mark human acceptance without feedback.
 
 Repository instructions and handoffs carry durable context. A Codex project groups work; it does not itself keep agents running or automatically share every chat's state. This agreement configures no unattended schedule.

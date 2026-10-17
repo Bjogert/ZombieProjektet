@@ -20,7 +20,7 @@ This queue refines the milestones below. `Ready` means the task has no known ext
 
 **OVERRIDE-01 boundary:** extend `tools/building_styles.py`, `tests/test_building_styles.py` and synthetic example inputs. Use stable fixture IDs and a separate override file with manual values taking precedence over generated style defaults. Start with style selection only; no geometry edits, GIS downloads, game exporter, UI or automatic real-world identity matching. Passing this task proves the manifest behavior; persistence in a regenerated playable map remains a later M3 check.
 
-**While waiting:** the cottage and synthetic override deliveries have passed agent checks. The next development slice is the requested deck/patio and flowerbed garden, followed by representative screenshots and an optional short playtest. The two Geotorget applications are being processed; no new application is needed. Real Getaboda interiors and future discoveries need not be exposed. M0 creator acceptance and independent reproduction remain open.
+**While waiting:** the cottage and synthetic override deliveries have passed agent checks. The next development slice is the requested deck/patio and flowerbed garden, followed by screenshots and an optional short playtest. Develop Getaboda and the tools openly with the creator, including layouts and technical explanations; preserve surprises in later areas. The two Geotorget applications are being processed; no new application is needed. M0 creator acceptance and independent reproduction remain open.
 
 ## M0 — Prove a custom Build 42 map really loads (IN PROGRESS)
 See [BUILD42_SPIKE.md](BUILD42_SPIKE.md).

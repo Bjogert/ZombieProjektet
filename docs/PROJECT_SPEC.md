@@ -29,7 +29,7 @@ The first **technical gate M0** is deliberately narrower: prove a minimal custom
 - Data-file contributions through reviewed GitHub PRs; public code permissive, original art separately licensed, external materials kept under their own terms.
 - QGIS can be used as a temporary UI for selecting buildings/editing exported attributes/overrides; no custom editor during POC.
 - Agents work in English Markdown and communicate with the creator in Swedish. `HUMAN_OVERVIEW.md` accompanies a manually maintained static HTML view with locally interactive choice buttons and feedback; HTML has no credentials/backend and does not write to GitHub on its own. The dashboard script validates selected markers only.
-- Agents implement and test independently within accepted scope; the creator retains creative direction and consequential decisions. Routine updates and representative design previews preserve discovery, while full developer evidence remains available. See `AGENT_WORKFLOW.md`.
+- Agents implement and test independently within accepted scope; the creator retains creative direction and consequential decisions. Develop Getaboda and the supporting worldbuilding tools openly with the creator through layouts, screenshots and useful technical explanations. Preserve discovery in later areas by default; full developer evidence remains available. See `AGENT_WORKFLOW.md`.
 - Creator tests in the real game and returns screenshots/logs. New games are acceptable during development. Once publicly distributed, prefer stable coordinates but never guarantee backward save compatibility until verified.
 
 ## Deliberately deferred
