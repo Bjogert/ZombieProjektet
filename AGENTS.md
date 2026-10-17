@@ -1,30 +1,39 @@
-# ZombieProjektet — gemensamma instruktioner för Codex och Claude Code
+# ZombieProjektet — shared agent instructions
 
-Den här filen är den kanoniska agent-ingången. Claude Code har även [CLAUDE.md](CLAUDE.md), som pekar hit; läs inte instruktionerna rekursivt.
+This is the canonical entry point for Codex and Claude Code. [CLAUDE.md](CLAUDE.md) points here; do not read these files recursively.
 
-## Uppdrag — beslutat
-Bygg **en Project Zomboid-kartmod för Build 42 Stable**, inte ett fristående spel. Getaboda (cirka 4–5 byggnader) är första verkliga experimentet och framtida Smålandsvärldens utgångspunkt. Spelvärlden ska kännas svensk och tidsmässigt passa spelets 1990-tal; använd nutida geodata utan att återskapa en historiskt exakt karta. Använd Project Zomboids standardmekanik. Se [PROJECT_SPEC](docs/PROJECT_SPEC.md), [DECISIONS](docs/DECISIONS.md), [ROADMAP](docs/ROADMAP.md), [SCOPE](docs/SCOPE.md) och [ADR-0001](docs/decisions/0001-mod-or-game.md).
+## Mission — settled
+Build a **Project Zomboid Build 42 Stable map mod**. Getaboda (approximately 4–5 buildings) is the first real location and starting point for an expanding Swedish world. Use modern geodata with Swedish 1990s styling and the game's existing mechanics. The creator wants to discover the world while playing, participate in design and important decisions, and delegate routine development.
 
-**Icke-mål:** fristående spelmotor, nya zombiesystem, nya överlevnadsmekaniker, fullt dynamisk terräng, multiplayer i första POC, komplett svensk assetkatalog eller automatisk geografisk komprimering i första testet.
+Read [PROJECT_SPEC](docs/PROJECT_SPEC.md), [DECISIONS](docs/DECISIONS.md), [ROADMAP](docs/ROADMAP.md), [SCOPE](docs/SCOPE.md) and [ADR-0001](docs/decisions/0001-mod-or-game.md) as relevant. Do not reopen the mod-versus-standalone decision or the choice of Getaboda.
 
-## Principer
-1. **Enklaste verifierbara skalbara lösning**: ingen spekulativ arkitektur. Behåll gränssnitt som tillåter större detaljrikedom senare.
-2. **Bevara källan:** originalkoordinater, identifierare, källa/licens och verifierade egenskaper ändras aldrig av spelskalning/kvantisering. Skilj antaganden från fakta.
-3. **Determinism och overrides:** samma indata/seed ger samma resultat. Använd separata identifierarbaserade korrigeringar; en omgenerering får inte tysta övertrampa dem.
-4. **Svenska typer:** ett litet utbyggbart, datadrivet bibliotek av byggnadstyper, fasader, interiörregler och senare egna tiles. Antag rimliga standardvärden när data saknas; hitta inte på verifierade byggnadsplaceringar.
-5. **Verifiera i spelet:** Python-test är aldrig bevis för att modden laddar, att kollision fungerar eller att ett hus går att gå in i.
-6. **Kostnader och rättigheter:** öppna och fria verktyg först; inga inköp utan användarens godkännande. Följ [DATA_AND_RIGHTS](docs/DATA_AND_RIGHTS.md). Publicera inga detaljerade privata interiörer utan granskning.
+## Language and player experience
+- Communicate with the user in **Swedish**. Write documentation, code, identifiers, comments, commit messages, PR text and authored UI text in **English**. Preserve proper place names, source identifiers and external tool names.
+- Keep normal updates spoiler-free. Describe capability, quality and progress; avoid exposing exact interiors, placements, seeds, loot or discoveries unless needed for the user's requested design review. Use a representative test house for visual decisions.
+- Keep full evidence in developer documentation. Spoiler avoidance is a presentation preference, not repository secrecy. Never hide bugs, costs, failed checks or material limitations.
 
-## Första uppgift
-Utför [BUILD42_SPIKE](docs/BUILD42_SPIKE.md) före storskalig geodatapipeline. Verifiera kompatibla kartverktyg, producera minsta möjliga separata karta och få den testad i aktuell Build 42 Stable. Dokumentera versionsnummer, reproduktionssteg, evidens och eventuella blockerare. Ingen falsk statusuppdatering om icke-speltestad kod.
+## Autonomy and decisions
+Follow [AGENT_WORKFLOW](docs/AGENT_WORKFLOW.md). Independently implement, investigate, test and repair reversible changes within accepted scope. Do not ask the user to choose routine technical details or act as first-line QA. Bring consequential design, scope, cost and release decisions to the user with a concrete proposal, a recommendation and its tradeoff. Continue unrelated authorized work while awaiting an answer.
 
-## Agentarbete och mänsklig vy
-- Följ [AGENT_WORKFLOW](docs/AGENT_WORKFLOW.md) och välj passande projekt-skills i `.agents/skills/` respektive `.claude/skills/`.
-- Läs befintlig kod, tester och [GLOSSARY](GLOSSARY.md); arbeta i små, självständigt kontrollerbara vertikala steg. Ange ändrat beteende, körda kontroller, ej verifierat och risk.
-- Specifikationer, tekniska beslut, granskningar och arbetshistorik skrivs i **Markdown**.
-- Den förenklade mänskliga vyn kommer från [HUMAN_OVERVIEW](docs/HUMAN_OVERVIEW.md) och genereras till [PROJECT_OVERVIEW.html](docs/PROJECT_OVERVIEW.html) med `python tools/render_dashboard.py`. **Tekniskt facit är PROJECT_SPEC/DECISIONS/ROADMAP**; håll den mänskliga översikten konsekvent men duplicera inte tekniska detaljer.
-- De klickbara HTML-knapparna skapar *förslag* (GitHub issue eller kopierad text), inte automatiska beslut eller commits.
-- Kör `python tools/render_dashboard.py --check`, `python tools/check_agent_setup.py` och `python -m unittest discover -s tests -v` efter relevanta ändringar.
+Specialist roles and delegation rules are described in the workflow. Keep one integration owner. These instructions do not authorize unrestricted background execution, purchases, public releases or PR merges.
 
-## Avgjorda vägval
-Inga nya frågor om mod kontra fristående spel eller om Getaboda ska vara första testområdet: detta är redan beslutat. Om verkliga verktygsbegränsningar motsäger specifikationen, beskriv evidensen och föreslå minsta möjliga ändring i en Markdown-review.
+## Engineering principles
+1. Choose the simplest complete, verifiable solution. Avoid speculative architecture and dependencies without a demonstrated need.
+2. Preserve original coordinates, identifiers, licenses and verified properties. Record assumptions separately; never invent verified real building placements or footprints.
+3. Keep generation deterministic. Store corrections separately by stable building ID; regeneration must preserve them and never overwrite source geometry.
+4. Grow a small data-driven Swedish building library. Begin with permitted game resources and generic interiors; review detailed private interiors before publication.
+5. Verify gameplay in the game. Python tests cannot prove map loading, collision, roof behavior or house entry. Record the exact version, tested artifact and evidence; distinguish agent tests from human acceptance.
+6. Prefer free tools and lawful data. No purchases without approval. Follow [DATA_AND_RIGHTS](docs/DATA_AND_RIGHTS.md); do not commit proprietary game art or code.
+7. Do not change the Steam installation or system-wide settings without approval. Ask before administrator actions or running unknown binaries. Necessary free development tools from trusted sources are already authorized by the project brief.
+
+## Current delivery gate
+Finish [BUILD42_SPIKE](docs/BUILD42_SPIKE.md) before a broad geodata pipeline. Its report records current evidence and remaining checks. M0 is not complete merely because a package builds or a smoke test passes. A reusable Swedish cottage is the next visual prototype, followed by source-backed Getaboda integration.
+
+## Working practice
+- Use relevant project skills under `.agents/skills/` or `.claude/skills/`; keep mirrored skill files byte-identical.
+- Read affected code and tests first. Work in small, verifiable steps. Record changed behavior, checks, unresolved concerns and the next action.
+- Write specifications, decisions, reviews and handoffs in Markdown. Keep [HUMAN_OVERVIEW](docs/HUMAN_OVERVIEW.md) and the manually maintained [PROJECT_OVERVIEW.html](docs/PROJECT_OVERVIEW.html) consistent. `tools/render_dashboard.py` checks selected markers only; it does not generate HTML.
+- HTML feedback buttons prepare suggestions; they do not approve decisions, submit issues or change files automatically.
+- Run relevant checks: `python -m unittest discover -s tests -v`, `python tools/check_agent_setup.py`, `python tools/render_dashboard.py --check`, and `git diff --check`.
+
+Out of scope for the first POC: a standalone engine, new zombie/survival systems, dynamic terrain, multiplayer, a complete Swedish asset catalog and automatic geographic compression.

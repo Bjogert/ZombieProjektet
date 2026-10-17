@@ -2,8 +2,11 @@
 
 **Chosen:** Project Zomboid Build 42 Stable map mod. **Not building:** standalone game.
 
-## M0 — Prove a custom Build 42 map really loads (NEXT)
+## M0 — Prove a custom Build 42 map really loads (IN PROGRESS)
 See [BUILD42_SPIKE.md](BUILD42_SPIKE.md).
+
+As of 2026-10-17, world selection, loading, indoor spawn and walking through the doorway have been agent-tested in 42.21.0. Closed-door darkness, direct wall collision, roof behavior and creator acceptance remain open. Finish those checks before declaring M0 complete. Then validate one reusable Swedish cottage as an early M2 prototype before scaling to source-backed Getaboda; real geography has not yet been verified.
+
 - Identify the exact installed Build 42 Stable version and supported official/community mapping toolchain using current primary sources and local proof.
 - Create minimal separate test map, a usable door and one simple building.
 - Launch game, select/spawn on map, walk into house, check collision and errors.

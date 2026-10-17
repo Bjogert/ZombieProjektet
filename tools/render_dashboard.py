@@ -19,8 +19,8 @@ def check():
         ("Getaboda", "Getaboda"),
         ("Build 42", "Build 42"),
         ("GitHub", "GitHub"),
-        ("90-tal", "1990-tal"),
-        ("din kommentar", 'id="comment"'),
+        ("1990s", "1990s"),
+        ("your comment", 'id="comment"'),
     ]
     failures = [title for title, token in assertions if title not in source or token not in html]
     if failures:

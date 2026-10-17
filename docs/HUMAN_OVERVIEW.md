@@ -1,34 +1,32 @@
-# ZombieProjektet – din projektöversikt
+# ZombieProjektet — project overview
 
-**Status:** Codex har testat kartan i Project Zomboid 42.21.0: världsval, start inne i huset, dörr och att gå ut och in fungerar. Stängd dörr ger fortfarande svart interiör; väggkollision och tak behöver fortsatt kontroll. Spelet är pausat för ditt test. Följ [provspelningsguiden](PLAYTEST_M0.html).
+**Status (2026-10-17):** the synthetic map has been smoke-tested in Project Zomboid Build 42.21.0. World selection, indoor spawn and walking out/in work. Closed-door darkness, wall collision, roof behavior and creator acceptance remain open. This is not yet the Getaboda map.
 
-## Vad bygger vi?
-Ett svenskt zombie-Småland som en Project Zomboid-mod. Vi börjar i Getaboda med cirka 4–5 hus, vägar och natur. Husen ska ligga ungefär där de finns i verkligheten, men vi använder enkla svenska standardhus där detaljer saknas. På sikt vill vi att du och dina vänner ska kunna spela tillsammans runt Ljungby.
+## What are we building?
+A recognizable Swedish world in Project Zomboid. Start with about 4–5 source-confirmed Getaboda buildings, nearby roads and nature, with Swedish 1990s styling and generic interiors where details are unavailable. Later, expand toward Ljungby and test multiplayer with friends.
 
-## Så arbetar vi
-AI-agenterna bygger, testar och dokumenterar tekniken. Du får korta instruktioner när vi behöver provspela något. Ingen egen spelmotor eller avancerad editor just nu.
+## How we work
+The creator sets creative direction and important choices. The lead agent implements, tests, fixes and coordinates technical work. Specialist tasks cover world data, buildings/art and QA when useful and authorized. Conversation is in Swedish; project material is in English.
 
-## Projektets fyra steg
-1. **Nästa steg: Slutför testhuset i Build 42.** Det laddar och går att gå in och ut ur. Belysning, väggkollision, tak och din egen provspelning återstår innan M0 godkänns.
-2. **Lägg in Getabodas verkliga huslägen.** Vi verifierar och använder tillåtna kartdata.
-3. **Skapa enkla svenska hus och interiörer automatiskt.** Biblioteket kan växa när vi vill.
-4. **Generera om utan att förlora manuella ändringar.** Bevisa det i lilla Getaboda.
+Routine updates and design previews preserve surprises. Full developer evidence remains available, and bugs are always disclosed. The creator should be able to enjoy playing without reviewing every room or implementation detail.
 
-## Viktiga beslut
-- Nutida kartor med svensk 1990-talskänsla.
-- Getaboda och andra bebyggda platser behåller verkliga avstånd; långa skogsvägar kan kortas ned senare.
-- Skog och åkrar hämtas ur kartunderlag, träd och detaljer genereras.
-- Detaljerade enskilda hus kan byggas om senare och granskas före publicering.
-- Öppen kod, gratis verktyg som standard, GitHub-paket först och Steam Workshop senare.
-- Vi får börja om med sparfiler under utveckling; målet är att ha roligt och komma framåt.
+## Next deliveries
+1. Finish technical QA on the test house: darkness, collision and roof behavior.
+2. Build one reusable Swedish cottage and present a representative exterior for design feedback.
+3. Verify lawful Getaboda data and integrate the first real buildings.
+4. Demonstrate that individual corrections survive regeneration.
 
-## Hur fungerar denna sida?
-Du kan klicka på förslag, skriva din kommentar och kopiera dina synpunkter eller öppna ett **förifyllt** GitHub-ärende. Dina val sparas **endast i den här webbläsaren** tills du skickar dem till GitHub eller till en agent. Sidan ändrar **inte** repositoryts Markdown-filer av sig själv.
+Agents resolve technical issues before requesting milestone playtests. Creator playtests focus on feel and usability; acceptance is recorded only after actual feedback.
 
-## Öppna vägval för människan
-- **Vägval A – provspela första Build 42-spiken:** exporten är klar; du provar testhuset enligt HTML-guiden och återkopplar.
-- **Vägval B – ändra omfattning innan vi startar:** skriv vilken del du vill lägga till eller ta bort.
-- **Vägval C – begär en genomgång:** be om en enklare visuell presentation innan arbetet börjar.
+## Established direction
+- Modern source geography with Swedish 1990s atmosphere.
+- Getaboda at local 1:1 scale; countryside distance compression later.
+- Source-backed land cover with deterministic detail placement.
+- Generic interiors; review detailed private homes before publication.
+- Free tools by default; GitHub packages first, Steam Workshop later.
+- Development saves may need restarting; protect valuable existing saves.
 
-## Nästa mänskliga aktivitet
-Fortsätt i den pausade testomgången eller följ HTML-guiden för en ny omgång. Kontrollera särskilt väggkollision och tak. Huset saknar fönster och belysning; håll dörren öppen för att se interiören i detta test. Agentens speltest är dokumenterat, men ditt godkännande återstår.
+## Feedback
+The HTML companion lets you record a suggestion and your comment, then copy it or open a prefilled GitHub issue. Feedback stays in your browser until you send it. It does not automatically change project decisions or files.
+
+Useful feedback: a desired atmosphere, a preferred example exterior, or observations from a requested playtest. Routine implementation choices remain with the agent.

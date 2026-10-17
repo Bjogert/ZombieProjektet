@@ -1,8 +1,8 @@
 # Shared vocabulary
 
-- **ZombieProjektet:** the overall Swedish survival world project, not necessarily a Project Zomboid modification.
+- **ZombieProjektet:** a Swedish world built as a Project Zomboid Build 42 Stable map mod, starting in Getaboda.
 - **Mod track:** building a custom map and content for the proprietary Project Zomboid game.
-- **Standalone track:** building an original game; engine not selected.
+- **Standalone track:** a deferred idea, not an active implementation track or architecture requirement.
 - **Vertical slice:** the smallest end-to-end behavior that can be demonstrated or verified.
 - **Style manifest:** deterministic, source-linked proposal of Swedish building styles for GeoJSON footprints; it is not playable game content.
 - **Tile:** a compatible piece of map or house artwork in Project Zomboid; not a generic image.

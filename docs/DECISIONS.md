@@ -28,9 +28,12 @@ Summary from questions 1–28; accepted user comments override any overly broad 
 | Licenses | Permissive own code/library where rights allow; independent licenses for external data/art |
 | Real-home privacy | Generic interiors default; carefully review detailed private interiors before publishing |
 | Costs | Free/open default; explicit approval before purchases |
-| Human-agent handoff | AI writes/tests; user conducts milestone game tests |
+| Human-agent handoff | AI implements, tests and resolves routine QA; creator playtests milestones for feel and acceptance |
 | Planning | Grill finished. Maintain MD canonical design/docs and simplified interactive human HTML projection |
+| Language (2026-10-17) | Swedish conversation; English documentation, code, identifiers and authored UI; preserve proper names |
+| Autonomy (2026-10-17) | Agent proceeds within agreed scope; creator participates in design and consequential decisions |
+| Discovery (2026-10-17) | Spoiler-free routine updates and representative design previews; full evidence remains available |
 
 **Priority rule:** hobby fun and working proof over exhaustive completeness, but avoid unnecessary traps by preserving source data and clean minimal interfaces. Do not create premature abstractions or gold-plate compatibility.
 
-**Still must verify empirically:** exact Build 42 Stable tool chain; source geodata coverage and license for Getaboda; mod install/map generation process; usable tile resource rights; behavior of user edits on regenerate; multiplayer/save behavior later.
+**Evidence update (2026-10-17):** the official tools produced a map smoke-tested in Build 42.21.0. See [the M0 report](test-reports/M0-BUILD42.md) for demonstrated behavior and remaining checks. M0 acceptance is pending. Getaboda data coverage/rights, override persistence in a playable artifact, and later multiplayer/save behavior still require verification.

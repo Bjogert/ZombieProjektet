@@ -1,28 +1,31 @@
-# ZombieProjektet — Småland i Project Zomboid
+# ZombieProjektet — Småland in Project Zomboid
 
-**Status (2026-10-11): design beslutad; teknisk kartintegration ännu inte verifierad i spelet.**
+A hobby project building a recognizable Swedish world as a **Project Zomboid Build 42 Stable map mod**. The first real test area is **Getaboda between Agunnaryd and Södra Ljunga**, approximately 4–5 buildings, with later expansion toward Ljungby.
 
-Ett öppet hobbyprojekt för att bygga en igenkännbar svensk spelvärld som en **kartmod till Project Zomboid Build 42 Stable**. Första testområdet är **Getaboda mellan Agunnaryd och Södra Ljunga**, cirka 4–5 hus. Sedan kan världen växa mot Ljungbytrakten.
+Use lawful source data for actual building locations, roads and land cover. Generate ordinary buildings and details from a small Swedish template library, with separate stable-ID overrides that survive regeneration. Aim for Swedish 1990s atmosphere and a world the creator can enjoy discovering.
 
-**Princip:** enklaste fungerande och skalbara lösningen. Verkliga huslägen, vägar och marktyper från tillåtna geodata; vanliga byggnader och detaljer genereras med svenska standardregler. Enskilda hus kan senare förbättras via separata datafiler utan att deras ändringar skrivs över.
+## Current state (2026-10-17)
+A synthetic test map has been exported with the official mapping tools and smoke-tested in **42.21.0**. World selection, loading, indoor spawn and walking out/in were verified. Closed-door darkness, direct wall collision, roof behavior and human acceptance remain open. See the [M0 report](docs/test-reports/M0-BUILD42.md) for evidence and limitations.
 
-## Börja här
-- **För dig:** [Projektöversikt (HTML)](docs/PROJECT_OVERVIEW.html) — ladda ner filen och öppna den i en webbläsare för klickbara vägval och kommentarer. Den skickar inte ändringar direkt till GitHub.
-- **För agenter:** [Specifikation](docs/PROJECT_SPEC.md), [beslut](docs/DECISIONS.md), [roadmap](docs/ROADMAP.md) och [agentinstruktioner](AGENTS.md).
-- **Första tekniska testet:** [Build 42-spike](docs/BUILD42_SPIKE.md).
+Real Getaboda geometry has **not** been imported or verified. The deterministic GeoJSON style manifest is a separate data experiment, not a playable Getaboda map. A reusable Swedish cottage remains the next visual prototype after closing the technical test-house gaps.
 
-## Nuläge och ärliga begränsningar
-Det finns ett Python-experiment som tilldelar reproducerbara stilar till GeoJSON-byggnader. Det skapar **inte** fungerande Project Zomboid-kartor, tiles, inredningar eller modpaket. Getabodas verkliga geometri är ännu **inte** inläst eller verifierad. Ingen speltestad Build 42-karta finns ännu i detta repo.
+## Start here
+- Creator: [project overview](docs/PROJECT_OVERVIEW.html), with local feedback controls; it does not automatically submit anything to GitHub.
+- Agents: [AGENTS.md](AGENTS.md), [workflow](docs/AGENT_WORKFLOW.md), [specification](docs/PROJECT_SPEC.md), [decisions](docs/DECISIONS.md) and [roadmap](docs/ROADMAP.md).
+- Integration: [Build 42 test plan](docs/BUILD42_SPIKE.md).
 
-## Lokala kontroller (Python 3.10+, inga tredjepartsberoenden)
+Conversation with the creator is in Swedish. Project documentation, code, identifiers and authored UI are in English. Routine updates preserve surprises; developer evidence remains available for inspection.
+
+## Local checks (Python 3.10+, standard library)
 ```sh
 python -m unittest discover -s tests -v
 python tools/check_agent_setup.py
 python tools/render_dashboard.py --check
+git diff --check
 python tools/building_styles.py --input data/sample/buildings.geojson --output build/building-styles.json
 ```
 
-Håll `docs/HUMAN_OVERVIEW.md` och den manuellt formgivna `docs/PROJECT_OVERVIEW.html` i takt. `python tools/render_dashboard.py --check` kontrollerar ett fåtal gemensamma nyckelord; automatisk HTML-generering är ett senare förbättringssteg.
+Keep `docs/HUMAN_OVERVIEW.md` and the manually maintained `docs/PROJECT_OVERVIEW.html` consistent. The dashboard check validates selected markers; it does not render or fully compare the documents.
 
-## Juridiskt
-Endast eget material och tillåtna data får distribueras. Egna kodfiler licensieras enligt [MIT](LICENSE); varje extern datakälla, importerad resurs och eventuell grafik har sina respektive villkor. Se [DATA_AND_RIGHTS.md](docs/DATA_AND_RIGHTS.md). Projektet är inte knutet till The Indie Stone.
+## Rights
+Distribute only original material and permitted data. Original code uses [MIT](LICENSE); external data, resources and art retain their own terms. See [DATA_AND_RIGHTS](docs/DATA_AND_RIGHTS.md). This project is not affiliated with The Indie Stone.
