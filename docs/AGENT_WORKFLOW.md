@@ -26,6 +26,26 @@ Use a small team structure when parallel work is explicitly authorized and usefu
 
 Give delegated tasks a bounded result, acceptance criteria and file ownership. Use separate worktrees for concurrent writers; review and integrate sequentially. Worktrees do not share uncommitted changes. Only the integration owner installs test mods, drives WorldEd/BuildingEd or controls the game: these resources remain shared even with separate Git worktrees. Do not create persistent chats or schedules merely to fill roles. Use the current model unless the user requests another.
 
+## Dispatch and integration
+
+The execution queue lives in [ROADMAP](ROADMAP.md); keep task state there instead of creating a second backlog. Select one main deliverable. When delegation is authorized and useful, start with one implementation task and one independent review task; split further only for genuinely independent work. A role is a focused task with context and evidence, not a permanent model identity.
+
+Each assignment includes this compact brief:
+
+```text
+Task ID and outcome:
+Repository/worktree and base commit:
+Inputs and relevant instructions:
+Owned files; shared files reserved for the lead:
+Acceptance criteria and required evidence:
+Dependencies, exclusions and data-handling boundary:
+Return: changed files/commit, checks, unresolved risks and next action.
+```
+
+Workers report to the lead. The lead reviews the actual diff and evidence, integrates one result at a time, and runs the affected checks. Read-only reviewers do not edit the implementation. Shared documentation, packaging, mod installation, mapping-tool UI and game execution remain with the lead unless explicitly handed over. Record a new owner before transferring those resources.
+
+For each delivery, report separately what is implemented, what has passed automated/editor/game checks, and what still needs creator acceptance. If a dependency blocks one task, choose another ready task rather than repeatedly polling or inventing success. Raw Lantmäteriet data must not enter agent prompts or model-visible tool output under the current local-processing decision.
+
 ## Preserve discovery
 Normal updates report what is playable, what improved, what remains uncertain and the next design decision. Avoid exact floor plans, loot, seeds, discovery locations and future surprises in updates, task titles and unsolicited screenshots. Use a representative test building for visual decisions. Keep necessary detailed evidence in clearly labelled developer reports and warn before opening spoiler-bearing material for the creator. This does not add quests, secrets or other new scope. Always disclose bugs and material risks.
 

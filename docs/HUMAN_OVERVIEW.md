@@ -10,6 +10,8 @@ The creator sets creative direction and important choices. The lead agent implem
 
 Routine updates and design previews preserve surprises. Full developer evidence remains available, and bugs are always disclosed. The creator should be able to enjoy playing without reviewing every room or implementation detail.
 
+The lead assigns bounded work, checks the results and integrates changes. The current priorities are a playable fictional cottage and a test that individual style corrections survive regeneration using synthetic data. Both can proceed while geodata access is reviewed; the mapping tools and game have one operator at a time.
+
 ## Next deliveries
 1. Creator playtest of the repaired test house; agent lighting, collision and roof checks have passed.
 2. Refine and game-test the first reusable Swedish cottage, then review its representative exterior together.

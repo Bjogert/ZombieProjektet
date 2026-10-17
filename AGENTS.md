@@ -15,6 +15,8 @@ Read [PROJECT_SPEC](docs/PROJECT_SPEC.md), [DECISIONS](docs/DECISIONS.md), [ROAD
 ## Autonomy and decisions
 Follow [AGENT_WORKFLOW](docs/AGENT_WORKFLOW.md). Independently implement, investigate, test and repair reversible changes within accepted scope. Do not ask the user to choose routine technical details or act as first-line QA. Bring consequential design, scope, cost and release decisions to the user with a concrete proposal, a recommendation and its tradeoff. Continue unrelated authorized work while awaiting an answer.
 
+Use the current execution queue in [ROADMAP](docs/ROADMAP.md) to select the next bounded delivery. A ready task is planned work, not evidence that an agent is running or that a milestone passed.
+
 Specialist roles and delegation rules are described in the workflow. Keep one integration owner. These instructions do not authorize unrestricted background execution, purchases, public releases or PR merges.
 
 ## Engineering principles
