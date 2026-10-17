@@ -1,6 +1,6 @@
 # ZombieProjektet — project overview
 
-**Status (2026-10-17):** the synthetic test house and first furnished cottage have been agent-tested in Project Zomboid Build 42.21.0. Daylight, a light switch, wall collision and roof coverage/rendering pass; the cottage also has tested entrance and window interactions. Creator acceptance and cottage exterior approval remain open. This is not yet the Getaboda map.
+**Status (2026-10-17):** the synthetic test house and furnished cottage have been agent-tested in Project Zomboid Build 42.21.0. The cottage now also has a playable wooden deck, outdoor furniture and three flowerbeds in a separate garden test package. Access routes, outdoor floors, object counts and table collision pass runtime checks. Daylight, a light switch, walls, roof and cottage entrance/window interactions have passed their recorded tests. Creator acceptance and exterior approval remain open. This is not yet the Getaboda map.
 
 ## What are we building?
 A recognizable Swedish world in Project Zomboid. Start with about 4–5 source-confirmed Getaboda buildings, nearby roads and nature, with Swedish 1990s styling and generic interiors where details are unavailable. Later, expand toward Ljungby and test multiplayer with friends.
@@ -14,7 +14,7 @@ The lead assigns bounded work, checks the results and integrates changes. The fi
 
 ## Next deliveries
 1. Creator playtest of the repaired test house; agent lighting, collision and roof checks have passed.
-2. Add a deck/patio and a garden with flowerbeds to the fictional cottage, then show in-game exterior screenshots. The current cottage passes agent checks; its outdoor setting is not built yet.
+2. Review the cottage's playable deck, seating and flowerbeds in the new in-game screenshots. The relative-coordinate garden template supports repeatable placement; rotation and fitting arbitrary Getaboda houses remain future work. See [GARDEN_TEST](GARDEN_TEST.md).
 3. Verify lawful Getaboda data and integrate the first real buildings.
 4. Connect the tested style overrides to generated playable buildings and prove their persistence there.
 

@@ -1,4 +1,5 @@
 import base64
+import json
 import struct
 import tempfile
 import unittest
@@ -10,6 +11,32 @@ from tools import build_cottage, build_m0
 
 
 class TestCottageSource(unittest.TestCase):
+    def test_garden_export_keeps_house_source_and_rejects_missing_tiles(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            tiles, game = root / 'tiles', root / 'game'
+            tiles.mkdir()
+            (game / 'media').mkdir(parents=True)
+            (game / 'media/newtiledefinitions.tiles').write_bytes(b'fixture')
+            repo = Path(__file__).resolve().parents[1]
+            cottage = repo / 'assets/buildings/swedish_cottage_01.tbx'
+            garden = repo / 'assets/gardens/cottage_garden_01.json'
+            original = cottage.read_bytes(), garden.read_bytes()
+            names = {'blends_natural_01', 'blends_street_01'}
+            names.update(p['tile'][0] for p in json.loads(garden.read_text())['patches'])
+            for name in names - {'carpentry_02'}:
+                build_m0.write_png(tiles / (name + '.png'), 1024, 4096)
+            with self.assertRaises(FileNotFoundError):
+                build_cottage.build(root / 'out', tiles, game, cottage, garden)
+            self.assertFalse((root / 'out').exists())
+            build_m0.write_png(tiles / 'carpentry_02.png', 1024, 4096)
+            build_cottage.build(root / 'out', tiles, game, cottage, garden)
+            terrain = ET.parse(root / 'out/cottage.tmx')
+            self.assertEqual({l.get('name') for l in terrain.findall('layer')},
+                             {'0_Floor', '0_Furniture'})
+            self.assertEqual((root / 'out/swedish_cottage_01.tbx').read_bytes(), original[0])
+            self.assertEqual((cottage.read_bytes(), garden.read_bytes()), original)
+
     def test_repeatable_terrain_and_separate_building_reference(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)

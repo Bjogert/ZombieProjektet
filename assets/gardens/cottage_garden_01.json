@@ -1,0 +1,24 @@
+{
+  "id": "cottage_garden_01",
+  "house_size": [6, 10],
+  "clear_routes": [
+    [-5, 3, 5, 2],
+    [-1, 0, 1, 10],
+    [-1, -1, 8, 1],
+    [6, 0, 1, 10],
+    [-1, 10, 8, 1]
+  ],
+  "patches": [
+    {"layer": "0_Floor", "rect": [-4, 1, 4, 6], "tile": ["carpentry_02", 56]},
+    {"layer": "0_Floor", "rect": [-5, 3, 1, 2], "tile": ["floors_exterior_tilesandstone_01", 0]},
+    {"layer": "0_Furniture", "rect": [-4, -2, 4, 1], "tile": ["vegetation_ornamental_01", 16]},
+    {"layer": "0_Furniture", "rect": [-4, 8, 3, 1], "tile": ["vegetation_ornamental_01", 17]},
+    {"layer": "0_Furniture", "rect": [1, 11, 4, 1], "tile": ["vegetation_ornamental_01", 18]},
+    {"layer": "0_Furniture", "rect": [-5, -1, 1, 1], "tile": ["vegetation_ornamental_01", 9]},
+    {"layer": "0_Furniture", "rect": [0, 11, 1, 1], "tile": ["vegetation_ornamental_01", 9]},
+    {"layer": "0_Furniture", "rect": [5, 11, 1, 1], "tile": ["vegetation_ornamental_01", 9]},
+    {"layer": "0_Furniture", "rect": [-4, 5, 1, 1], "tile": ["furniture_seating_outdoor_01", 16]},
+    {"layer": "0_Furniture", "rect": [-3, 5, 1, 1], "tile": ["furniture_tables_low_01", 21]},
+    {"layer": "0_Furniture", "rect": [-2, 5, 1, 1], "tile": ["furniture_seating_outdoor_01", 19]}
+  ]
+}

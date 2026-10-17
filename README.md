@@ -7,7 +7,7 @@ Use lawful source data for actual building locations, roads and land cover. Gene
 ## Current state (2026-10-17)
 A synthetic test map has been exported with the official mapping tools and tested in **42.21.0**. World selection, indoor spawn, doorway traversal, closed-door daylight and the light switch work. Runtime collision probes pass on all four walls; the roof covers all 80 room squares and renders outdoors. Human acceptance remains open. See the [M0 report](docs/test-reports/M0-BUILD42.md) for evidence and limits.
 
-The first [reusable cottage](assets/buildings/README.md) is furnished, exported and agent-tested in a separate playable map. Entrance traversal, a window, a light switch, indoor daylight, wall collision and roof coverage/rendering pass; see [COTTAGE_TEST](docs/COTTAGE_TEST.md). Its stock exterior palette still awaits creator review.
+The first [reusable cottage](assets/buildings/README.md) is furnished, exported and agent-tested in a separate playable map. Entrance traversal, a window, a light switch, indoor daylight, wall collision and roof coverage/rendering pass; see [COTTAGE_TEST](docs/COTTAGE_TEST.md). A separate [garden template](assets/gardens/README.md) now adds a wooden deck, outdoor furniture and three flowerbeds, with game checks recorded in [GARDEN_TEST](docs/GARDEN_TEST.md). Its stock exterior palette and landscaping still await creator review.
 
 Real Getaboda geometry has **not** been imported or verified. The deterministic GeoJSON style manifest now preserves separate manual style overrides by stable ID, with automated regression checks. Connecting those choices to regenerated playable maps remains future work.
 

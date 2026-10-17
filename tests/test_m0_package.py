@@ -52,3 +52,10 @@ class TestM0Package(unittest.TestCase):
                 self.assertIn('ZombieProjektetCottage/42/media/maps/CottageTest/spawnpoints.lua', names)
                 self.assertIn('ZombieProjektetCottage/common/media/maps/.gitkeep', names)
                 self.assertFalse(any('M0Sweden' in n or 'ZombieProjektetM0' in n for n in names))
+
+            package_m0.package(export, root / 'garden', profile='garden')
+            with zipfile.ZipFile(root / 'garden/ZombieProjektetGarden.zip') as archive:
+                names = archive.namelist()
+                self.assertIn('ZombieProjektetGarden/42/media/maps/CottageGardenTest/spawnpoints.lua', names)
+                self.assertIn('ZombieProjektetGarden/common/media/maps/.gitkeep', names)
+                self.assertFalse(any('ZombieProjektetCottage/' in n or 'qa_' in n for n in names))

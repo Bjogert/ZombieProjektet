@@ -18,6 +18,10 @@ M0's installed package. The [runtime report](../../docs/COTTAGE_TEST.md) records
 the exact package, reproduction steps, interaction checks and remaining limits.
 Creator acceptance and exterior design approval remain open.
 
+The separate [garden template](../gardens/README.md) adds a wooden deck, outdoor
+furniture and flowerbeds around this unchanged house. Its own package and game
+checks are recorded in [GARDEN_TEST](../../docs/GARDEN_TEST.md).
+
 The file contains original layout data and stock tile names, with no copied
 textures or game code. Tile references resolve from the user's permitted game
 mapping resources; the referenced artwork remains The Indie Stone's property.

@@ -12,7 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PROFILES = {'m0': ('ZombieProjektetM0', 'M0Sweden'),
-            'cottage': ('ZombieProjektetCottage', 'CottageTest')}
+            'cottage': ('ZombieProjektetCottage', 'CottageTest'),
+            'garden': ('ZombieProjektetGarden', 'CottageGardenTest')}
 
 
 def validate_header(path):
