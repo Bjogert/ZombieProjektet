@@ -14,7 +14,7 @@ The lead assigns bounded work, checks the results and integrates changes. The fi
 
 ## Next deliveries
 1. Creator playtest of the repaired test house; agent lighting, collision and roof checks have passed.
-2. Review the representative cottage exterior and try the separate playable prototype; its agent game checks have passed.
+2. Add a deck/patio and a garden with flowerbeds to the fictional cottage, then show in-game exterior screenshots. The current cottage passes agent checks; its outdoor setting is not built yet.
 3. Verify lawful Getaboda data and integrate the first real buildings.
 4. Connect the tested style overrides to generated playable buildings and prove their persistence there.
 
@@ -25,6 +25,7 @@ The source audit found 2025 aerial imagery catalog coverage at 16 cm pixel size 
 
 ## Established direction
 - Modern source geography with Swedish 1990s atmosphere.
+- Decks/patios and gardens with flowerbeds as part of residential character, varied between houses.
 - Getaboda at local 1:1 scale; countryside distance compression later.
 - Source-backed land cover with deterministic detail placement.
 - Generic interiors; review detailed private homes before publication.

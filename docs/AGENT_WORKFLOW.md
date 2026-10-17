@@ -53,7 +53,7 @@ Normal updates report what is playable, what improved, what remains uncertain an
 1. Read the current milestone and evidence; choose the smallest useful next slice.
 2. Build, test and repair it before asking the creator to play it.
 3. Review acceptance criteria; record tool and game checks separately.
-4. Give a short Swedish, spoiler-free update: playable change, validation, limitation and any decision required.
+4. Give a short Swedish, spoiler-free update at meaningful milestones during active work: playable change, validation, limitation and any decision required. Include representative in-game screenshots for visual changes; identify older test images and distinguish playable results from proposals. The creator explicitly requested regular visual progress updates.
 5. Request brief milestone playtests for feel and usability. Keep unresolved technical QA with the agent. Never mark human acceptance without feedback.
 
 Repository instructions and handoffs carry durable context. A Codex project groups work; it does not itself keep agents running or automatically share every chat's state. This agreement configures no unattended schedule.
