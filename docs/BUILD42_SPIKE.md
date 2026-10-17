@@ -1,6 +1,6 @@
 # M0 test plan — first playable separate Build 42 map
 
-**State: NOT STARTED / NOT VERIFIED IN GAME.** This is an executable plan for Codex/Claude and human tester, *not* proof of working export.
+**State: EXPORTED / NOT VERIFIED IN GAME (2026-10-17).** Official 8x8 export and local mod package exist. Gameplay acceptance remains open; see [evidence](test-reports/M0-BUILD42.md) and [playtest instructions](PLAYTEST_M0.html).
 
 ## Goal
 Using legally permitted, currently compatible mapping tools, ship the smallest separate Swedish-world test map loading on **Project Zomboid Build 42 Stable**. At least one building should have a working entrance, basic inside space, correct player collision, and a documented spawn point.

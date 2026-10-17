@@ -1,6 +1,6 @@
 # ZombieProjektet – din projektöversikt
 
-**Status:** Planeringen klar. Nu väntar det första riktiga karttestet i Project Zomboid Build 42.
+**Status:** Testhus med väg är exporterade med officiella verktyg och modden är installerad lokalt. Project Zomboid 42.21.0 är verifierat. Kartans speltest återstår. Följ [provspelningsguiden](PLAYTEST_M0.html).
 
 ## Vad bygger vi?
 Ett svenskt zombie-Småland som en Project Zomboid-mod. Vi börjar i Getaboda med cirka 4–5 hus, vägar och natur. Husen ska ligga ungefär där de finns i verkligheten, men vi använder enkla svenska standardhus där detaljer saknas. På sikt vill vi att du och dina vänner ska kunna spela tillsammans runt Ljungby.
@@ -23,12 +23,12 @@ AI-agenterna bygger, testar och dokumenterar tekniken. Du får korta instruktion
 - Vi får börja om med sparfiler under utveckling; målet är att ha roligt och komma framåt.
 
 ## Hur fungerar denna sida?
-Du kan klicka på förslag, lämna kommentarer och kopiera dina synpunkter eller öppna ett **förifyllt** GitHub-ärende. Dina val sparas **endast i den här webbläsaren** tills du skickar dem till GitHub eller till en agent. Sidan ändrar **inte** repositoryts Markdown-filer av sig själv.
+Du kan klicka på förslag, skriva din kommentar och kopiera dina synpunkter eller öppna ett **förifyllt** GitHub-ärende. Dina val sparas **endast i den här webbläsaren** tills du skickar dem till GitHub eller till en agent. Sidan ändrar **inte** repositoryts Markdown-filer av sig själv.
 
 ## Öppna vägval för människan
-- **Vägval A – godkänn första Build 42-spiken:** detta är rekommenderat och kräver ingen extra budget. AI bygger en minimal karta och du provspelar.
+- **Vägval A – provspela första Build 42-spiken:** exporten är klar; du provar testhuset enligt HTML-guiden och återkopplar.
 - **Vägval B – ändra omfattning innan vi startar:** skriv vilken del du vill lägga till eller ta bort.
 - **Vägval C – begär en genomgång:** be om en enklare visuell presentation innan arbetet börjar.
 
 ## Nästa mänskliga aktivitet
-När agenterna kan visa ett konkret modpaket behöver vi ett kort test i det installerade spelet. Innan dess har vi inte lovat att någon karta fungerar.
+Provspela det installerade testpaketet enligt HTML-guiden. Kontrollera startposition, dörr, väggar och att gå in och ut. Skicka en skärmbild och eventuella fel. Ingen karta är ännu verifierad i spelet.
