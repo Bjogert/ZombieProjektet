@@ -72,6 +72,11 @@
  </furniture>
  <furniture><entry orient="W"><tile x="0" y="0" name="furniture_tables_low_01_000"/></entry></furniture>
  <furniture><entry orient="W"><tile x="0" y="0" name="furniture_seating_indoor_01_056"/></entry></furniture>
+ <furniture><entry orient="N"><tile x="0" y="0" name="furniture_bedding_01_001"/><tile x="0" y="1" name="furniture_bedding_01_000"/></entry></furniture>
+ <furniture><entry orient="N"><tile x="0" y="0" name="appliances_refrigeration_01_000"/></entry></furniture>
+ <furniture><entry orient="N"><tile x="0" y="0" name="appliances_cooking_01_001"/></entry></furniture>
+ <furniture><entry orient="N"><tile x="0" y="0" name="fixtures_sinks_01_002"/></entry></furniture>
+ <furniture><entry orient="N"><tile x="0" y="0" name="fixtures_bathroom_01_000"/></entry></furniture>
  <user_tiles>
   <tile tile="walls_exterior_wooden_01_018"/>
   <tile tile="walls_exterior_wooden_01_020"/>
@@ -97,6 +102,12 @@
   <object type="furniture" x="5" y="6" orient="N" FurnitureTiles="0"/>
   <object type="furniture" x="3" y="2" orient="W" FurnitureTiles="1"/>
   <object type="furniture" x="3" y="4" orient="W" FurnitureTiles="2"/>
+  <object type="furniture" x="2" y="8" orient="N" FurnitureTiles="3"/>
+  <object type="furniture" x="3" y="0" orient="N" FurnitureTiles="4"/>
+  <object type="furniture" x="4" y="0" orient="N" FurnitureTiles="5"/>
+  <object type="furniture" x="5" y="0" orient="N" FurnitureTiles="6"/>
+  <object type="furniture" x="5" y="6" orient="N" FurnitureTiles="6"/>
+  <object type="furniture" x="5" y="8" orient="N" FurnitureTiles="7"/>
   <rooms>
 1,1,1,1,1,1,
 1,1,1,1,1,1,

@@ -59,7 +59,7 @@ Priority access requests: **Byggnad Nedladdning, vektor** and **Ortofoto Nedladd
 7. **Adapt to PZ.** Preserve source scale/orientation and record snapping, resizing and rotations separately. Verify the approved local 1:1 intent against the practical tile grid. Report overlap, clearance and shape distortion; arbitrary geographic rotations may require adaptation to editor walls.
 8. **Review and test.** Show one representative exterior for creator review. The agent checks data quality and tests doors, windows, daylight, lighting, walls and roofs in the exact game version. Expand after the pilot regenerates consistently and corrections survive.
 
-QGIS is a suitable first visual inspection/clipping tool, with Python/GDAL introduced for repeated operations. This is a proposed workflow, not a claim that these processing tools are installed. `tools/building_styles.py` currently implements deterministic style selection only, not acquisition, measurement, overrides or map export.
+QGIS is a suitable first visual inspection/clipping tool, with Python/GDAL introduced for repeated operations. This is a proposed workflow, not a claim that these processing tools are installed. `tools/building_styles.py` implements deterministic style selection and separate stable-ID style overrides, verified on synthetic fixtures. It does not acquire or measure real data or export playable maps. See [the override contract](specs/building-style-overrides.md); persistence in a regenerated playable map remains a later integration check.
 
 ## Minimum building record
 

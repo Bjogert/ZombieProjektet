@@ -70,12 +70,16 @@ def write_png(path, width, height):
     path.write_bytes(image)
 
 
-def make_tmx(tiles):
+def make_tmx(tiles, layers=None, rooms=None, tilesets=TILESETS):
+    if layers is None:
+        layers = make_layers()
+    if rooms is None:
+        rooms = [('livingroom', 120, 120, 10, 8)]
     root = ET.Element('map', version='1.0', orientation='isometric',
                       width=str(SIZE), height=str(SIZE), tilewidth='64', tileheight='32')
     gids = {}
     first = 1
-    for name in TILESETS:
+    for name in tilesets:
         path = (tiles / (name + '.png')).resolve()
         header = path.read_bytes()[:24]
         if header[:8] != b'\x89PNG\r\n\x1a\n':
@@ -87,7 +91,7 @@ def make_tmx(tiles):
         ET.SubElement(ts, 'image', source=path.as_posix(), width=str(width), height=str(height))
         gids[name] = (first, count)
         first += count
-    for name, values in make_layers().items():
+    for name, values in layers.items():
         data = []
         for tile in values:
             gid = 0
@@ -100,9 +104,10 @@ def make_tmx(tiles):
         layer = ET.SubElement(root, 'layer', name=name, width=str(SIZE), height=str(SIZE))
         encoded = ET.SubElement(layer, 'data', encoding='base64', compression='zlib')
         encoded.text = base64.b64encode(zlib.compress(struct.pack(f'<{len(data)}I', *data))).decode()
-    rooms = ET.SubElement(root, 'objectgroup', name='0_RoomDefs', width=str(SIZE), height=str(SIZE))
-    ET.SubElement(rooms, 'object', name='livingroom', type='RoomDef',
-                  x=str(120 * 32), y=str(120 * 32), width=str(10 * 32), height=str(8 * 32))
+    group = ET.SubElement(root, 'objectgroup', name='0_RoomDefs', width=str(SIZE), height=str(SIZE))
+    for name, x, y, width, height in rooms:
+        ET.SubElement(group, 'object', name=name, type='RoomDef',
+                      x=str(x * 32), y=str(y * 32), width=str(width * 32), height=str(height * 32))
     return ET.tostring(root, encoding='utf-8', xml_declaration=True)
 
 

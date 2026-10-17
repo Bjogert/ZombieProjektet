@@ -45,3 +45,10 @@ class TestM0Package(unittest.TestCase):
                 self.assertIn('ZombieProjektetM0/common/media/maps/.gitkeep', archive.namelist())
             with self.assertRaises(FileExistsError):
                 package_m0.package(export, root / 'one')
+
+            package_m0.package(export, root / 'cottage', profile='cottage')
+            with zipfile.ZipFile(root / 'cottage/ZombieProjektetCottage.zip') as archive:
+                names = archive.namelist()
+                self.assertIn('ZombieProjektetCottage/42/media/maps/CottageTest/spawnpoints.lua', names)
+                self.assertIn('ZombieProjektetCottage/common/media/maps/.gitkeep', names)
+                self.assertFalse(any('M0Sweden' in n or 'ZombieProjektetM0' in n for n in names))

@@ -1,6 +1,6 @@
 # ZombieProjektet — project overview
 
-**Status (2026-10-17):** the synthetic map has been tested in Project Zomboid Build 42.21.0. Lighting is fixed; wall collision and roof coverage/rendering pass agent checks. Creator acceptance remains open. The first reusable cottage is now a BuildingEd prototype; its game test is next. This is not yet the Getaboda map.
+**Status (2026-10-17):** the synthetic test house and first furnished cottage have been agent-tested in Project Zomboid Build 42.21.0. Daylight, a light switch, wall collision and roof coverage/rendering pass; the cottage also has tested entrance and window interactions. Creator acceptance and cottage exterior approval remain open. This is not yet the Getaboda map.
 
 ## What are we building?
 A recognizable Swedish world in Project Zomboid. Start with about 4–5 source-confirmed Getaboda buildings, nearby roads and nature, with Swedish 1990s styling and generic interiors where details are unavailable. Later, expand toward Ljungby and test multiplayer with friends.
@@ -10,13 +10,13 @@ The creator sets creative direction and important choices. The lead agent implem
 
 Routine updates and design previews preserve surprises. Full developer evidence remains available, and bugs are always disclosed. The creator should be able to enjoy playing without reviewing every room or implementation detail.
 
-The lead assigns bounded work, checks the results and integrates changes. The current priorities are a playable fictional cottage and a test that individual style corrections survive regeneration using synthetic data. Both can proceed while geodata access is reviewed; the mapping tools and game have one operator at a time.
+The lead assigns bounded work, checks the results and integrates changes. The fictional cottage is playable, and individual style corrections survive regenerated manifests in automated tests using synthetic data. Both changes received an independent code review. Applying those corrections to regenerated playable maps is a later integration check. The mapping tools and game have one operator at a time.
 
 ## Next deliveries
 1. Creator playtest of the repaired test house; agent lighting, collision and roof checks have passed.
-2. Refine and game-test the first reusable Swedish cottage, then review its representative exterior together.
+2. Review the representative cottage exterior and try the separate playable prototype; its agent game checks have passed.
 3. Verify lawful Getaboda data and integrate the first real buildings.
-4. Demonstrate that individual corrections survive regeneration.
+4. Connect the tested style overrides to generated playable buildings and prove their persistence there.
 
 Agents resolve technical issues before requesting milestone playtests. Creator playtests focus on feel and usability; acceptance is recorded only after actual feedback.
 

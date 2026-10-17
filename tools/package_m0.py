@@ -11,6 +11,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+PROFILES = {'m0': ('ZombieProjektetM0', 'M0Sweden'),
+            'cottage': ('ZombieProjektetCottage', 'CottageTest')}
 
 
 def validate_header(path):
@@ -33,7 +35,8 @@ def validate_header(path):
         raise ValueError(f'Expected Build 42 8x8 chunks: {path}')
 
 
-def package(export, output):
+def package(export, output, profile='m0'):
+    mod_name, map_name = PROFILES[profile]
     files = []
     # One 300-square authoring cell overlaps four 256-square runtime cells.
     for x in range(2):
@@ -46,23 +49,25 @@ def package(export, output):
             validate_header(export / f'{x}_{y}.lotheader')
     if output.exists():
         raise FileExistsError(f'Refusing to replace existing package: {output}')
-    mod = output / 'ZombieProjektetM0'
-    shutil.copytree(ROOT / 'mod' / 'ZombieProjektetM0', mod)
-    maps = mod / '42' / 'media' / 'maps' / 'M0Sweden'
+    mod = output / mod_name
+    shutil.copytree(ROOT / 'mod' / mod_name, mod)
+    maps = mod / '42' / 'media' / 'maps' / map_name
     for path in files:
         shutil.copy2(path, maps / path.name)
-    with zipfile.ZipFile(output / 'ZombieProjektetM0.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
+    archive_path = output / (mod_name + '.zip')
+    with zipfile.ZipFile(archive_path, 'w', zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(mod.rglob('*')):
             if path.is_file():
                 info = zipfile.ZipInfo(path.relative_to(output).as_posix())
                 info.compress_type = zipfile.ZIP_DEFLATED
                 archive.writestr(info, path.read_bytes())
-    print(f'Package: {output / "ZombieProjektetM0.zip"}; NOT VERIFIED IN GAME.')
+    print(f'Package: {archive_path}; NOT VERIFIED IN GAME.')
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--export', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--profile', choices=PROFILES, default='m0')
     args = parser.parse_args()
-    package(args.export, args.output)
+    package(args.export, args.output, args.profile)
