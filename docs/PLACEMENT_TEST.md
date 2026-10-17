@@ -86,6 +86,12 @@ CLI duplicate-key rejection and the 16-file separate package boundary. No artwor
 TileDefs or QA scripts are included in the package. This is code/source review,
 not independent game reproduction.
 
+The final saved-evidence review also found no blockers. It independently checked
+the 92 PASS records and clean exit, all eight authoring and 12 export files,
+matching ZIP hashes, 16-file installed parity and the saved screenshots. Manual
+walking sequences rely on the operator's observations and still images; they
+were not replayed by the reviewer.
+
 ## Runtime evidence
 
 All **92 structural/runtime probes passed** (23 per house): 60 indoor squares,
