@@ -34,6 +34,13 @@ Specialist roles and delegation rules are described in the workflow. Keep one in
 ## Current delivery gate
 Use [ROADMAP](docs/ROADMAP.md) for the next bounded delivery and dependencies. The [synthetic roadside integration](docs/INTEGRATION_TEST.md) has 25/25 runtime probes, manual light/door/roof checks and clean save/reload evidence after a bounded metadata compatibility step. Packaging still rejects the original defective export. [Local road extraction](docs/ROAD_PIPELINE.md) reproduces the registered corridor and authoring inputs. The [small terrain prototype](docs/TERRAIN_TEST.md) is verified in-game with clear character access and clean reload; the creator approved maintained residential plots with flowerbeds, wilder vegetation outside and vanilla gradual overgrowth on 2026-10-18. This approves direction, not every prototype detail. A frozen Microsoft open-footprint sample now supplies 13 local Getaboda candidates, with preserved IDs and source bytes. The creator approved a 45° grid rotation at 1:1; real-house verification and the exact V1 selection remain open. See `docs/research/getaboda-building-register-2026-10-18.md`. Creator acceptance and continuous driving remain separate gates. Do not turn a control or access blocker into an indefinite stop on independent work. No broad municipality exporter or completed milestone is implied by successful builds alone.
 
+The [provisional candidate pilot](docs/CANDIDATE_PILOT_TEST.md) now connects one
+8 by 12 candidate to the registered village road at 1:1, with a generic house,
+garden and assumed access. Official export and 17/17 game probes pass, including
+after full restart/reload. This advances fitting without confirming identity,
+likeness or final selection. Better photos are not a blocker for reversible
+prototype work; preserve unknown source properties and separate design choices.
+
 ## Working practice
 - Use relevant project skills under `.agents/skills/` or `.claude/skills/`; keep mirrored skill files byte-identical.
 - Read affected code and tests first. Work in small, verifiable steps. Record changed behavior, checks, unresolved concerns and the next action.

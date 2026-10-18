@@ -21,6 +21,7 @@ Summary from questions 1–28; accepted user comments override any overly broad 
 | Automation | Stepwise automated processing + temporary manual export/import allowed; automate later only after evidence |
 | First POC success | Getaboda's 4–5 houses, nearby roads/landscape, enter one house, rerun preserving corrections |
 | Grid (2026-10-18) | Creator approved a 45-degree world-grid rotation for Getaboda after reviewing the local comparison. Preserve 1:1 distances and original source coordinates; geographic north becomes diagonal. Quantization and individual footprint approximations remain separate game adaptations |
+| Provisional work while photos are pending (2026-10-18) | Creator will take better house photos later and explicitly requested continued development now. Build reversible candidate prototypes with generic interiors and labelled appearance/access assumptions. Missing photos do not block tool and game testing; final likeness and V1 selection remain creator decisions |
 | Save compatibility | Aim to avoid moving released areas, but experimental resets/rebuilds acceptable; don't build migration machinery |
 | Multiplayer | Singleplayer first; private friends multiplayer later using game's systems |
 | Nature | Forest/farmland/water aligned to permitted geodata; deterministic vegetation |
