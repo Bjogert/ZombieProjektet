@@ -7,10 +7,31 @@ import xml.etree.ElementTree as ET
 import zlib
 from pathlib import Path
 
-from tools import build_cottage, build_m0
+from tools import build_cottage, build_m0, cottage_variant
 
 
 class TestCottageSource(unittest.TestCase):
+    def test_sized_lot_preserves_dimensions_and_rejects_fixed_garden(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            tiles, game = root / 'tiles', root / 'game'
+            tiles.mkdir()
+            (game / 'media').mkdir(parents=True)
+            (game / 'media/newtiledefinitions.tiles').write_bytes(b'fixture')
+            for name in ('blends_natural_01', 'blends_street_01'):
+                build_m0.write_png(tiles / (name + '.png'), 1024, 4096)
+            repo = Path(__file__).resolve().parents[1]
+            cottage = root / 'variant.tbx'
+            cottage.write_bytes(cottage_variant.generate(
+                (repo / 'assets/buildings/swedish_cottage_01.tbx').read_bytes(), 8, 12))
+            build_cottage.build(root / 'out', tiles, game, cottage)
+            lot = ET.parse(root / 'out/cottage.pzw').find('cell/lot')
+            self.assertEqual((lot.get('width'), lot.get('height')), ('8', '12'))
+            with self.assertRaisesRegex(ValueError, 'fixed garden'):
+                build_cottage.build(root / 'garden', tiles, game, cottage,
+                                    repo / 'assets/gardens/cottage_garden_01.json')
+            self.assertFalse((root / 'garden').exists())
+
     def test_garden_export_keeps_house_source_and_rejects_missing_tiles(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)

@@ -17,8 +17,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def build(output, tiles, game, cottage, garden=None):
     source = ET.parse(cottage).getroot()
-    if source.tag != 'building' or (source.get('width'), source.get('height')) != ('6', '10'):
-        raise ValueError('Expected the 6 x 10 representative cottage TBX')
+    width, height = int(source.get('width', 0)), int(source.get('height', 0))
+    if source.tag != 'building' or not (6 <= width <= 12 and 9 <= height <= 18):
+        raise ValueError('Expected a supported rectangular cottage TBX')
     if output.exists():
         raise FileExistsError(f'Refusing to replace existing source: {output}')
     if not (game / 'media/newtiledefinitions.tiles').is_file():
@@ -32,6 +33,8 @@ def build(output, tiles, game, cottage, garden=None):
             ground[y * SIZE + x] = ('blends_street_01', 0)
     layers = {'0_Floor': ground}
     if garden is not None:
+        if (width, height) != (6, 10):
+            raise ValueError('The fixed garden currently requires a 6 x 10 cottage')
         template = json.loads(garden.read_text(encoding='utf-8'))
         if template['house_size'] != [6, 10]:
             raise ValueError('Garden template must fit the 6 x 10 cottage')
@@ -55,7 +58,7 @@ def build(output, tiles, game, cottage, garden=None):
     ET.SubElement(lots, 'worldOrigin', origin='0,0')
     cell = ET.SubElement(world, 'cell', x='0', y='0', map='cottage.tmx')
     # Official WorldEd worldwriter.cpp lot attributes; TBX maps resolve natively.
-    ET.SubElement(cell, 'lot', x='120', y='120', level='0', width='6', height='10',
+    ET.SubElement(cell, 'lot', x='120', y='120', level='0', width=str(width), height=str(height),
                   map='swedish_cottage_01.tbx')
     ET.ElementTree(world).write(output / 'cottage.pzw', encoding='utf-8', xml_declaration=True)
     print(f'Authoring source: {output / "cottage.pzw"}; NOT compiled or playtested.')

@@ -176,6 +176,18 @@ class IntegrationTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 validate_cottage_metadata(path)
 
+    def test_metadata_gate_checks_explicit_variant_area(self):
+        path = self.root / 'variant-header'
+        path.write_bytes(cottage_header().replace(
+            struct.pack('<4i', 175, 175, 6, 6),
+            struct.pack('<4i', 175, 169, 6, 12)))
+        validate_cottage_metadata(path, expected_area=96)
+        with self.assertRaises(ValueError):
+            validate_cottage_metadata(path)
+        for invalid in (True, 0, 96.0, 217):
+            with self.assertRaises(ValueError):
+                validate_cottage_metadata(path, expected_area=invalid)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -3,6 +3,7 @@
 ## Sources and provenance
 
 - **OpenStreetMap/Geofabrik:** retain ODbL attribution and assess derived-database obligations before distribution. Coverage is not guaranteed. Use cached queries or extracts, not raster tile harvesting.
+- **Microsoft Global ML Building Footprints:** the local 2026-08-13 pilot retains CDLA-Permissive-2.0 and source hashes. Machine-detected outlines are candidates with variable accuracy, not surveyed walls or confirmed residential identities. Keep the license with any redistribution. The current local-processing boundary still applies.
 - **Lantmäteriet:** use products whose specific terms permit the intended access, storage, processing and distribution. Free pricing, public catalog metadata and download authorization are separate facts. Buildings and orthophotos currently require Geotorget access and purpose review. Retain approved scope and terms; check processing/storage conditions before cloud use or public uploads.
 - **Naturvårdsverket NMD:** current product documentation specifies CC0. Record the release, local coverage and class definitions; credit the source for traceability.
 - **Trafikverket NVDB:** use official delivery services and record the product's license and attributes at download. Viewer access does not establish reuse rights for every background layer.

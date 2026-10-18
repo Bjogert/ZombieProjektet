@@ -42,12 +42,14 @@ def _header_stream(path):
     return stream
 
 
-def validate_cottage_metadata(path):
+def validate_cottage_metadata(path, *, expected_area=60):
     """Reject the observed nonzero-cell WorldEd metadata regression.
 
     This gate is deliberately limited to our single three-room cottage fixture.
     It reads official output; it never repairs or replaces the exporter.
     """
+    if type(expected_area) is not int or not 54 <= expected_area <= 216:
+        raise ValueError('Expected a supported cottage area from 54 to 216 squares')
     stream = _header_stream(path)
 
     def integer():
@@ -83,9 +85,9 @@ def validate_cottage_metadata(path):
             integer(), integer(), integer()  # Tile meta enum and local x/y.
     buildings = count(32)
     memberships = [[integer() for _ in range(count(32))] for _ in range(buildings)]
-    if (rooms, area, buildings, objects) != (3, 60, 1, 8) or sorted(memberships[0]) != [0, 1, 2]:
+    if (rooms, area, buildings, objects) != (3, expected_area, 1, 8) or sorted(memberships[0]) != [0, 1, 2]:
         raise ValueError(f'Invalid cottage export metadata: rooms={rooms}, area={area}, '
-                         f'buildings={buildings}, objects={objects}; expected 3, 60, 1, 8. '
+                         f'buildings={buildings}, objects={objects}; expected 3, {expected_area}, 1, 8. '
                          'Keep this export diagnostic-only; repair and recheck official export.')
 
 
