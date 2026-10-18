@@ -10,6 +10,9 @@ retained and still rejected by packaging. No physical tiles or room IDs change.
 Creator acceptance, real Getaboda geometry and continuous road driving remain
 separate. The initial failed trial below is historical reproduction evidence.
 
+The subsequent seeded terrain revision and its separate package/save evidence are
+recorded in [TERRAIN_TEST](TERRAIN_TEST.md).
+
 ## Corrected artifact and fresh verification
 
 Reference: `build/room-metadata-reference/cottage.pzw`, officially exported with

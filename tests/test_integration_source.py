@@ -46,7 +46,8 @@ class IntegrationTests(unittest.TestCase):
         (self.game / 'media/newtiledefinitions.tiles').touch()
         for name in ('blends_natural_01', 'blends_street_01', 'carpentry_02',
                      'floors_exterior_tilesandstone_01', 'vegetation_ornamental_01',
-                     'furniture_seating_outdoor_01', 'furniture_tables_low_01'):
+                     'furniture_seating_outdoor_01', 'furniture_tables_low_01',
+                     'vegetation_foliage_01', 'blends_grassoverlays_01'):
             write_png(self.tiles / (name + '.png'), 1024, 4096)
         self.source, self.choices = self.root / 'road.json', self.root / 'choices.json'
         self.source.write_text(json.dumps(route_fixture()))
@@ -112,6 +113,24 @@ class IntegrationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'outside'):
             self.generate('bad')
         self.assertFalse((self.root / 'bad').exists())
+
+    def test_terrain_export_is_repeatable_and_preserves_lot_and_other_cells(self):
+        plain = self.generate('plain')
+        for name in ('terrain', 'repeat'):
+            integration_source.build(self.source, self.choices, self.root / name,
+                                     self.tiles, self.game, terrain_seed=42)
+        files = lambda folder: {p.name: p.read_bytes() for p in folder.iterdir() if p.is_file()}
+        patch = files(self.root / 'terrain')
+        self.assertEqual(patch, files(self.root / 'repeat'))
+        self.assertEqual({k for k, v in files(plain).items() if patch[k] != v},
+                         {'manifest.json', 'road_0_0.tmx'})
+        metadata = json.loads(patch['manifest.json'])['integration']['terrain']
+        self.assertEqual(metadata['seed'], 42)
+        self.assertGreater(metadata['vegetation_squares'], 5)
+        with self.assertRaises(ValueError):
+            integration_source.build(self.source, self.choices, self.root / 'badseed',
+                                     self.tiles, self.game, terrain_seed=-1)
+        self.assertFalse((self.root / 'badseed').exists())
 
     def test_package_requires_export_and_is_scoped_to_its_own_map(self):
         source = self.generate('authoring')
