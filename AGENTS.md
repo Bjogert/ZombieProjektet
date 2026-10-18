@@ -48,6 +48,10 @@ Prioritise [residential character](docs/specs/residential-character.md) before
 scaling more copies. The [Småland pattern study](docs/research/smaland-houses-2026-10-18.md)
 supports separate dwelling families and varied boundaries, shrubs and outbuildings.
 It is research/design guidance, not a new game-tested asset or final approval.
+Creator roof correction (2026-10-18): use clear gable roofs with two slopes and
+vertical gable ends for Getaboda/Agunnaryd dwellings. Keep single-pitch roofs for
+separately chosen garage or supported modern/funkis exceptions, not random rural
+house variants. This specific direction does not approve the entire study.
 
 ## Working practice
 - Use relevant project skills under `.agents/skills/` or `.claude/skills/`; keep mirrored skill files byte-identical.

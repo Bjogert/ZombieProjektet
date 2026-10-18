@@ -45,6 +45,21 @@ The exact red/white fence treatment and the frequency of garages have not been
 established by this source sample. Preserve both as selectable design variants;
 do not invent a percentage or a source-confirmed Getaboda attribution.
 
+### Creator correction after the visual study
+
+On 2026-10-18 the creator rejected the summer cottage and country house roof
+depictions as locally inappropriate. His local knowledge places single-pitch
+roofs mainly on garages and some modern/funkis houses in Ljungby, rather than
+Agunnaryd dwellings. The design default for Getaboda/Agunnaryd is therefore a
+clear gable roof with two slopes and vertical gable ends. Comparative examples
+from other regions do not override this local direction. This records a design
+decision, not a claim that every roof in the area has been surveyed.
+
+The original schematic's roof-coloured end and misplaced ridge made its form
+misleading. The corrected study centres the ridge across the depth, distinguishes
+the vertical gable wall from the roof, and shows the summer deck without a roof.
+The correction is a design sketch; it does not change the tested game artifact.
+
 ## Three architectural families to develop
 
 These are proposed game profiles. Dimensions below are authored test sizes, not
@@ -54,8 +69,8 @@ profile name describes an inspired visual family, not a real property's history.
 | Profile | House pattern | Plot pattern | First technical target |
 | --- | --- | --- | --- |
 | `croft_cottage` | Compact rectangular body, visible masonry/plinth base, gable roof, grouped or regularly spaced windows with light trim, a clear small porch or sheltered entrance; optional chimney. | Partial stone boundary or timber fence, gate-to-door gravel walk, shrub clusters, flowerbeds near the entrance, modest separate shed. | A fictional 6 by 9 cottage. Improve entrance, trim and window rhythm before adding complex roofs. |
-| `summer_cottage` | Low compact body, simpler roof and window grouping, small side extension or sheltered deck where appropriate. Red/light trim and brown/darker trim are alternatives. | Open lawn, retained trees/rock where supported, a side deck, less formal hedge or fence, optional small annex. | A separate low cottage profile; a proposed 6 by 8 variant needs explicit support because the current resizer starts at length 9. |
-| `country_house` | Larger body with a deliberate facade hierarchy; consider one-and-a-half/two storeys and a central veranda or entrance projection, not a uniformly enlarged cottage. | Entrance route, separate garage/utility area, hedge or fence segments, fruit/ornamental tree groups and a usable lawn. | Revisit the 9 by 12 candidate only after a representative residential facade passes review. Extra storeys and roofs need their own implementation and QA. |
+| `summer_cottage` | Low compact body, clear gable roof with vertical ends, simpler window grouping and an open side deck. Red/light trim and brown/darker trim are alternatives. | Open lawn, retained trees/rock where supported, a side deck, less formal hedge or fence, optional small annex. | A separate low cottage profile; a proposed 6 by 8 variant needs explicit support because the current resizer starts at length 9. |
+| `country_house` | Larger body with a gable roof and deliberate facade hierarchy; consider one-and-a-half/two storeys and a central veranda or entrance projection, not a uniformly enlarged cottage. | Entrance route, separate garage/utility area, hedge or fence segments, fruit/ornamental tree groups and a usable lawn. | Revisit the 9 by 12 candidate only after a representative residential facade passes review. Extra storeys and roofs need their own implementation and QA. |
 
 Keep older houses, later extensions and postwar homes in the same 1990s setting.
 Do not impose gingerbread trim, tile-red roofs, spröjs or a chimney on every type.

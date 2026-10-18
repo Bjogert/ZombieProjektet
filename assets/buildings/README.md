@@ -12,6 +12,9 @@ Prioritise a compact residential revision before more stretched copies. See the
 [residential character specification](../../docs/specs/residential-character.md).
 The proposed croft, summer cottage and country house families are not yet new
 playable assets.
+Use clear gable roofs with two slopes and vertical gable ends for these rural
+dwelling families, following the creator's roof correction on 2026-10-18.
+Single-pitch roofs belong to separately chosen garage or modern/funkis exceptions.
 
 Open it directly in the official 2026-09-16 BuildingEd with the matching Tiles
 directory configured. It was loaded and visually inspected there on 2026-10-17.

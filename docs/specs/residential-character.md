@@ -18,6 +18,14 @@ window rhythm on the road-facing and side elevations. Audit roof/plinth/porch
 assets before choosing them. A chimney is desirable but must not be faked as a
 working fireplace or assumed technically supported.
 
+Roof direction confirmed by the creator on 2026-10-18: use a clear gable roof
+with two slopes and vertical gable ends for all three proposed rural dwelling
+families. Vary pitch, material and eaves within that form when supported. Do not
+randomly introduce single-pitch or hipped roofs on Getaboda/Agunnaryd homes.
+Single-pitch garage roofs or individually supported modern/funkis houses in
+Ljungby are separate exceptions. The corrected study shows an open side deck;
+a later roofed extension needs its own intentional form.
+
 Show a maintained plot with one partial boundary, a clear gate-to-door route,
 grouped shrubs and entrance/seating flowerbeds. Prefer a stock stone boundary for
 the first test if its appearance and collision suit the purpose. Red fencing with
@@ -35,7 +43,9 @@ or in-game screenshot. The three proposed families are not approved final design
   opening trim, windows placed for the rooms and no accidental long blank primary
   elevation. Assess by comparison, not a fabricated numerical beauty score.
 - The roof and main body have deliberate proportions. A larger house must not
-  silently become the same seven-window cottage stretched again.
+  silently become the same seven-window cottage stretched again. Front/side
+  views must show the intended gable form: the triangular end is a vertical wall,
+  not another roof slope. Technical roof coverage alone cannot pass this check.
 - The boundary has an opening aligned to pedestrian access. At least one negative
   test rejects a blocked entry or path when placement logic is changed. Preserve
   reserved neighbours and roads; no decorative obstruction can count as a pass.

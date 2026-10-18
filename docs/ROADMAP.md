@@ -10,6 +10,10 @@ The cottage, deck and garden now connect to the road prototype in a separate syn
 
 The [provisional candidate pilot](CANDIDATE_PILOT_TEST.md) now places an 8 by 12 house on one registered candidate, with garden and assumed access to about 266 m of village road. Official export and 17/17 game probes pass, also after full restart/reload; the suite has 72 tests. Its bounded landscape follow-on passes 19/19 probes and clean reload, adding 92 shoulder squares and 43 vegetation placements while preserving access. Better photos are pending, so likeness and residential use remain unknown. Latest creator feedback: the enlarged house reads as a barn. Next ready work is a compact residential revision guided by the [Småland pattern study](research/smaland-houses-2026-10-18.md), before more size variants. Final V1 selection remains with the creator.
 
+The compact residential revision follows the creator's confirmed gable-roof
+direction: two slopes and vertical gable ends for Getaboda/Agunnaryd dwellings.
+The corrected pattern sketch is not a new game build or full design acceptance.
+
 The unfinished continuous road drive remains a separate technical gate. Give its control problem one focused diagnostic attempt with a new, testable hypothesis; do not repeat unsuccessful input methods while other work is ready. Do not count teleportation as a driving pass.
 
 | Existing result | Evidence | Still open |

@@ -58,6 +58,7 @@ The [road-first scale study](research/road-first-scale-study-2026-10-17.md) comp
 
 ## Established direction
 - Modern source geography with Swedish 1990s atmosphere.
+- Gable roofs with two slopes and vertical gable ends by default for Getaboda/Agunnaryd dwellings (creator correction, 2026-10-18). Single-pitch roofs remain separately chosen garage or supported modern/funkis exceptions.
 - Decks/patios and gardens with flowerbeds as part of residential character, varied between houses. Start with maintained plots and wilder vegetation outside; use vanilla gradual overgrowth (approved 2026-10-18).
 - Start at 1:1, including connecting roads; use the approved 45-degree Getaboda grid rotation. Reconsider countryside compression after driving and performance tests.
 - Source-backed land cover with deterministic detail placement.
