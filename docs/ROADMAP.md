@@ -14,6 +14,12 @@ The compact residential revision follows the creator's confirmed gable-roof
 direction: two slopes and vertical gable ends for Getaboda/Agunnaryd dwellings.
 The corrected pattern sketch is not a new game build or full design acceptance.
 
+The [environment and building library](design/ENVIRONMENT_LIBRARY.md) records the
+creator's four proposed environment contexts, overlapping house families and
+reusable plot/detail kits. A first original concept board supports discussion.
+This is design preparation for the same compact playable slice; it adds no
+whole-town modelling gate before Getaboda and installs no mod dependencies.
+
 The unfinished continuous road drive remains a separate technical gate. Give its control problem one focused diagnostic attempt with a new, testable hypothesis; do not repeat unsuccessful input methods while other work is ready. Do not count teleportation as a driving pass.
 
 | Existing result | Evidence | Still open |

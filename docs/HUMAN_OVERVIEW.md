@@ -7,6 +7,9 @@
 ## What are we building?
 A recognizable Swedish world in Project Zomboid. Start with about 4–5 source-confirmed Getaboda buildings, nearby roads and nature, with Swedish 1990s styling and generic interiors where details are unavailable. Later, expand toward Ljungby and test multiplayer with friends.
 
+## Environment and building library
+The [working design catalogue](design/ENVIRONMENT_LIBRARY.md) separates four overlapping environments — countryside, rural village, planned neighbourhood and town centre — from house families and reusable garden/street/detail kits. An older cottage can remain inside a later town context. The first mood board is an original AI concept, not reference photography or game footage. Proposed families and kits are not additional playable assets. Start with stock game references, inspect mod permissions and compatibility for concrete gaps, and author the distinctive missing pieces only as needed. The next playable delivery remains the compact Getaboda residential revision.
+
 ## Why this world matters
 The creator wants to reunite a former PZ group from Ljungby/Agunnaryd and surprise friends with familiar places. Approximately ten personally important homes across the expanding world receive extra exterior/interior care; the rest use plausible, varied Swedish templates. V1 still starts with roughly 4–5 Getaboda buildings. Getaboda remains open development with the creator.
 

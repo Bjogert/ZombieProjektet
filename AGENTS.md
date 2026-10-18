@@ -53,6 +53,12 @@ vertical gable ends for Getaboda/Agunnaryd dwellings. Keep single-pitch roofs fo
 separately chosen garage or supported modern/funkis exceptions, not random rural
 house variants. This specific direction does not approve the entire study.
 
+Use the [environment and building library](docs/design/ENVIRONMENT_LIBRARY.md)
+as the working design catalogue. Its countryside, village, planned-neighbourhood
+and town-centre contexts overlap; house families and detail kits remain separate.
+The proposed entries are not new playable assets, approved automatic assignments
+or additional V1 requirements. Extend existing generation tools when needed.
+
 ## Working practice
 - Use relevant project skills under `.agents/skills/` or `.claude/skills/`; keep mirrored skill files byte-identical.
 - Read affected code and tests first. Work in small, verifiable steps. Record changed behavior, checks, unresolved concerns and the next action.

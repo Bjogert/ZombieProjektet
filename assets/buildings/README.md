@@ -16,6 +16,11 @@ Use clear gable roofs with two slopes and vertical gable ends for these rural
 dwelling families, following the creator's roof correction on 2026-10-18.
 Single-pitch roofs belong to separately chosen garage or modern/funkis exceptions.
 
+The [environment and building library](../../docs/design/ENVIRONMENT_LIBRARY.md)
+now separates proposed house families, overlapping environment contexts and
+reusable plot/detail kits. It is a design catalogue, not additional playable
+templates or a change to the current generator inputs.
+
 Open it directly in the official 2026-09-16 BuildingEd with the matching Tiles
 directory configured. It was loaded and visually inspected there on 2026-10-17.
 Use the upper floor for the exterior preview; hide the grid and object shapes.
