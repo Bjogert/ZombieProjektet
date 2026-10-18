@@ -42,6 +42,8 @@ NMD resolution and CC0 are documented in the [NMD2023 v2.1 description](https://
 
 **Access update (2026-10-17):** the creator registered and activated a Geotorget account and submitted the building application. The agent completed and submitted the orthophoto application after the creator explicitly approved accepting its terms and sending the zero-cost request. The account's case view shows both applications as `Behandlas` (processing); neither product's access has been confirmed as granted. The applications specify EU/EEA storage/processing and the documented hobby-map purpose and eventual game-output distribution. No duplicate building request was submitted. Applicant details, case identifiers and receipts remain outside the repository.
 
+**Access update (2026-10-18):** authenticated inspection still shows both applications as `Behandlas`. The creator authorized ordinary sign-in using the already populated login form in future sessions. Use that form without asking again; do not extract or record its credentials. Request creator participation only if an additional security challenge requires it. The separate [Microsoft building pilot](research/getaboda-building-register-2026-10-18.md) supplies 13 local candidates while these applications remain under review.
+
 The creator approved local raw-data and imagery processing in Sweden as the initial boundary. The submitted orthophoto application explicitly includes that restriction. Do not upload raw inputs to cloud/AI services or expose them in model-visible tool output before conditions are clarified; see [DATA_AND_RIGHTS](DATA_AND_RIGHTS.md). Public catalog metadata already audited is separate from the restricted source products.
 
 The [HVD terms containing personal data](https://www.lantmateriet.se/globalassets/geodata/geodataprodukter/anvandningsvillkor_for_vardefulla_datamangder_pu.pdf), version 1.1, 2025-03-04, specify CC BY 4.0 and approved-purpose/data-handling conditions. Credit the product, ©Lantmäteriet, license and modifications. Check processing/storage conditions before cloud use or public uploads; a license label alone is insufficient.
@@ -89,4 +91,4 @@ Start with one real building after access, then about 4–5 buildings in the agr
 - Include attribution with distributable output. Exclude credentials and source archives unless redistribution is cleared.
 - Record geometry QA separately from game QA. Creator review covers representative style and play feel.
 
-Next: obtain access to the two priority Geotorget products, inspect the Getaboda subset and measure one source-backed house. Cottage refinement and game testing can proceed independently.
+Next: confirm the first building and bounded V1 subset from the local candidate register, then fit and test it. Revisit the submitted Geotorget applications when their status changes; do not duplicate them. Cottage refinement and game testing can proceed independently.
