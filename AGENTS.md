@@ -32,6 +32,16 @@ Specialist roles and delegation rules are described in the workflow. Keep one in
 7. Do not change the Steam installation or system-wide settings without approval. Ask before administrator actions or running unknown binaries. Necessary free development tools from trusted sources are already authorized by the project brief.
 
 ## Current delivery gate
+The creator approved the environment-library direction and changed the immediate
+target on 2026-10-18: build a complete fictional rural showcase, without requiring
+Getaboda likeness. Prioritise [the playable plot](docs/specs/rural-showcase.md):
+house, deck, foundation planting, props and surroundings, with fresh game proof.
+Preserve existing geographic work separately; it is not this showcase's acceptance gate.
+The [r5 showcase](docs/RURAL_SHOWCASE_TEST.md) now passes 23/23 runtime probes,
+manual light/door/walk/roof inspection and clean restart/reload without QA.
+The 72-test suite passes. Creator visual acceptance remains open; use the actual
+game evidence and documented visual follow-up before multiplying this layout.
+
 Use [ROADMAP](docs/ROADMAP.md) for the next bounded delivery and dependencies. The [synthetic roadside integration](docs/INTEGRATION_TEST.md) has 25/25 runtime probes, manual light/door/roof checks and clean save/reload evidence after a bounded metadata compatibility step. Packaging still rejects the original defective export. [Local road extraction](docs/ROAD_PIPELINE.md) reproduces the registered corridor and authoring inputs. The [small terrain prototype](docs/TERRAIN_TEST.md) is verified in-game with clear character access and clean reload; the creator approved maintained residential plots with flowerbeds, wilder vegetation outside and vanilla gradual overgrowth on 2026-10-18. This approves direction, not every prototype detail. A frozen Microsoft open-footprint sample now supplies 13 local Getaboda candidates, with preserved IDs and source bytes. The creator approved a 45° grid rotation at 1:1; real-house verification and the exact V1 selection remain open. See `docs/research/getaboda-building-register-2026-10-18.md`. Creator acceptance and continuous driving remain separate gates. Do not turn a control or access blocker into an indefinite stop on independent work. No broad municipality exporter or completed milestone is implied by successful builds alone.
 
 The [provisional candidate pilot](docs/CANDIDATE_PILOT_TEST.md) now connects one

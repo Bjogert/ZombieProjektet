@@ -6,6 +6,15 @@ Updated 2026-10-18. This is the canonical execution queue and delivery plan. The
 
 ## Next delivery and current position
 
+**Active creator-directed priority (2026-10-18): RURAL-SHOWCASE-01.** Build a complete
+fictional rural dwelling and lived-in plot, replacing Getaboda likeness as the
+immediate acceptance target. The environment-library direction is accepted.
+The r5 build now has actual game screenshots, 23/23 runtime probes, manual
+light/door/walk/roof checks and clean restart/reload. Creator visual acceptance
+remains open. See [the evidence](RURAL_SHOWCASE_TEST.md) and
+[the specification](specs/rural-showcase.md).
+Historical geographic milestones below remain preserved, not prerequisites for this test.
+
 The cottage, deck and garden now connect to the road prototype in a separate synthetic fixture. A bounded metadata compatibility step resolved the official export defect: 25/25 runtime probes, manual light/door/roof checks and clean save/reload pass. Packaging still rejects the defective original export. See [integration evidence](INTEGRATION_TEST.md). The maintained local extraction command reproduces the road and authoring inputs. A small seeded road-edge/vegetation patch now has [game and clean-reload evidence](TERRAIN_TEST.md), including all 172 driveway adjacencies clear for characters. The creator approved **maintained residential plots with flowerbeds, wilder vegetation outside, and vanilla gradual overgrowth** on 2026-10-18. Next is **the first permitted real building and applying this direction to its surroundings**. The open-source building pilot now supplies 13 locally registered candidate outlines; creator-approved 45° grid rotation keeps 1:1 scale. Real-house verification, final selection and vehicle driving remain separate gates.
 
 The [provisional candidate pilot](CANDIDATE_PILOT_TEST.md) now places an 8 by 12 house on one registered candidate, with garden and assumed access to about 266 m of village road. Official export and 17/17 game probes pass, also after full restart/reload; the suite has 72 tests. Its bounded landscape follow-on passes 19/19 probes and clean reload, adding 92 shoulder squares and 43 vegetation placements while preserving access. Better photos are pending, so likeness and residential use remain unknown. Latest creator feedback: the enlarged house reads as a barn. Next ready work is a compact residential revision guided by the [Småland pattern study](research/smaland-houses-2026-10-18.md), before more size variants. Final V1 selection remains with the creator.
@@ -79,6 +88,7 @@ States: **Ready** = no known blocker; **Waiting** = named dependency; **Technica
 
 | Order / ID | State and owner role | Deliverable | Dependency / next action |
 | --- | --- | --- | --- |
+| 0 · RURAL-SHOWCASE-01 | Technical evidence recorded; lead/buildings | Complete fictional dwelling, deck, garden, props and woodland edge | Official export, 72 tests, 23/23 runtime probes, manual light/door/walk/roof inspection and clean restart/reload pass. See RURAL_SHOWCASE_TEST.md. Creator judges actual screenshots; refine planting rhythm, gravel edges and entrance/interior before wider reuse. |
 | 1 · DRIVE-INPUT-01 | Diagnostic attempted; waiting for supported sustained control; QA/lead | Reliable sustained input and steering for an actual driving check | Native API exposes key taps and the new Escape trial did not work. No held accelerate/steer/stop path verified. Retain the gate; do not repeat tap loops. |
 | 2 · INTEGRATE-01 | Technical evidence recorded; lead/buildings | Cottage, deck/garden and road access in one synthetic playable fixture | 25/25 runtime probes, manual light/door/roof checks and clean save/reload pass after the bounded metadata stage. Original export remains rejected. Creator acceptance separate; see INTEGRATION_TEST.md. |
 | 3 · DATA-ACCESS-01 | Waiting for access outcome; world/data | Current access outcome and smallest permitted acquisition plan | Fresh authenticated Geotorget check on 2026-10-18 shows both applications as Behandlas. A separate Microsoft open-footprint pilot supplies 13 local candidates; see research/getaboda-building-register-2026-10-18.md. No duplicate applications; continue ready work. |

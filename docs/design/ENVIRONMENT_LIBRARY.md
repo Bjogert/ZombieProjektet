@@ -3,7 +3,9 @@
 Created 2026-10-18 from the creator's proposed countryside, rural village,
 planned neighbourhood and town-centre mood boards. This is an initial design
 catalogue, not a new generator, an approved complete art direction or a list of
-finished game assets. Getaboda remains the next playable delivery.
+finished game assets. The creator accepted this library direction on 2026-10-18;
+the immediate playable delivery is the fictional rural showcase, without a
+Getaboda-likeness requirement. Individual variants still need visual review.
 
 ## One library, overlapping environments
 
@@ -34,9 +36,13 @@ need to be forced into a residential family or built before Getaboda is ready.
 
 ## Building families
 
-IDs are stable design vocabulary. The proposed families below have no new
-playable implementation yet. The existing rectangular cottage remains a tested
-technical baseline; it is not evidence that all these families already exist.
+IDs are stable design vocabulary. The families below describe the intended range, not a completed catalogue.
+The new `rural_cottage_01` and `rural_plot_01` sources implement one compact
+countryside combination using the existing pipeline. See the
+[rural showcase specification](../specs/rural-showcase.md),
+[game evidence](../RURAL_SHOWCASE_TEST.md) and
+[plot source notes](../../assets/gardens/RURAL_PLOT.md). Other families remain
+proposals; this single combination does not establish their implementation.
 
 | Family ID | Recognition features | Useful variation | Context relationship |
 | --- | --- | --- | --- |

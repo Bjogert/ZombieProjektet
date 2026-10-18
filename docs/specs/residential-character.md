@@ -9,7 +9,10 @@ research into cottages/crofts and related boundaries, shrubs, garages and garden
 The [dated research](../research/smaland-houses-2026-10-18.md) separates regional
 evidence, comparative typology and creator preferences.
 
-## Next bounded delivery
+## Earlier bounded proposal
+
+Superseded as the immediate target by the creator-directed [complete rural showcase](rural-showcase.md). Its 6 x 10 footprint reuses the validated cottage assembly; the residential and gable-roof requirements below still apply.
+
 
 Author one separate fictional 6 by 9 `croft_cottage` revision using the existing
 size range and permitted local tiles. Keep the playable entrance, rooms and

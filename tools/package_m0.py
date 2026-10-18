@@ -14,7 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PROFILES = {'m0': ('ZombieProjektetM0', 'M0Sweden'),
             'cottage': ('ZombieProjektetCottage', 'CottageTest'),
             'garden': ('ZombieProjektetGarden', 'CottageGardenTest'),
-            'placements': ('ZombieProjektetPlacements', 'PlacementTest')}
+            'placements': ('ZombieProjektetPlacements', 'PlacementTest'),
+            'rural': ('ZombieProjektetRural', 'RuralShowcase')}
 
 
 def validate_header(path):

@@ -48,3 +48,12 @@ Summary from questions 1–28; accepted user comments override any overly broad 
 **Priority rule:** hobby fun and working proof over exhaustive completeness, but avoid unnecessary traps by preserving source data and clean minimal interfaces. Do not create premature abstractions or gold-plate compatibility.
 
 **Evidence reviewed (2026-10-18):** the official tools produced house/cottage/garden fixtures with recorded checks in Build 42.21.0. See [the M0 report](test-reports/M0-BUILD42.md) and [placement evidence](PLACEMENT_TEST.md); creator acceptance remains open. Saved house/orientation/garden choices survive synthetic playable regeneration; the broader style palette and real-building integration remain unverified. The separate [road prototype](ROAD_TEST.md) has sampled runtime loading and short vehicle-motion evidence, but no continuous route drive. Real building coverage/rights and later multiplayer/save compatibility remain open. The [roadmap](ROADMAP.md) preserves these distinctions and defines Test Version 1 as the Getaboda POC.
+
+## Rural showcase pivot — 2026-10-18
+
+The creator accepts the environment-library direction and requests a complete
+fictional countryside house and plot as the next proof. Drop real Getaboda
+likeness for this test. Prioritise a coherent lived-in composition, foundation
+flowerbeds, usable deck, everyday props and surroundings; show actual game
+evidence. Keep existing geography and saves intact. This is not acceptance of
+the implementation or authorization for unrelated release/scope changes.

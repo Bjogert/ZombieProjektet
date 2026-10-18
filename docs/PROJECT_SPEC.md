@@ -5,6 +5,15 @@
 ## Product
 Project Zomboid **Build 42 Stable** mod. A standalone Swedish world expanding from Getaboda toward Agunnaryd, Södra Ljunga and Ljungby, initially singleplayer and later small private multiplayer. The users are the hobby creator and friends from the region. Their real-world recognition and ability to play outweigh exact reconstruction, historical research, or engine innovation.
 
+## Active showcase priority (2026-10-18)
+
+The creator accepts the environment-library direction and requests a complete
+fictional rural dwelling and plot before further real-house fitting. Getaboda
+likeness is no longer required for this immediate test. Show the house, deck,
+foundation flowerbeds, garden and everyday props together in the actual game.
+The [rural showcase](specs/rural-showcase.md) overrides earlier next-delivery
+wording; geographic inputs and historical V1 plans remain preserved separately.
+
 ## Personal purpose and detail priorities (2026-10-18)
 The creator wants to reunite a former PZ group from Ljungby/Agunnaryd and surprise friends with familiar places. Private multiplayer is an eventual product goal, with actual host/client testing before claiming readiness. Getaboda and the tools remain open development with the creator; later-area discovery preferences still apply.
 
