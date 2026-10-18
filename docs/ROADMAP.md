@@ -18,6 +18,7 @@ The unfinished continuous road drive remains a separate technical gate. Give its
 | Separate 5.09 km OSM road prototype; 37 automated tests; 52 runtime road samples across 25 cells | [Road test](ROAD_TEST.md) | Continuous driving, handling through bends and populated-map performance; observed vehicle motion was only 66.47 m |
 | Municipality overview, source audit and 1:1 scale decision | [World draft](research/ljungby-world-draft-2026-10-17.md), [scale study](research/road-first-scale-study-2026-10-17.md) | Whole-municipality production is not approved or performance-tested |
 | Building/orthophoto applications submitted; alternative sources documented | [Geodata workflow](GEODATA_WORKFLOW.md) | Last checked 2026-10-17: access decisions pending. Refresh when starting DATA-ACCESS-01; do not assume this remains current |
+| Local source-coverage comparison: 0 Getaboda and 190 Agunnaryd OSM building areas in equal 750 m samples; three Agunnaryd candidates registered reproducibly | [Data feasibility test](research/getaboda-agunnaryd-pilot-2026-10-18.md) | Appearance, residential identity and Getaboda geometry still unverified. Email-only check on 2026-10-18 found receipts but no approval; portal status not refreshed. No real-house or game gate passed. |
 
 Existing task IDs remain valid: COTTAGE-01, COTTAGE-02, TOOLS-01 and REVIEW-01 have the technical evidence above and open creator review; OVERRIDE-01 is implemented and reviewed; WORLD-DRAFT-01 remains a planning draft; ROAD-SCALE-01 has an accepted 1:1 pilot. Evidence is not creator approval.
 

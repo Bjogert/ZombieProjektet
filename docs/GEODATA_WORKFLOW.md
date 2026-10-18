@@ -22,6 +22,8 @@ No house length, width, facade color, roof material or exact height has been ver
 
 ## Recommended free sources
 
+The [2026-10-18 exterior-reference audit](research/exterior-reference-workflow-2026-10-18.md) adds plugin discovery, viewing-versus-collection distinctions, licensed-photo alternatives, realistic collection priorities and a local register recommendation with a one-house feasibility pilot. It does not update the access or coverage findings above.
+
 | Need | Source and access | Automation and limits |
 | --- | --- | --- |
 | Building location and outline | [Lantmäteriet Byggnad Nedladdning, vektor](https://geotorget.lantmateriet.se/geodataprodukter/byggnad-nedladdning-vektor-api?page=%C3%85tkomst-och-leverans.html&version=2025.02&view=dokumentation): free, Geotorget account and purpose review | STAC discovery and GeoPackage selection. Check whether geometry represents walls or another building outline before deriving facade dimensions. |
