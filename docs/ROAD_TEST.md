@@ -10,7 +10,7 @@ Source: OSM France Kronoberg PBF snapshot 2026-10-17T01:27:19Z, SHA-256 `4d459da
 
 The first road is tagged gravel; subsequent sections are tagged asphalt. Widths of 5 m and 7 m are provisional design choices. Both endpoint pads are synthetic. Plain grass surrounds the road; buildings, vegetation, traffic, elevation and realistic scenery are not implemented here. Side roads are omitted in this corridor experiment.
 
-A local audit of the four selected OSM ways found no `oneway`, `access`, `motor_vehicle`, `bridge`, `tunnel` or `layer` tags. Missing tags are not surveyed proof of unrestricted access. The local route extractor is currently an experiment at `build/municipality-draft/route_corridor.py`; the committed generator starts from its normalized JSON contract, not directly from arbitrary OSM regions.
+A local audit of the four selected OSM ways found no `oneway`, `access`, `motor_vehicle`, `bridge`, `tunnel` or `layer` tags. Missing tags are not surveyed proof of unrestricted access. The maintained [local road pipeline](ROAD_PIPELINE.md) now reproduces the experiment from the same registered snapshot with direction/access checks and explicit coverage gaps. It emits the generator's normalized JSON contract; it is not an arbitrary-region importer or a navigation service.
 
 ## Build and package
 

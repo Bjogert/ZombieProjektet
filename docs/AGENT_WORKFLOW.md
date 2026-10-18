@@ -16,6 +16,13 @@ Conversation is in Swedish. Documentation, code, identifiers, comments, commits,
 
 Continue useful independent work while a design answer is pending. Separate provisional prototypes from accepted design. Ask one consequential question at a time, with an example, a recommendation and its tradeoff. Do not make routine implementation details approval gates. Existing explicit authorization takes precedence over this default table.
 
+Clarified on 2026-10-18: during an active session, continue from a completed slice
+to the next ready authorized task. A progress report or routine technical failure
+is not a reason to return ownership to the creator. Resolve failures or move to
+independent ready work under the roadmap's diagnostic limit. Pause dependent work
+for consequential creator decisions or a genuine external boundary. This does
+not claim that work continues between turns or configure unattended execution.
+
 ## Specialist roles
 Use a small team structure when parallel work is explicitly authorized and useful. These are task roles, not installed agents or a claim of distinct model expertise. The lead can perform any role without spawning another agent.
 

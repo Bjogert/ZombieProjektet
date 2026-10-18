@@ -17,11 +17,11 @@ Use the existing locally normalized road input without changing its coordinates.
   Retain existing fixtures and saves. Do not ship QA scripts or proprietary assets.
 
 ## Acceptance and verification
-Status on 2026-10-18: generation and initial game diagnostics implemented; game
-acceptance **failed** because official export split the three cottage rooms into
-three buildings and emitted zero room metadata objects. Packaging now rejects
-that output. See [integration evidence](../INTEGRATION_TEST.md). Do not bypass the
-gate or treat the pre-gate diagnostic ZIP as a playtest release.
+Status on 2026-10-18: the initial official export failed shared building metadata.
+The bounded compatibility step below now produces a package with 25/25 runtime
+probes, manual interaction/roof checks and clean save/reload evidence. Packaging
+still rejects the original defective export. See [integration evidence](../INTEGRATION_TEST.md).
+Creator acceptance remains separate; the pre-gate diagnostic ZIP stays diagnostic.
 
 Automated: correct cottage and driveway alignment on a synthetic metric road;
 continuous walkable ground connection; no overwritten road/garden surfaces;
@@ -40,3 +40,27 @@ artifact. Preserve automated, export, game and creator acceptance as separate ga
 No real-house fitting, automatic parcel layout, scenery pass, full-route driving
 claim, multiplayer, tractor dependency or public release is included. The existing
 road-driving gate remains open. Raw geodata stays local under DATA_AND_RIGHTS.md.
+
+## Bounded exporter compatibility step
+The identical rotation-0 TBX exports correctly at (120,120) in authoring cell
+(0,0): one building, three rooms, eight room objects. At the roadside location,
+the official exporter produces correct room rectangles and physical tiles but
+splits membership and loses room objects. Retain both original exports.
+
+Implement a separate staging command for this single synthetic cottage only:
+- Require identical TBX bytes, one ground-floor 6x10 lot, zero world origin,
+  the expected integration manifest and complete official export files.
+- Require three uniquely matching room names/floors/translated rectangles,
+  a valid reference and exactly the observed split-building/zero-object failure.
+- Preserve target room order/IDs, rectangles, tile table, level bounds and zombie
+  suffix. Translate only the reference room objects and map reference membership
+  onto the existing target IDs. Reject unsupported geometry, levels or counts.
+- Write a fresh staging directory with a hash-based provenance record. Preserve
+  every other export byte and both inputs. Refuse existing output directories.
+- Keep the packaging gate. Prove malformed/mismatched input rejection,
+  deterministic output and unchanged physical exports with synthetic tests.
+- Verify shared building identity, lighting, roof, entry and save/reload in-game.
+
+This is a documented compatibility transformation of official output, not a new
+map exporter or a general repair tool. Remove/revisit it when the pinned official
+tool is fixed; do not silently apply it to unrelated buildings or versions.
