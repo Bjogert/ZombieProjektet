@@ -3,6 +3,12 @@
 TERRAIN-01 adds a reversible, seeded landscape around the synthetic cottage
 approach. It demonstrates roadside styling without claiming real land cover.
 
+Creator direction accepted 2026-10-18: start with maintained residential plots
+and flowerbeds, freer vegetation along road edges and forest margins outside,
+and let vanilla PZ handle gradual overgrowth. Keep access clear. The existing
+prototype preserves the garden and places loose vegetation beyond its envelope;
+this decision needs no new growth mechanic or change to saved games.
+
 `tools.integration_source --terrain-seed INTEGER` enables one bounded patch in
 the cottage cell. Omitting it preserves the existing authoring output. Stock
 grass-edge overlays soften a narrow gravel shoulder outside the existing road

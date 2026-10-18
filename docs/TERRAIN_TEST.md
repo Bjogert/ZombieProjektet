@@ -1,8 +1,10 @@
 # Small roadside terrain test
 
 Date: 2026-10-18. TERRAIN-01 is a synthetic design sample around the existing
-roadside cottage, not verified Getaboda land cover. Creator visual review remains
-open. See [specification](specs/roadside-terrain.md).
+roadside cottage, not verified Getaboda land cover. The creator approved the
+landscape direction on 2026-10-18: maintained plots with flowerbeds, freer
+vegetation outside and vanilla gradual overgrowth. Detailed visual and milestone
+acceptance remain separate. See [specification](specs/roadside-terrain.md).
 
 ## Implementation and repeatability
 
@@ -63,7 +65,7 @@ and normal package gate remain required for this fixture.
 Final self-review against the specification and engineering standards found no
 remaining blocker for this bounded prototype. The source patch adds no dependency
 or game mechanic. Broader decoration, trees and arbitrary footprint fitting were
-deliberately deferred; creator design review and vehicle driving remain open.
+deliberately deferred; detailed visual acceptance and vehicle driving remain open.
 
 ## Reuse and remaining gates
 
@@ -74,6 +76,6 @@ the bounded rotation-0 synthetic fixture, not arbitrary real footprints.
 
 For Getaboda, permitted source data must define actual roads/land cover and checked
 building positions. Decorative vegetation remains an explicitly synthetic design
-choice. Review representative density and road-edge character with the creator
-before expanding. Continuous vehicle clearance and the whole-corridor drive need
+choice. The maintained-plot/wilder-outside direction is approved. Review material
+changes to that direction and representative detail as real houses are fitted. Continuous vehicle clearance and the whole-corridor drive need
 actual driving; pointwise collision probes do not substitute for it.

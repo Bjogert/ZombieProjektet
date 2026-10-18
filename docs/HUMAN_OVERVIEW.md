@@ -18,7 +18,7 @@ Getaboda and the worldbuilding tools are developed openly with the creator. Upda
 The lead assigns bounded work, checks the results and integrates changes. Separate stable-ID house, orientation and garden choices now produce a reproducible playable synthetic map. Independent code/source review found no blockers. The older style-only manifest's broader palette and fitting templates to real geometry remain future integration work. The mapping tools and game have one operator at a time.
 
 ## Next deliveries
-1. Review the tested landscape sample. The proposed direction is maintained residential gardens with looser vegetation beyond the plot, followed by vanilla gradual overgrowth. This is a recommendation awaiting creator feedback. The small prototype is verified; real land-cover placement and vehicle clearance remain separate checks.
+1. Apply the accepted landscape direction: maintained residential plots with flowerbeds at game start, freer vegetation along roads and forest margins outside, then vanilla gradual overgrowth (approved 2026-10-18). The small prototype is verified; real placement awaits permitted data. Exact visual details and vehicle clearance remain separate checks.
 2. Resume the continuous road drive when a supported sustained steering method is available. The bounded input diagnostic did not establish one; this remains a separate gate.
 3. Await the submitted data applications and validate the first permitted real building. The local road extraction is now reproducible; continue synthetic tool/scenery work while access is pending.
 4. Fit one verified house, then assemble the agreed Getaboda subset and run V1 installation, regeneration and game checks.
@@ -54,7 +54,7 @@ The [road-first scale study](research/road-first-scale-study-2026-10-17.md) comp
 
 ## Established direction
 - Modern source geography with Swedish 1990s atmosphere.
-- Decks/patios and gardens with flowerbeds as part of residential character, varied between houses.
+- Decks/patios and gardens with flowerbeds as part of residential character, varied between houses. Start with maintained plots and wilder vegetation outside; use vanilla gradual overgrowth (approved 2026-10-18).
 - Start at 1:1, including connecting roads; reconsider countryside compression after driving and performance tests.
 - Source-backed land cover with deterministic detail placement.
 - Generic interiors by default; extra care for approximately ten selected homes across the expanding project. Review detailed private homes before publication.
