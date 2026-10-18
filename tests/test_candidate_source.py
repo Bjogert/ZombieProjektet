@@ -94,3 +94,41 @@ class CandidateSourceTests(unittest.TestCase):
             source['roads'][0]['coordinates'] = points
             with self.assertRaises(ValueError):
                 candidate_source.plan(source, 'house-a', {})
+
+    def test_seeded_landscape_preserves_candidates_roads_garden_and_access(self):
+        source = fixture()
+        source['placements'].append({'building_id': 'reserved', 'x': 132, 'y': 130,
+                                     'width': 5, 'height': 8, 'orientation': 0})
+        choice = {'house-a': {'garden': True, 'terrain_seed': 42}}
+        before = copy.deepcopy((source, choice))
+        plain = candidate_source.plan(source, 'house-a', {'house-a': {'garden': True}})
+        decorated = candidate_source.plan(source, 'house-a', choice)
+        self.assertEqual(decorated, candidate_source.plan(source, 'house-a', choice))
+        self.assertEqual(before, (source, choice))
+        self.assertEqual(plain['building'], decorated['building'])
+        self.assertEqual(plain['access'], decorated['access'])
+        protected = {(x, y) for x in range(114, 130) for y in range(118, 135)}
+        protected |= {(x, y) for x in range(131, 138) for y in range(129, 139)}
+        protected |= {tuple(p) for p in plain['access']}
+        for i, floor in enumerate(plain['layers']['0_Floor']):
+            x, y = i % 300, i // 300
+            if (x, y) in protected or floor != candidate_source.GRASS or x >= 256 or y >= 256:
+                self.assertEqual(decorated['layers']['0_Floor'][i], floor)
+                self.assertEqual(decorated['layers']['0_Furniture'][i], plain['layers']['0_Furniture'][i])
+        self.assertGreater(decorated['terrain']['vegetation_squares'], 0)
+        self.assertGreater(decorated['terrain']['shoulder_squares'], 0)
+        varied = candidate_source.plan(source, 'house-a', {'house-a': {'garden': True, 'terrain_seed': 43}})
+        self.assertNotEqual(decorated['layers'], varied['layers'])
+        edge = fixture()
+        edge['placements'][0].update(x=240, y=239)
+        edge['roads'][0]['coordinates'] = [[220, 205], [220, 256]]
+        bounded = candidate_source.plan(edge, 'house-a', choice)
+        self.assertEqual(bounded['terrain']['bounds'][2:], [256, 256])
+        for i, floor in enumerate(bounded['layers']['0_Floor']):
+            if i % 300 >= 256 or i // 300 >= 256:
+                self.assertEqual(floor, candidate_source.GRASS)
+                self.assertIsNone(bounded['layers']['0_Furniture'][i])
+                self.assertIsNone(bounded['layers']['0_FloorOverlay'][i])
+        for seed in (True, -1, 2**32, '42', None):
+            with self.subTest(seed=seed), self.assertRaises(ValueError):
+                candidate_source.plan(source, 'house-a', {'house-a': {'garden': True, 'terrain_seed': seed}})

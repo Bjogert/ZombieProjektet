@@ -37,7 +37,9 @@ Use [ROADMAP](docs/ROADMAP.md) for the next bounded delivery and dependencies. T
 The [provisional candidate pilot](docs/CANDIDATE_PILOT_TEST.md) now connects one
 8 by 12 candidate to the registered village road at 1:1, with a generic house,
 garden and assumed access. Official export and 17/17 game probes pass, including
-after full restart/reload. This advances fitting without confirming identity,
+after full restart/reload. Its bounded landscape follow-on passes 19/19 probes
+and clean reload, preserving candidate reservations and pedestrian access.
+This advances fitting without confirming identity,
 likeness or final selection. Better photos are not a blocker for reversible
 prototype work; preserve unknown source properties and separate design choices.
 

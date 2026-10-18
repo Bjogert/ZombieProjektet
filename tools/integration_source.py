@@ -10,20 +10,20 @@ from tools.build_m0 import SIZE
 from tools.building_styles import unique_override_keys
 
 
-def landscape(layers, driveway, road, envelope, start, building, seed):
-    """Decorate one synthetic patch; preserve access and original surfaces."""
+def landscape(layers, driveway, road, envelope, start, building, seed, *, excluded=(), limit=SIZE):
+    """Decorate one bounded patch; preserve reserved areas and original surfaces."""
     if type(seed) is not int or not 0 <= seed < 2**32:
         raise ValueError('Terrain seed must be an integer from 0 to 4294967295')
     lx, ly = start
     ox, oy = building['origin']
     width, height = building['size']
     _, x0, y0, x1, y1 = envelope
-    protected = set(driveway) | {(i % SIZE, i // SIZE) for i in road}
+    protected = set(driveway) | set(excluded) | {(i % SIZE, i // SIZE) for i in road}
     protected |= {(x, y) for y in range(y0, y1) for x in range(x0, x1)}
     margin = {(x + dx, y + dy) for x, y in protected
               for dx in (-1, 0, 1) for dy in (-1, 0, 1)}
     bounds = [max(0, lx - 12), max(0, ly - 12),
-              min(SIZE, ox + width + 12), min(SIZE, oy + height + 12)]
+              min(limit, ox + width + 12), min(limit, oy + height + 12)]
     floor, furniture = layers['0_Floor'], layers['0_Furniture']
     overlay = [None] * SIZE**2
     # Order the floor overlay before furniture in the official TMX stack.

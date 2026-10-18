@@ -12,6 +12,7 @@ from tools.build_m0 import SIZE, make_tmx, write_png
 from tools.building_styles import unique_override_keys
 from tools.cottage_variant import generate
 from tools.garden_source import garden_layers
+from tools.integration_source import landscape
 from tools.road_source import GRASS, GRAVEL, ASPHALT
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,9 +29,13 @@ def plan(source, building_id, choices):
     if not isinstance(choices, dict) or set(choices) - set(ids):
         raise ValueError('Unknown candidate choice')
     for choice in choices.values():
-        if (not isinstance(choice, dict) or set(choice) != {'garden'}
+        if (not isinstance(choice, dict) or 'garden' not in choice
+                or set(choice) - {'garden', 'terrain_seed'}
                 or type(choice['garden']) is not bool):
-            raise ValueError('Only a boolean garden choice is supported')
+            raise ValueError('Expected a boolean garden and optional terrain seed')
+        if 'terrain_seed' in choice and (type(choice['terrain_seed']) is not int
+                or not 0 <= choice['terrain_seed'] < 2**32):
+            raise ValueError('Terrain seed must be an integer from 0 to 4294967295')
     selected = next(p for p in placements if p['building_id'] == building_id)
     ox, oy, width, height = (selected[k] for k in ('x', 'y', 'width', 'height'))
     if (any(type(v) is not int for v in (ox, oy, width, height))
@@ -128,10 +133,17 @@ def plan(source, building_id, choices):
     for x, y in access:
         if ground[y * SIZE + x] == GRASS:
             ground[y * SIZE + x] = GRAVEL
-    return {'building': {'id': building_id, 'origin': [ox, oy], 'size': [width, height]},
+    result = {'building': {'id': building_id, 'origin': [ox, oy], 'size': [width, height]},
             'layers': {'0_Floor': ground, '0_Furniture': furniture},
             'spawn': [ox + 1, oy + 3], 'access': [list(p) for p in sorted(access)],
             'road_squares': len(roads), 'garden': garden}
+    seed = choices.get(building_id, {}).get('terrain_seed')
+    if seed is not None:
+        result['terrain'] = landscape(result['layers'], access,
+            {y * SIZE + x for x, y in roads}, (0, ox - 6, oy - 2, ox + width + 2, oy + height + 3),
+            (min(x for x, y in access), min(y for x, y in access)), result['building'], seed,
+            excluded=occupied, limit=256)
+    return result
 
 
 def build(register, layout, choices_path, building_id, output, tiles, game):
@@ -173,7 +185,8 @@ def build(register, layout, choices_path, building_id, output, tiles, game):
                    input_sha256={k: hashlib.sha256(v).hexdigest() for k, v in raw.items()},
                    assumptions=['rectangular fit', 'residential use', 'west entrance',
                                 'generic interior', 'garden design', 'access path',
-                                'plain ground outside known road', 'road width/surface fallback'])
+                                'unverified ground and landscaping outside registered roads',
+                                'road width/surface fallback'])
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='.candidate-', dir=output.parent) as temp:
         staged = Path(temp) / 'ready'

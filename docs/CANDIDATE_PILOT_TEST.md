@@ -86,8 +86,59 @@ no remaining authoring blocker. The source hash is a binding to the previously
 validated register, not independent verification of the real building. Official
 export and local packaging remain explicit steps; this is not a village exporter.
 
-Next: reuse the tested bounded vegetation/road-edge pattern at this placement,
-then add only variants required by the remaining candidates. Better photos can
+The bounded vegetation follow-on below reuses the tested road-edge pattern.
+Next, add only variants required by the remaining candidates. Better photos can
 correct appearance later through stable-ID choices. Keep raw geodata and build
 receipts local. Final V1 selection, real-house verification, source-backed land
 cover, actual vehicle driving and creator acceptance remain separate gates.
+
+## Bounded landscape follow-on
+
+The optional `terrain_seed` choice now reuses `integration_source.landscape`
+around this candidate. The shared helper accepts an explicit map bound and extra
+reserved squares; the previous synthetic fixture keeps its defaults. Candidate
+rectangles, the maintained house/garden envelope, access and road are protected,
+with an additional vegetation margin. The rest of the cell remains plain grass.
+
+Seed 42 produces 92 shoulder squares with grass-edge overlays and 43 grass/bush
+placements. This is decorative styling under the accepted landscape direction,
+not measured land cover. The house, flowers and access remain unchanged. Omitting
+the seed reproduces the tested plain pilot's TMX, TBX and spawn PNG exactly.
+Two decorated builds are byte-identical and seven input files are unchanged.
+The suite has 72 passing tests, including reserved-neighbor and core-bound checks.
+
+Local authoring and evidence are under
+`build/getaboda-candidate-landscape-r1/`. WorldEd export and the ordinary metadata
+gate pass without repair. Separate package/mod `ZombieProjektetCandidateLandscape`
+uses map `GetabodaCandidateLandscape`; the plain pilot stays installed untouched.
+The package retains the required common map directory and source attribution.
+ZIP SHA-256: `9d2b113a3d7457be975fcd35689f666a5dad2f284ae636c7935a948a67d258b2`.
+Fresh zero-zombie Sandbox save `2026-10-18_14-37-18` in Steam Build 42.21.0 /
+`4a0e9546ec` passes 19/19 read-only runtime probes: the previous seventeen plus
+all 92 shoulder overlays and all 43 vegetation placements. The vegetation check
+accepts the original stock sprites and documented vanilla replacement families.
+All 94 access adjacencies remain clear. Manual door use, walking onto the deck,
+along the access path and around the house succeed; the complete roof, flowers
+and surrounding plants are visible. This run had natural fog; no weather override,
+teleport or movement script was used. Screenshots: `interior-closed-door.png` and
+`exterior-landscape.png`. The first log records normal saving and game exit.
+
+The QA helper was then removed and the previous default mod selection restored.
+A full process restart loaded the same save with its exterior position, roof,
+garden and vegetation intact. All 17 installed files match the ZIP, and the
+required common map directory is present. The clean log has no QA callbacks or
+exceptions and records normal save/exit; the previously recorded stock warnings
+remain. Evidence: `reload-selection.png`, `clean-reload.png`, `console-clean.txt`
+and `package-parity.json`. The final full suite passes 72 tests in 13.228 seconds.
+
+Sequential review checked the shared helper's unchanged synthetic defaults,
+protected candidate/garden surfaces, seeded repeatability, edge-of-core behavior
+and source immutability. The receipt wording now describes ground/landscaping as
+unverified rather than calling the decorated patch plain grass. No raw source
+data or proprietary art is added to Git.
+
+The reviewed four-candidate layout also needs 9 by 12 and 11 by 17 variants,
+plus a 9 by 6 placement oriented 90 degrees. The two unrotated sizes are within
+the generator's supported range but still need their own export/game evidence.
+The rotated placement needs supported orientation through the candidate adapter.
+These are provisional technical fits, not a decision about the final V1 list.

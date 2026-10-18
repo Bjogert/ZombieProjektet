@@ -28,3 +28,12 @@ are separate required evidence before calling this pilot playable.
 Only one candidate and rotation zero are supported in this slice. No automatic
 building classification, exact real garden, inferred private floor plan, full
 village assembly or final building selection is implied.
+
+Follow-on landscape slice: an optional integer `terrain_seed` in the selected
+stable-ID choice reuses the tested bounded roadside pattern. Protect all candidate
+rectangles, the house/garden envelope, road and access with a vegetation margin.
+Keep edits inside the 256-square core. Missing seed preserves the tested plain
+pilot byte-for-byte. Repeat seed gives identical output; changing it changes only
+decorative terrain. Retain seed/counts/assumption status in the local receipt.
+This is authored styling, not verified land cover. Official export and game QA
+remain required for the decorated artifact.
