@@ -1,6 +1,6 @@
 # ZombieProjektet — project overview
 
-**Evidence reviewed (2026-10-18):** the synthetic test house and furnished cottage have been agent-tested in Project Zomboid Build 42.21.0. A new four-house test map now rotates the cottage, wooden deck, outdoor furniture and three flowerbeds together. All 92 runtime checks and manual entry/exit checks passed. Saved house, orientation and optional garden choices survive regeneration; repeated official export produced an identical package. Creator acceptance and exterior approval remain open. This is not yet the Getaboda map.
+**Evidence reviewed (2026-10-18):** the earlier cottage/garden and four-house rotation fixtures have recorded game passes. The new roadside fixture joins one cottage, deck, flowerbeds and gravel access to the road. It passes 42 automated tests and 24 of 25 initial runtime probes, but its three rooms receive separate building IDs from official export. Packaging now rejects this defect. It is a diagnostic preview, not an accepted test version or the real Getaboda map. See [integration evidence](INTEGRATION_TEST.md).
 
 ## What are we building?
 A recognizable Swedish world in Project Zomboid. Start with about 4–5 source-confirmed Getaboda buildings, nearby roads and nature, with Swedish 1990s styling and generic interiors where details are unavailable. Later, expand toward Ljungby and test multiplayer with friends.
@@ -18,8 +18,8 @@ Getaboda and the worldbuilding tools are developed openly with the creator. Upda
 The lead assigns bounded work, checks the results and integrates changes. Separate stable-ID house, orientation and garden choices now produce a reproducible playable synthetic map. Independent code/source review found no blockers. The older style-only manifest's broader palette and fitting templates to real geometry remain future integration work. The mapping tools and game have one operator at a time.
 
 ## Next deliveries
-1. Make one focused attempt to resolve sustained vehicle steering and finish the continuous road test. Keep it open if the control method is still unavailable.
-2. Connect one cottage, its deck/garden and road access in a separate synthetic playable fixture. This is the next visible build; it does not claim a real Getaboda house location.
+1. Correct the roadside fixture's export metadata, then repeat fresh game and save/reload checks. The cottage, deck/garden and driveway are already integrated; the current diagnostic map is not ready for acceptance.
+2. Resume the continuous road drive when a supported sustained steering method is available. The bounded input diagnostic did not establish one; this remains a separate gate.
 3. Refresh the submitted data applications and validate the first permitted real building. While waiting, make the local road extraction reproducible and prototype a small road-edge/vegetation patch.
 4. Fit one verified house, then assemble the agreed Getaboda subset and run V1 installation, regeneration and game checks.
 

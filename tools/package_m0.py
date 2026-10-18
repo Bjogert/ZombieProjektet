@@ -18,6 +18,10 @@ PROFILES = {'m0': ('ZombieProjektetM0', 'M0Sweden'),
 
 
 def validate_header(path):
+    _header_stream(path)
+
+
+def _header_stream(path):
     stream = io.BytesIO(path.read_bytes())
     if stream.read(8) != b'LOTH\x01\0\0\0':
         raise ValueError(f'Expected Build 42 LOTH version 1: {path}')
@@ -35,6 +39,54 @@ def validate_header(path):
             raise ValueError(f'Invalid tile name: {path}')
     if (integer(), integer()) != (8, 8):
         raise ValueError(f'Expected Build 42 8x8 chunks: {path}')
+    return stream
+
+
+def validate_cottage_metadata(path):
+    """Reject the observed nonzero-cell WorldEd metadata regression.
+
+    This gate is deliberately limited to our single three-room cottage fixture.
+    It reads official output; it never repairs or replaces the exporter.
+    """
+    stream = _header_stream(path)
+
+    def integer():
+        data = stream.read(4)
+        if len(data) != 4:
+            raise ValueError(f'Truncated cottage metadata: {path}')
+        return struct.unpack('<i', data)[0]
+
+    def count(limit):
+        value = integer()
+        if not 0 <= value <= limit:
+            raise ValueError(f'Invalid cottage metadata count: {path}')
+        return value
+
+    integer(), integer()  # Minimum and maximum map level.
+    rooms = count(32)
+    objects = 0
+    area = 0
+    for _ in range(rooms):
+        name = stream.readline(257)
+        if not name.endswith(b'\n') or len(name) > 256:
+            raise ValueError(f'Invalid cottage room name: {path}')
+        if integer() != 0:
+            raise ValueError('Cottage rooms must be on the ground floor')
+        for _ in range(count(32)):
+            x, y, width, height = (integer() for _ in range(4))
+            if not (0 <= x < x + width <= 256 and 0 <= y < y + height <= 256):
+                raise ValueError('Cottage room lies outside its runtime cell')
+            area += width * height
+        n = count(128)
+        objects += n
+        for _ in range(n):
+            integer(), integer(), integer()  # Tile meta enum and local x/y.
+    buildings = count(32)
+    memberships = [[integer() for _ in range(count(32))] for _ in range(buildings)]
+    if (rooms, area, buildings, objects) != (3, 60, 1, 8) or sorted(memberships[0]) != [0, 1, 2]:
+        raise ValueError(f'Invalid cottage export metadata: rooms={rooms}, area={area}, '
+                         f'buildings={buildings}, objects={objects}; expected 3, 60, 1, 8. '
+                         'Keep this export diagnostic-only; repair and recheck official export.')
 
 
 def package(export, output, profile='m0'):

@@ -6,7 +6,7 @@ Updated 2026-10-18. This is the canonical execution queue and delivery plan. The
 
 ## Next delivery and current position
 
-The next playable delivery is **one cottage with its deck and garden connected to the road prototype in a separate integration fixture**. Its house placement is explicitly synthetic until real building data is verified. This proves that the working parts fit together without waiting for all Getaboda data.
+The current delivery is **one cottage with its deck and garden connected to the road prototype in a separate integration fixture**. Generation and initial game checks are implemented, but acceptance failed: the official export gives the three cottage rooms separate building IDs and zero room metadata objects. Packaging now rejects that output. The next integration step is a minimal zero/nonzero-cell export reproduction and correction, followed by fresh game QA. See [integration evidence](INTEGRATION_TEST.md). Its house placement remains explicitly synthetic.
 
 The unfinished continuous road drive remains a separate technical gate. Give its control problem one focused diagnostic attempt with a new, testable hypothesis; do not repeat unsuccessful input methods while other work is ready. Do not count teleportation as a driving pass.
 
@@ -15,6 +15,7 @@ The unfinished continuous road drive remains a separate technical gate. Give its
 | Minimal house loads; daylight, switch, walls and roof checked in 42.21.0 | [M0](BUILD42_SPIKE.md), [report](test-reports/M0-BUILD42.md) | Creator acceptance and independent game reproduction |
 | Furnished cottage, deck, seating and flowerbeds; four orientations | [Cottage](COTTAGE_TEST.md), [garden](GARDEN_TEST.md), [placements](PLACEMENT_TEST.md) | Creator visual review; library has one rectangular cottage and one optional garden |
 | Stable-ID house/orientation/garden choices survive playable regeneration | [Placements](PLACEMENT_TEST.md), [style contract](specs/building-style-overrides.md) | Broader style palette and real-footprint fitting are not connected |
+| Cottage/garden/driveway joined to road; 42 automated tests; 24/25 runtime probes pass | [Roadside integration](INTEGRATION_TEST.md) | Shared-building metadata fails; current package command rejects the export. Final roof and save/reload acceptance open; diagnostic artifact only |
 | Separate 5.09 km OSM road prototype; 37 automated tests; 52 runtime road samples across 25 cells | [Road test](ROAD_TEST.md) | Continuous driving, handling through bends and populated-map performance; observed vehicle motion was only 66.47 m |
 | Municipality overview, source audit and 1:1 scale decision | [World draft](research/ljungby-world-draft-2026-10-17.md), [scale study](research/road-first-scale-study-2026-10-17.md) | Whole-municipality production is not approved or performance-tested |
 | Building/orthophoto applications submitted; alternative sources documented | [Geodata workflow](GEODATA_WORKFLOW.md) | Last checked 2026-10-17: access decisions pending. Refresh when starting DATA-ACCESS-01; do not assume this remains current |
@@ -66,8 +67,8 @@ States: **Ready** = no known blocker; **Waiting** = named dependency; **Technica
 
 | Order / ID | State and owner role | Deliverable | Dependency / next action |
 | --- | --- | --- | --- |
-| 1 · DRIVE-INPUT-01 | Ready for one bounded diagnostic; QA/lead | Reliable sustained input and steering for an actual driving check | Reproduce the limitation in the disposable road save using a supported control path. If unavailable, retain the blocker and move to INTEGRATE-01. |
-| 2 · INTEGRATE-01 | Ready; lead/buildings | Cottage, deck/garden and road access in one synthetic playable fixture | Reuse tested assets and road projection; write the small integration spec first. This is the next visible build. |
+| 1 · DRIVE-INPUT-01 | Diagnostic attempted; waiting for supported sustained control; QA/lead | Reliable sustained input and steering for an actual driving check | Native API exposes key taps and the new Escape trial did not work. No held accelerate/steer/stop path verified. Retain the gate; do not repeat tap loops. |
+| 2 · INTEGRATE-01 | Implemented; game QA failed; lead/buildings | Cottage, deck/garden and road access in one synthetic playable fixture | 24/25 runtime probes pass. Isolate zero/nonzero-cell export metadata and correct through a supported export path; then fresh game QA. Never bypass the new packaging gate. PIPELINE-01 is independent ready work. |
 | 3 · DATA-ACCESS-01 | Ready for status/rights check; world/data | Current access outcome and smallest permitted acquisition plan | Check the submitted applications once during active work. No duplicates. If pending, continue ready tool work. |
 | 4 · PIPELINE-01 | Ready; world/data/lead | Reproduce the corridor from registered local source through maintained code | Replace the ignored extraction experiment with a bounded, tested local command and provenance contract. |
 | 5 · TERRAIN-01 | Ready for synthetic prototype; buildings/world | Small road-edge/vegetation patch with clear cottage access | Licensed stock assets and deterministic placement. Real land-cover placement waits for permitted data. |

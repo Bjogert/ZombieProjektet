@@ -18,10 +18,8 @@ ROOT = Path(__file__).resolve().parents[1]
 CHOICES = {'house', 'rotation', 'garden'}
 
 
-def build(output, tiles, game, source, choices):
-    """Validate all placements and resources before writing a new output folder."""
-    if output.exists():
-        raise FileExistsError(f'Refusing to replace existing output: {output}')
+def resolve(source, choices):
+    """Resolve validated synthetic lots and garden layers without writing files."""
     if not isinstance(source, dict) or set(source) != {'defaults', 'buildings'}:
         raise ValueError('Source must contain defaults and buildings')
     defaults, records = source['defaults'], source['buildings']
@@ -94,6 +92,14 @@ def build(output, tiles, game, source, choices):
         manifest.append({'id': identifier, 'origin': record['origin'], **selected,
                          'size': [width, height], 'tbx': tbx.name,
                          'tbx_sha256': hashlib.sha256(data).hexdigest()})
+    return layers, manifest, copies, envelopes
+
+
+def build(output, tiles, game, source, choices):
+    """Validate all placements and resources before writing a new output folder."""
+    if output.exists():
+        raise FileExistsError(f'Refusing to replace existing output: {output}')
+    layers, manifest, copies, _ = resolve(source, choices)
     if not (game / 'media/newtiledefinitions.tiles').is_file():
         raise FileNotFoundError('Expected Project Zomboid media/newtiledefinitions.tiles')
     tilesets = sorted({tile[0] for values in layers.values() for tile in values if tile})

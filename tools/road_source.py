@@ -9,7 +9,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 from pathlib import Path
 from tools.build_m0 import SIZE, make_tmx, write_png
-from tools.package_m0 import validate_header
+from tools.package_m0 import validate_header, validate_cottage_metadata
 
 GRASS = ("blends_natural_01", 16)
 ASPHALT = ("blends_street_01", 0)
@@ -100,17 +100,8 @@ def plan(data):
     }
 
 
-def build(source, output, tiles, game):
-    data = json.loads(source.read_text(encoding="utf-8"))
-    p = plan(data)
-    if output.exists():
-        raise FileExistsError(output)
-    if not (game / "media/newtiledefinitions.tiles").is_file():
-        raise FileNotFoundError("Game TileDefs missing")
-    # Validate external tiles before creating output.
-    make_tmx(tiles, {"0_Floor": [GRASS] * SIZE**2}, [], [GRASS[0], ASPHALT[0]])
-    output.mkdir(parents=True)
-    (output / "export").mkdir()
+def terrain_cells(p):
+    """Rasterized road and synthetic pads, shared by road/integration fixtures."""
     cells = {}
     for (x, y), tile in p["roads"].items():
         cells.setdefault((x // SIZE, y // SIZE), {})[y % SIZE * SIZE + x % SIZE] = tile
@@ -121,6 +112,29 @@ def build(source, output, tiles, game):
                 cells.setdefault((x // SIZE, y // SIZE), {})[
                     y % SIZE * SIZE + x % SIZE
                 ] = ASPHALT
+    return cells
+
+
+def build(source, output, tiles, game, cell_layers=None):
+    data = json.loads(source.read_text(encoding="utf-8"))
+    p = plan(data)
+    if output.exists():
+        raise FileExistsError(output)
+    if not (game / "media/newtiledefinitions.tiles").is_file():
+        raise FileNotFoundError("Game TileDefs missing")
+    # Validate external tiles and replacement cells before creating output.
+    make_tmx(tiles, {"0_Floor": [GRASS] * SIZE**2}, [], [GRASS[0], ASPHALT[0]])
+    replacements = {}
+    for (cx, cy), layers in (cell_layers or {}).items():
+        if not (0 <= cx < p['width'] and 0 <= cy < p['height']):
+            raise ValueError('Replacement cell outside road extent')
+        if any(len(values) != SIZE**2 for values in layers.values()):
+            raise ValueError('Replacement layer must cover one authoring cell')
+        tilesets = sorted({tile[0] for values in layers.values() for tile in values if tile})
+        replacements[cx, cy] = make_tmx(tiles, layers, [], tilesets)
+    output.mkdir(parents=True)
+    (output / "export").mkdir()
+    cells = terrain_cells(p)
     world = ET.Element(
         "world", version="1.0", width=str(p["width"]), height=str(p["height"])
     )
@@ -139,6 +153,7 @@ def build(source, output, tiles, game):
                 ground[i] = tile
             name = f"road_{cx}_{cy}.tmx"
             (output / name).write_bytes(
+                replacements[cx, cy] if (cx, cy) in replacements else
                 make_tmx(tiles, {"0_Floor": ground}, [], [GRASS[0], ASPHALT[0]])
             )
             ET.SubElement(world, "cell", x=str(cx), y=str(cy), map=name)
@@ -194,25 +209,39 @@ def package(source, output):
                 if f.suffix == ".lotheader":
                     validate_header(f)
                 required.append(f)
-    mod = output / "ZombieProjektetRoadTest"
-    maps = mod / "42/media/maps/GetabodaRoadTest"
+    integrated = m.get('integration')
+    if integrated and integrated.get('format') != 'synthetic-roadside-v1':
+        raise ValueError('Unsupported integration manifest')
+    if integrated:
+        cx, cy = integrated['cell']
+        ox, oy = integrated['building']['origin']
+        hx, hy = (cx * SIZE + ox) // 256, (cy * SIZE + oy) // 256
+        validate_cottage_metadata(source / 'export' / f'{hx}_{hy}.lotheader')
+    mod_id = 'ZombieProjektetRoadside' if integrated else 'ZombieProjektetRoadTest'
+    map_id = 'RoadsideTest' if integrated else 'GetabodaRoadTest'
+    title = 'Roadside cottage test' if integrated else 'Getaboda road test'
+    description = ('Fictional cottage, garden and driveway beside the road prototype. New save required.'
+                   if integrated else '1:1 road corridor toward Agunnaryd. New save required. Provisional widths, plain terrain.')
+    mod = output / mod_id
+    maps = mod / f"42/media/maps/{map_id}"
     maps.mkdir(parents=True)
     (mod / "common/media/maps").mkdir(parents=True)
     (mod / "common/media/maps/.gitkeep").touch()
     (mod / "42/mod.info").write_text(
-        "name=ZombieProjektet - Getaboda road test\nid=ZombieProjektetRoadTest\ndescription=1:1 road corridor toward Agunnaryd. New save required. Provisional widths, plain terrain.\nversionMin=42.20\n"
+        f"name=ZombieProjektet - {title}\nid={mod_id}\ndescription={description}\nversionMin=42.20\n"
     )
     sx, sy = m["start"]
     (maps / "map.info").write_text(
-        f"title=ZombieProjektet - Getaboda road test\ndescription=5 km road test toward Agunnaryd. No town buildings yet.\nfixed2x=true\nzoomX={sx}\nzoomY={sy}\nzoomS=4\n"
+        f"title=ZombieProjektet - {title}\ndescription={description}\nfixed2x=true\nzoomX={sx}\nzoomY={sy}\nzoomS=4\n"
     )
+    spawn_x, spawn_y = integrated['spawn'] if integrated else (sx + 5, sy)
     (maps / "spawnpoints.lua").write_text(
-        f"function SpawnPoints() return {{ unemployed = {{ {{posX={sx+5},posY={sy},posZ=0}} }} }} end\n"
+        f"function SpawnPoints() return {{ unemployed = {{ {{posX={spawn_x},posY={spawn_y},posZ=0}} }} }} end\n"
     )
     (maps / "objects.lua").write_text("objects = {}\n")
     (mod / "ATTRIBUTION.txt").write_text(
         m["attribution"]
-        + "\nhttps://www.openstreetmap.org/copyright\nOpen Database License 1.0. Derived road geometry retains ODbL terms.\nRoad widths and endpoint staging pads are provisional design choices.\n",
+        + "\nhttps://www.openstreetmap.org/copyright\nOpen Database License 1.0. Derived road geometry retains ODbL terms.\nRoad widths, endpoint staging pads and any cottage/driveway/garden placement are provisional fictional design choices.\n",
         encoding="utf-8",
     )
     for f in required:
@@ -222,10 +251,10 @@ def package(source, output):
     template = (
         Path(__file__).with_name("road_test_setup.lua").read_text(encoding="utf-8")
     )
-    config = f'local START_X, START_Y, END_X, END_Y = {sx},{sy},{m["end"][0]},{m["end"][1]}\n'
+    config = f'local TEST_MAP = "{map_id}"\nlocal START_X, START_Y, END_X, END_Y = {sx},{sy},{m["end"][0]},{m["end"][1]}\n'
     (client / "RoadTestSetup.lua").write_text(config + template, encoding="utf-8")
     with zipfile.ZipFile(
-        output / "ZombieProjektetRoadTest.zip", "w", zipfile.ZIP_DEFLATED
+        output / (mod_id + '.zip'), "w", zipfile.ZIP_DEFLATED
     ) as archive:
         for f in sorted(mod.rglob("*")):
             if f.is_file():
