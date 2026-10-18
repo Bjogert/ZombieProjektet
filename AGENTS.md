@@ -43,6 +43,12 @@ This advances fitting without confirming identity,
 likeness or final selection. Better photos are not a blocker for reversible
 prototype work; preserve unknown source properties and separate design choices.
 
+The creator's latest visual feedback is that the enlarged pilot looks barn-like.
+Prioritise [residential character](docs/specs/residential-character.md) before
+scaling more copies. The [Småland pattern study](docs/research/smaland-houses-2026-10-18.md)
+supports separate dwelling families and varied boundaries, shrubs and outbuildings.
+It is research/design guidance, not a new game-tested asset or final approval.
+
 ## Working practice
 - Use relevant project skills under `.agents/skills/` or `.claude/skills/`; keep mirrored skill files byte-identical.
 - Read affected code and tests first. Work in small, verifiable steps. Record changed behavior, checks, unresolved concerns and the next action.

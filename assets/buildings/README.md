@@ -5,6 +5,14 @@
 a slate-coloured pitched roof and generic rooms. It represents no real property.
 The stock palette is provisional, not an approved final Swedish facade.
 
+Creator feedback on 2026-10-18: the enlarged candidate reads as a barn. Its game
+checks remain valid technical evidence, but the form is not visually accepted.
+Prioritise a compact residential revision before more stretched copies. See the
+[Småland pattern study](../../docs/research/smaland-houses-2026-10-18.md) and
+[residential character specification](../../docs/specs/residential-character.md).
+The proposed croft, summer cottage and country house families are not yet new
+playable assets.
+
 Open it directly in the official 2026-09-16 BuildingEd with the matching Tiles
 directory configured. It was loaded and visually inspected there on 2026-10-17.
 Use the upper floor for the exterior preview; hide the grid and object shapes.
