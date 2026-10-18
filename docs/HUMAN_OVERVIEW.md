@@ -1,6 +1,6 @@
 # ZombieProjektet — project overview
 
-**Status (2026-10-17):** the synthetic test house and furnished cottage have been agent-tested in Project Zomboid Build 42.21.0. A new four-house test map now rotates the cottage, wooden deck, outdoor furniture and three flowerbeds together. All 92 runtime checks and manual entry/exit checks passed. Saved house, orientation and optional garden choices survive regeneration; repeated official export produced an identical package. Creator acceptance and exterior approval remain open. This is not yet the Getaboda map.
+**Evidence reviewed (2026-10-18):** the synthetic test house and furnished cottage have been agent-tested in Project Zomboid Build 42.21.0. A new four-house test map now rotates the cottage, wooden deck, outdoor furniture and three flowerbeds together. All 92 runtime checks and manual entry/exit checks passed. Saved house, orientation and optional garden choices survive regeneration; repeated official export produced an identical package. Creator acceptance and exterior approval remain open. This is not yet the Getaboda map.
 
 ## What are we building?
 A recognizable Swedish world in Project Zomboid. Start with about 4–5 source-confirmed Getaboda buildings, nearby roads and nature, with Swedish 1990s styling and generic interiors where details are unavailable. Later, expand toward Ljungby and test multiplayer with friends.
@@ -13,15 +13,31 @@ Getaboda and the worldbuilding tools are developed openly with the creator. Upda
 The lead assigns bounded work, checks the results and integrates changes. Separate stable-ID house, orientation and garden choices now produce a reproducible playable synthetic map. Independent code/source review found no blockers. The older style-only manifest's broader palette and fitting templates to real geometry remain future integration work. The mapping tools and game have one operator at a time.
 
 ## Next deliveries
-1. Creator playtest of the repaired test house; agent lighting, collision and roof checks have passed.
-2. Review the cottage, deck, seating and flowerbeds in the new in-game screenshots. Four orientations are game-tested; the current library supports one rectangular cottage and one optional garden. See [PLACEMENT_TEST](PLACEMENT_TEST.md).
-3. Verify lawful Getaboda data and integrate the first real buildings.
-4. Adapt the tested placement workflow to verified house geometry and extend the visual library after creator review. Broader facade colors are not yet playable.
+1. Make one focused attempt to resolve sustained vehicle steering and finish the continuous road test. Keep it open if the control method is still unavailable.
+2. Connect one cottage, its deck/garden and road access in a separate synthetic playable fixture. This is the next visible build; it does not claim a real Getaboda house location.
+3. Refresh the submitted data applications and validate the first permitted real building. While waiting, make the local road extraction reproducible and prototype a small road-edge/vegetation patch.
+4. Fit one verified house, then assemble the agreed Getaboda subset and run V1 installation, regeneration and game checks.
 
-Agents resolve technical issues before requesting milestone playtests. Creator playtests focus on feel and usability; acceptance is recorded only after actual feedback.
+The lead moves to ready independent work after a bounded diagnostic session without progress, while retaining the failed gate. Agents resolve technical issues before requesting milestone playtests; creator feedback focuses on feel, design and acceptance.
+
+## Delivery roadmap
+The [full roadmap](ROADMAP.md) contains dependencies, task owners, acceptance checks and blocker handling.
+
+| Phase | Delivery |
+| --- | --- |
+| M0 | Maintain the technical foundation and close remaining QA gaps |
+| M1 | Verify Getaboda sources, first building and the agreed small subset |
+| M2 | Integrate roads, houses and gardens; adapt only the required templates |
+| M3 | Test Version 1: roughly 4–5 real Getaboda buildings, nearby roads and basic nature |
+| M4 | Stabilize the shareable test; independently reproduce installation; prepare approved distribution and later multiplayer |
+| M5 | Extend to nearby settlements through the same measured, repeatable workflow |
+| M6 | Build and measure a small Ljungby urban pilot |
+| M7 | Expand municipality coverage in separately validated batches |
+
+V1 is a local/private Getaboda POC. It requires at least one usable furnished house, verified basic surroundings and a manual correction that survives playable regeneration. The full 5.09 km road can accompany it once its own driving gate passes. Agunnaryd buildings, multiplayer and municipality-wide coverage are later work. Re-estimate timing after the first real house and data-access outcome; no calendar release date is promised now.
 
 ## Getaboda data research
-The source audit found 2025 aerial imagery catalog coverage at 16 cm pixel size and a municipal building download from Lantmäteriet. The Geotorget account is active; both building and orthophoto applications have been received and are being processed. Access decisions are pending. Raw geodata and imagery will initially be processed locally in Sweden; cloud/AI uploads await clarification of the conditions. OSM has roads but no building objects in the checked 750 m radius. Actual house dimensions and facade colors remain unverified. The [automation workflow](GEODATA_WORKFLOW.md) preserves source facts, assumptions and individual corrections separately.
+The source audit found 2025 aerial imagery catalog coverage at 16 cm pixel size and a municipal building download from Lantmäteriet. At the last access check on 2026-10-17, the Geotorget account was active and both building and orthophoto applications had been received; decisions were pending. Refresh that status when starting data acquisition. Raw geodata and imagery will initially be processed locally in Sweden; cloud/AI uploads await clarification of the conditions. OSM has roads but no building objects in the checked 750 m radius. Actual house dimensions and facade colors remain unverified. The [automation workflow](GEODATA_WORKFLOW.md) preserves source facts, assumptions and individual corrections separately.
 
 ## Municipality planning draft
 A first geographic overview of the whole Ljungby municipality is available for creator review, using SCB's generalized boundary and locally processed OpenStreetMap roads, lakes and settlement points. It preserves actual distances and proposes Getaboda, nearby settlements and Ljungby as successive development anchors. This is a planning view, not a playable map or an approved whole-municipality delivery. The [source audit and scale proposal](research/ljungby-world-draft-2026-10-17.md) compares additional data channels and records the remaining choices.

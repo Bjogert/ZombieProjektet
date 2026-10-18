@@ -1,4 +1,4 @@
-# ZombieProjektet — implementation specification v1 (2026-10-11)
+# ZombieProjektet — implementation specification v1 (updated 2026-10-18)
 
 **Authority:** this specification, `DECISIONS.md`, `ROADMAP.md`, then relevant ADRs. `HUMAN_OVERVIEW.md` is a concise display companion, not an independent authority.
 
@@ -15,13 +15,15 @@ Project Zomboid **Build 42 Stable** mod. A standalone Swedish world expanding fr
 
 The first **technical gate M0** is deliberately narrower: prove a minimal custom playable Build 42 map with one usable house and record its exact tool chain before building a broad exporter.
 
+The proof of concept above is **Test Version 1 (M3)** in the [roadmap](ROADMAP.md). Deliver it first as a local/private test package. The separate 5.09 km road experiment may accompany it after its own driving gate passes; it does not require Agunnaryd buildings, multiplayer or whole-municipality coverage. A synthetic integration fixture is an intermediate engineering test, not a substitute for source-confirmed Getaboda.
+
 ## Layer boundaries (implement only when needed)
 1. **Ingest:** OpenStreetMap plus permissible Lantmäteriet/other datasets; respect licenses, source identity, time, geometry and coordinate system. Reject missing/ambiguous critical coverage for the POC until manually checked.
 2. **Normalize:** shared feature schema for buildings, roads, vegetation/landuse, water; preserve original source geometry immutable. Use geodata confidence/provenance. Separate stable internal IDs from potentially changing OSM IDs through a documented mapping.
 3. **Classify:** begin with a handful of extensible building categories (house/cottage, barn, shed, garage, other). Map known source tags; default to explicit 'unknown/assumed' rather than pretend the type is verified.
 4. **Style + interior:** compact JSON definitions of building type, exterior variants and rule-driven basic interiors. Apply deterministic seed derived from stable building IDs. Include 1990s-consistent selections. Residential variants should include decks/patios and gardens with flowerbeds, with variation between houses and clear entrance routes. Record invented garden details as design choices, not verified real-property features.
 5. **Overrides:** optional separate JSON keyed by immutable internal building ID for user-chosen type, facade, geometry correction, roof, doors, later floor plan. Explicit precedence: permitted observed source -> reproducible generated defaults -> approved manual overrides. Keep layer details documented and validate overrides; overriding original source geometry is forbidden.
-6. **Gameplay projection:** transform normalized source coordinates into grid/world cells, with minimal quantization offset saved separately. Getaboda locally 1:1. In later phases compress empty transport segments between geographically true built-up regions without breaking networks; out of scope for M0/first POC.
+6. **Gameplay projection:** transform normalized source coordinates into grid/world cells, with minimal quantization offset saved separately. Start at 1:1, including connecting roads, as approved on 2026-10-17. Preserve the original source geometry. Reconsider countryside compression only after driving/performance evidence and a new creator decision; no compression implementation is currently required.
 7. **Build 42 exporter:** only implement against observed correct, legally usable Build 42 tools/format, with current game smoke-test evidence; tolerate manual import/export steps in initial phase.
 8. **Packaging:** reproducible mod bundle for GitHub Releases; Steam Workshop later after validation.
 
