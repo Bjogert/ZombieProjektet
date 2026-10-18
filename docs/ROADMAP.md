@@ -126,6 +126,10 @@ States: **Ready** = no known blocker; **Waiting** = named dependency; **Technica
 
 ## Creator decisions and planning horizon
 
+The creator clarified the personal goal on 2026-10-18: a surprise reunion for a former PZ group from Ljungby/Agunnaryd. Approximately ten selected homes across the expanding world deserve extra exterior/interior care; ordinary houses use plausible templates. Select those homes and their recognition details with the creator as the relevant areas enter scope. The V1 building count and next integration delivery remain unchanged.
+
+Rural hunting firearms are accepted fictional gameplay direction, with loot frequency and balance still to be designed. Tractors are desired conditional content; [initial research](PROJECT_SPEC.md#tractor-feasibility-check) found a mod candidate, not a validated dependency. Schedule a bounded vehicle test before adoption. Private multiplayer remains the eventual friends-play goal and requires the M4 host/client evidence before claiming readiness.
+
 | When | Creator decision | Independent work that continues |
 | --- | --- | --- |
 | Representative previews | Exterior palette, recognizable likeness, garden/road-edge character | Reversible prototypes, geometry validation and QA |

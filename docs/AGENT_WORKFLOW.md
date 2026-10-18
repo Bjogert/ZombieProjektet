@@ -3,6 +3,8 @@
 ## Working agreement (2026-10-17)
 The creator owns creative direction and consequential decisions. The lead agent owns implementation, routine technical choices, integration, testing and documentation within approved scope. The goal is a playable world the creator can discover without supervising every implementation detail.
 
+Clarified on 2026-10-18: the world is also a surprise for the creator's former PZ group from Ljungby/Agunnaryd, with an eventual private multiplayer reunion. Approximately ten personally important homes merit individual exterior/interior work; plausible templates cover the rest. Keep research effort proportional to recognition value. This does not expand the 4–5-building V1 or prevent open Getaboda development with the creator.
+
 Conversation is in Swedish. Documentation, code, identifiers, comments, commits, PRs and authored UI text are in English; retain proper place names and source identifiers. Bring existing documents into English when updating them without rewriting historical evidence or external names.
 
 | Proceed independently | Bring a concrete proposal to the creator |

@@ -5,6 +5,19 @@
 ## Product
 Project Zomboid **Build 42 Stable** mod. A standalone Swedish world expanding from Getaboda toward Agunnaryd, Södra Ljunga and Ljungby, initially singleplayer and later small private multiplayer. The users are the hobby creator and friends from the region. Their real-world recognition and ability to play outweigh exact reconstruction, historical research, or engine innovation.
 
+## Personal purpose and detail priorities (2026-10-18)
+The creator wants to reunite a former PZ group from Ljungby/Agunnaryd and surprise friends with familiar places. Private multiplayer is an eventual product goal, with actual host/client testing before claiming readiness. Getaboda and the tools remain open development with the creator; later-area discovery preferences still apply.
+
+- Concentrate individual exterior and interior work on approximately ten creator-selected homes across the expanding world. Use creator input to identify the rooms and details that matter for recognition. The list and fidelity of each home remain to be chosen; these ten homes are not all required for V1.
+- Other buildings use plausible, varied Swedish templates and invented interiors. Research known geometry and useful exterior character, but do not pursue exact room layouts for ordinary homes. Keep verified source facts distinct from design choices; store individual changes through stable-ID overrides.
+- Rural hunting weapons are accepted gameplay direction: include hunting firearms in selected rural residential/farm loot rather than assuming a dense gun-shop network. Placement is fictional game content, never a record of real residents' possessions. Frequency, ammunition and balance remain to be designed and playtested; no loot changes are implemented by this decision.
+- Tractors are desired rural content, subject to suitable assets and version compatibility. A mod dependency and working agricultural implements are not yet selected. They do not gate V1.
+
+The creator's recollection of a hunting shop near the E4 at Lagan is an unverified research lead; no business identity or location has been confirmed.
+
+### Tractor feasibility check
+On 2026-10-18, a search of the installed game's script/Lua definitions and media filenames found no tractor definition. This is a bounded inspection, not a complete vehicle audit. The original [Agrotsar Farming Company](https://pz.ibrrus.ru/mods/agrotsar) documents a tractor and agricultural attachments for Build 41. A separate [Workshop port](https://steamcommunity.com/sharedfiles/filedetails/?id=3587117139) by Beathoven is labelled B42.20 and requires Tsar's Common Library B42. Treat it as a research candidate: distribution status, permissions, compatibility with our recorded 42.21.0 baseline, spawning, driving, save/reload and host/client behavior remain unverified. Nothing was installed or adopted. Assess driving separately from implement mechanics before making a dependency decision.
+
 ## First proof of concept — acceptance
 1. A separate, loadable Swedish map is tested in a recorded Build 42 Stable game version.
 2. Approximately 4–5 actual Getaboda buildings, access roads and basic land cover are present, with source data checked for accuracy and rights. Never invent precise Getaboda coordinates or building footprints.
@@ -35,7 +48,7 @@ The proof of concept above is **Test Version 1 (M3)** in the [roadmap](ROADMAP.m
 - Creator tests in the real game and returns screenshots/logs. New games are acceptable during development. Once publicly distributed, prefer stable coordinates but never guarantee backward save compatibility until verified.
 
 ## Deliberately deferred
-Precise real-house interiors, automatic large-scale distance compression, terrain elevation simulation, heavy geodata inference, bespoke editor, custom survival mechanics, standalone engine, multiplayer in first POC, any costs without permission.
+Detailed reconstruction of the selected personal homes beyond V1's minimum, automatic large-scale distance compression, terrain elevation simulation, heavy geodata inference, bespoke editor, custom survival mechanics, standalone engine, multiplayer in first POC, any costs without permission. Exact interiors for every home are outside scope; selected personal interiors remain an accepted later priority.
 
 ## Review gate
 Each milestone must list versioned source data, command/test outputs, files produced, in-game manual steps, screenshot/log proof, unverified requirements, and rights checks. Do not equate plausible source code with a playable mod.

@@ -14,6 +14,8 @@ A separate Swedish world in Project Zomboid Build 42 Stable with:
 
 Use 1:1 geography, including connecting roads. Preserve source coordinates and record grid approximations separately. Generic interiors remain the default.
 
+The broader personal goal is a surprise reunion for the creator's former PZ group from Ljungby/Agunnaryd. Approximately ten creator-selected homes across the expanding project receive extra exterior/interior care; other houses use plausible templates. Those ten homes, tailored hunting-loot balance and tractor integration are not additional V1 requirements.
+
 ## Intermediate deliveries
 
 M0 proved the technical route with a minimal house; cottage/garden/placement fixtures now have separate evidence. The 5.09 km Getaboda–Agunnaryd road experiment remains a separate prototype until continuous driving is verified. A synthetic cottage beside that road is a useful integration test, not a verified real house placement.
@@ -22,7 +24,8 @@ These prototypes support V1 without requiring Agunnaryd buildings or a municipal
 
 ## Later work — not required for V1
 
-- Additional Swedish house/outbuilding types, original tiles and carefully reviewed individual details.
+- Additional Swedish house/outbuilding types, original tiles and the selected personal homes with creator-guided recognizable interiors.
+- Fictional rural hunting-loot placement and balance; evaluate suitable tractors before choosing an asset/mod dependency.
 - Private multiplayer using the game's existing systems, then approved GitHub/Workshop distribution.
 - Bounded nearby settlements, a Ljungby district pilot and eventually municipality coverage after capacity and performance are measured.
 - Broader automation of demonstrated repeated work; no custom editor during the POC.

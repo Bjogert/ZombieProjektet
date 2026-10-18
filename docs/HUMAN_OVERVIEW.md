@@ -5,6 +5,11 @@
 ## What are we building?
 A recognizable Swedish world in Project Zomboid. Start with about 4–5 source-confirmed Getaboda buildings, nearby roads and nature, with Swedish 1990s styling and generic interiors where details are unavailable. Later, expand toward Ljungby and test multiplayer with friends.
 
+## Why this world matters
+The creator wants to reunite a former PZ group from Ljungby/Agunnaryd and surprise friends with familiar places. Approximately ten personally important homes across the expanding world receive extra exterior/interior care; the rest use plausible, varied Swedish templates. V1 still starts with roughly 4–5 Getaboda buildings. Getaboda remains open development with the creator.
+
+Rural hunting firearms are planned as fictional gameplay loot, with frequency and balance still open. Tractors are desired; a Build 42 mod candidate has been found but has not been installed or tested with our game version or multiplayer. See the [specification](PROJECT_SPEC.md) for the evidence and remaining choices.
+
 ## How we work
 The creator sets creative direction and important choices. The lead agent implements, tests, fixes and coordinates technical work. Specialist tasks cover world data, buildings/art and QA when useful and authorized. Conversation is in Swedish; project material is in English.
 
@@ -52,7 +57,7 @@ The [road-first scale study](research/road-first-scale-study-2026-10-17.md) comp
 - Decks/patios and gardens with flowerbeds as part of residential character, varied between houses.
 - Start at 1:1, including connecting roads; reconsider countryside compression after driving and performance tests.
 - Source-backed land cover with deterministic detail placement.
-- Generic interiors; review detailed private homes before publication.
+- Generic interiors by default; extra care for approximately ten selected homes across the expanding project. Review detailed private homes before publication.
 - Free tools by default; GitHub packages first, Steam Workshop later.
 - Development saves may need restarting; protect valuable existing saves.
 

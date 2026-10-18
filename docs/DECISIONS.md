@@ -7,6 +7,8 @@ Summary from questions 1–28; accepted user comments override any overly broad 
 | Product | Project Zomboid **map mod**; standalone engine deferred indefinitely |
 | Test ground | Getaboda (roughly 4–5 buildings) is childhood location and automation experiment |
 | Recognition | Accurate footprint/placement where legitimate geodata supports it; generic Swedish house exteriors/interiors now; detailed individual homes later |
+| Personal purpose (2026-10-18) | Reunite the creator's former PZ group from Ljungby/Agunnaryd with a surprise familiar world; eventual private multiplayer remains a tested later goal |
+| Detail priority (2026-10-18) | Approximately ten creator-selected homes across the expanding project receive extra exterior/interior care. Plausible varied templates cover the remainder. The exact list and recognition details remain open; V1 still requires roughly 4–5 Getaboda buildings, not all ten homes |
 | Override approach | Keep per-building overrides separately from generated defaults; reruns preserve corrections |
 | Geodata | OSM plus legitimately usable Swedish datasets, with manual gap corrections and provenance |
 | Scale (updated 2026-10-17) | Start at 1:1, including the Getaboda–Agunnaryd road trial. Preserve source coordinates. Reconsider countryside compression only after driving and performance tests; this supersedes the earlier assumption that connecting countryside would be compressed |
@@ -34,6 +36,8 @@ Summary from questions 1–28; accepted user comments override any overly broad 
 | Autonomy (2026-10-17) | Agent proceeds within agreed scope; creator participates in design and consequential decisions |
 | Discovery (2026-10-17, clarified) | Develop Getaboda and the worldbuilding tools openly with the creator, including layouts, screenshots and technical explanations. Preserve surprises in later areas by default; full evidence remains available |
 | Residential outdoor character (2026-10-17) | Include decks/patios and gardens with flowerbeds in the Swedish residential library. Vary them by house; synthetic garden design is not verified information about a real property |
+| Rural hunting loot (2026-10-18) | Include hunting firearms in selected rural homes/farms as fictional gameplay placement, never as real household ownership data. Frequency, ammunition and balance remain open for design/playtesting; no loot implementation is implied |
+| Agricultural vehicles (2026-10-18) | Tractors are desired if a suitable compatible option exists. Evaluate available assets/mods before selecting a dependency; agricultural implements, Build 42 compatibility and multiplayer are separate checks. Not a V1 blocker |
 | Progress previews (2026-10-17) | Include screenshots and short Swedish updates at meaningful milestones during active work. Getaboda and the tools can be shown in detail; preserve discoveries in later areas |
 | Initial geodata processing (2026-10-17) | Raw geodata and source imagery stay and are processed locally in Sweden (EU/EEA); cloud/AI upload waits until conditions and access scope are clarified |
 

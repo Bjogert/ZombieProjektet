@@ -5,6 +5,8 @@ This is the canonical entry point for Codex and Claude Code. [CLAUDE.md](CLAUDE.
 ## Mission — settled
 Build a **Project Zomboid Build 42 Stable map mod**. Getaboda (approximately 4–5 buildings) is the first real location and starting point for an expanding Swedish world. Use modern geodata with Swedish 1990s styling and the game's existing mechanics. The creator wants to discover the world while playing, participate in design and important decisions, and delegate routine development.
 
+The personal goal is to reunite the creator's former PZ group from Ljungby/Agunnaryd with a surprise familiar world. Concentrate individual exterior/interior work on approximately ten creator-selected homes across the expanding project; use plausible varied templates elsewhere. This is a detail priority, not an additional V1 acceptance requirement. Getaboda remains open development with the creator.
+
 Read [PROJECT_SPEC](docs/PROJECT_SPEC.md), [DECISIONS](docs/DECISIONS.md), [ROADMAP](docs/ROADMAP.md), [SCOPE](docs/SCOPE.md) and [ADR-0001](docs/decisions/0001-mod-or-game.md) as relevant. Do not reopen the mod-versus-standalone decision or the choice of Getaboda.
 
 ## Language and player experience
