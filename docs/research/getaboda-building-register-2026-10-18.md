@@ -38,6 +38,13 @@ unknown. Creator observations and game choices belong in separate fields/files.
 The local review labels G01–G13 map to persistent project IDs. Ranking by size is
 for review convenience, not proof that the four largest objects are homes.
 
+**Creator selection, 2026-10-19:** begin the first Getaboda version with G01–G04
+and correct details together. The existing local `choices.json` records this
+decision against their persistent IDs, with the review labels and decision date.
+Source geometry, registry status, building use and appearance remain unchanged;
+selection is not verification that these candidates are homes. The fictional
+rural showcase remains the immediate visual test.
+
 ## Fitting evidence and accepted grid decision
 
 The largest four minimum rectangles measure approximately 10.9 × 17.1,

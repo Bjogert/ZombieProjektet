@@ -1,6 +1,6 @@
 # Roadmap — Getaboda first, then a growing Swedish world
 
-Updated 2026-10-18. This is the canonical execution queue and delivery plan. The creator owns design, scale, major scope and release decisions; the lead owns implementation, integration and technical QA. Conversation is Swedish; project material is English.
+Updated 2026-10-19. This is the canonical execution queue and delivery plan. The creator owns design, scale, major scope and release decisions; the lead owns implementation, integration and technical QA. Conversation is Swedish; project material is English.
 
 **Product:** a Project Zomboid Build 42 Stable map mod. **Scale:** 1:1, including connecting roads. The eventual municipality is a planning horizon, not the next build. Compression requires new evidence and a new creator decision.
 
@@ -14,6 +14,11 @@ light/door/walk/roof checks and clean restart/reload. Creator visual acceptance
 remains open. See [the evidence](RURAL_SHOWCASE_TEST.md) and
 [the specification](specs/rural-showcase.md).
 Historical geographic milestones below remain preserved, not prerequisites for this test.
+
+**Starting Getaboda batch selected (2026-10-19): G01–G04.** The creator chose
+these four review candidates and will correct details with the lead. Persistent
+IDs are recorded in local choices. Identity, use, accuracy and likeness remain
+unverified; this selection does not replace the current rural showcase priority.
 
 The cottage, deck and garden now connect to the road prototype in a separate synthetic fixture. A bounded metadata compatibility step resolved the official export defect: 25/25 runtime probes, manual light/door/roof checks and clean save/reload pass. Packaging still rejects the defective original export. See [integration evidence](INTEGRATION_TEST.md). The maintained local extraction command reproduces the road and authoring inputs. A small seeded road-edge/vegetation patch now has [game and clean-reload evidence](TERRAIN_TEST.md), including all 172 driveway adjacencies clear for characters. The creator approved **maintained residential plots with flowerbeds, wilder vegetation outside, and vanilla gradual overgrowth** on 2026-10-18. Next is **the first permitted real building and applying this direction to its surroundings**. The open-source building pilot now supplies 13 locally registered candidate outlines; creator-approved 45° grid rotation keeps 1:1 scale. Real-house verification, final selection and vehicle driving remain separate gates.
 
@@ -94,7 +99,7 @@ States: **Ready** = no known blocker; **Waiting** = named dependency; **Technica
 | 3 · DATA-ACCESS-01 | Waiting for access outcome; world/data | Current access outcome and smallest permitted acquisition plan | Fresh authenticated Geotorget check on 2026-10-18 shows both applications as Behandlas. A separate Microsoft open-footprint pilot supplies 13 local candidates; see research/getaboda-building-register-2026-10-18.md. No duplicate applications; continue ready work. |
 | 4 · PIPELINE-01 | Technical evidence recorded; world/data/lead | Reproduce the corridor from registered local source through maintained code | Bounded local command reproduces all 152 segments and 108 authoring inputs. Repeat output identical; source coverage/access limits documented in ROAD_PIPELINE.md. |
 | 5 · TERRAIN-01 | Technical evidence recorded for bounded prototype; buildings/world | Small road-edge/vegetation patch with clear cottage access | Seeded authoring, official export, visible runtime plants/edges, 25/25 fixture probes, 172 clear character adjacencies and clean reload. Vanilla replaces vegetation sprite names. Landscape direction approved on 2026-10-18; detailed visual acceptance and actual vehicle clearance remain open. Real land cover waits for permitted data. |
-| 6 · GETABODA-01 | In progress; world/data | One verified building, then the agreed building/road/land-cover subset | Microsoft 2026-08-13 provides 13 locally registered candidate outlines. Repeated import preserves IDs/choices. Creator approved 45° grid rotation; review candidate identity, fitting and the exact V1 list. LM remains pending. |
+| 6 · GETABODA-01 | In progress; world/data | Verify the selected G01–G04 starting batch and its building/road/land-cover subset | Creator selected G01–G04 on 2026-10-19; persistent IDs are saved in local choices. Preserve the approved 45° grid rotation and 1:1 scale. Verify identity, use and fitting together; selection does not confirm source accuracy. LM remains pending. |
 | 7 · HOUSE-FIT-01 | In progress; buildings/lead | One traceable real house in the game | Generic 8 x 12 variant passed official export, exterior inspection and 12/12 probes after full restart/reload. A roof gap found in r1 was repaired in r2; see [sized cottage evidence](COTTAGE_SIZE_TEST.md). One provisional 8 by 12 registered candidate now passes official export, 17/17 runtime probes, manual door/walk/roof checks and full restart/reload; see [candidate pilot](CANDIDATE_PILOT_TEST.md). The landscape follow-on passes 19/19 probes and clean reload. Creator finds the current silhouette barn-like. First deliver the [residential character revision](specs/residential-character.md); then return to required size/orientation variants while photos are pending. Review material footprint approximations with the creator. |
 | 8 · GETABODA-ASSEMBLE-01 | Waiting; lead | V1 candidate with the agreed buildings and surroundings | Verified subset, HOUSE-FIT-01, PIPELINE-01 and terrain/land-cover integration. Add only required variants. |
 | 9 · V1-QA-01 | Waiting; QA/lead | Reproducible, locally installable Getaboda package and creator playtest | GETABODA-ASSEMBLE-01; resolve technical failures before requesting acceptance. |
@@ -130,6 +135,7 @@ States: **Ready** = no known blocker; **Waiting** = named dependency; **Technica
 
 **HOUSE-FIT-01 / GETABODA-ASSEMBLE-01**
 - Creator authorization on 2026-10-18: continue reversible provisional candidates and generic details while owned photos are pending. This does not approve the final subset or convert assumptions into verified appearance.
+- Creator selection on 2026-10-19: start with G01–G04 and correct details together. This resolves the starting batch; identity and appearance still require evidence.
 - Preserve source footprint, stable ID and provenance separately from grid approximation; document fitting limits instead of forcing every house into the current rectangle.
 - Prove the first house's access, interior and roof before adapting the remaining buildings. Unverified decks/gardens remain varied design choices.
 - Assemble source-backed roads/land cover, clear access and only required variants; inspect seams in-game. No detailed private interiors without review.
@@ -157,7 +163,7 @@ Rural hunting firearms are accepted fictional gameplay direction, with loot freq
 | When | Creator decision | Independent work that continues |
 | --- | --- | --- |
 | Representative previews | Exterior palette, recognizable likeness, garden/road-edge character | Reversible prototypes, geometry validation and QA |
-| Verified source subset | Which 4–5 buildings define V1; material footprint approximations | Tool tests and supported fixture improvements |
+| Selected source subset | G01–G04 selected on 2026-10-19; review identities, material footprint approximations and any replacements together | Tool tests and supported fixture improvements |
 | V1 passes agent QA | Playtest feedback/acceptance and next bounded area | Defect fixes and packaging preparation |
 | Before distribution | Private/public release scope, then any Workshop publication | Local tests and release preparation |
 | Measured regional/urban pilots | Expansion order, travel feel/performance, any reconsideration of 1:1 | Source preservation and measured prototypes |

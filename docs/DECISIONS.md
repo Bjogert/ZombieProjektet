@@ -57,3 +57,12 @@ likeness for this test. Prioritise a coherent lived-in composition, foundation
 flowerbeds, usable deck, everyday props and surroundings; show actual game
 evidence. Keep existing geography and saves intact. This is not acceptance of
 the implementation or authorization for unrelated release/scope changes.
+
+## First Getaboda batch — 2026-10-19
+
+The creator selected review labels **G01–G04** for the first Getaboda version:
+start with these four candidates and correct details together. The selection is
+stored by persistent project ID in the existing local register's `choices.json`;
+the review-label mapping and source records remain unchanged. This resolves the
+starting batch, not residential identity, measured accuracy or exterior likeness.
+It does not supersede the current fictional rural showcase and its visual review.
