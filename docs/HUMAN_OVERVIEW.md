@@ -21,7 +21,7 @@ The creator wants to reunite a former PZ group from Ljungby/Agunnaryd and surpri
 Rural hunting firearms are planned as fictional gameplay loot, with frequency and balance still open. Tractors are desired; a Build 42 mod candidate has been found but has not been installed or tested with our game version or multiplayer. See the [specification](PROJECT_SPEC.md) for the evidence and remaining choices.
 
 ## How we work
-The lead now dispatches bounded specialist tasks during active sessions, using reusable briefs for world/data, buildings/art and QA/review. ROADMAP remains the single queue. Workers return evidence to the lead, who integrates changes and controls the mapping tools and game. Ready tasks are distinguished from actual running agents. No unattended schedule is configured. See [studio assignments](AGENT_ROLES.md).
+The lead now dispatches bounded specialist tasks during active sessions, using reusable briefs for world/data, buildings/art and QA/review. ROADMAP remains the single queue. Workers return evidence to the lead, who integrates changes and controls the mapping tools and game. Ready tasks are distinguished from actual running agents. An hourly continuation in this chat was activated on 2026-10-23 at the creator's request. It resumes one bounded ready delivery when the computer and app are running, and reports meaningful progress or decisions. It does not imply continuous execution or automatic public releases. See [studio assignments](AGENT_ROLES.md).
 
 The creator sets creative direction and important choices. The lead agent implements, tests, fixes and coordinates technical work. Specialist tasks cover world data, buildings/art and QA when useful and authorized. Conversation is in Swedish; project material is in English.
 

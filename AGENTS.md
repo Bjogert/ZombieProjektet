@@ -27,6 +27,15 @@ subagent delegation for useful independent work during active project sessions,
 following [the reusable role briefs](docs/AGENT_ROLES.md). Report actual activity;
 available roles and ready tasks are not running agents.
 
+The creator prefers Astra for the lead and task-based worker model selection.
+Use the model policy in AGENT_WORKFLOW for new assignments; preserve the main
+chat's user-selected model and apply the same validation gates to every worker.
+
+On 2026-10-23 the creator authorized continued work without repeated start
+prompts. An hourly chat heartbeat, `zombieprojektet-studio`, was created and
+confirmed ACTIVE. Follow the scheduled-continuation rules in AGENT_WORKFLOW;
+verify current scheduler and worker state before describing activity.
+
 ## Engineering principles
 1. Choose the simplest complete, verifiable solution. Avoid speculative architecture and dependencies without a demonstrated need.
 2. Preserve original coordinates, identifiers, licenses and verified properties. Record assumptions separately; never invent verified real building placements or footprints.

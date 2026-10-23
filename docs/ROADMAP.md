@@ -113,9 +113,26 @@ The creator requested lead-directed specialist agents. Reusable briefs are in
 [AGENT_ROLES](AGENT_ROLES.md); the queue above remains authoritative. A read-only
 workflow review was completed by `studio_workflow_review`; it recommended reusing
 this queue and the existing resource-ownership rules. This is a completed review,
-not a running background job. The next implementation assignment remains
-RURAL-SHOWCASE-01 refinement. A new Lantmäteriet access outcome has not yet been
-verified; do not mark DATA-ACCESS-01 approved from the creator notification alone.
+not a running background job. The creator then confirmed the report and requested
+continued work without repeated start prompts. Hourly chat heartbeat
+`zombieprojektet-studio` was created ACTIVE; see AGENT_WORKFLOW for boundaries.
+The creator corrected the mail report: there is no new Lantmäteriet decision.
+DATA-ACCESS-01 remains waiting on verified access.
+
+The creator prefers Astra for the lead and task-based models for specialists;
+the selection policy is in AGENT_WORKFLOW. `studio_delivery_review`, requested
+as `gpt-6.1-sol` / high for independent review, returned no blocking findings on
+the six-document workflow change. Setup, overview-marker, local-link and scoped
+whitespace checks passed. This was documentation review, not new game evidence.
+
+Current RURAL-SHOWCASE-01 assignment (2026-10-23): `rural_plot_polish` was
+confirmed Running at dispatch in `C:/PZModding/worktrees/zombie-rural-polish`,
+branch `codex/rural-showcase-polish`, base `77f9452`. It owns only
+`assets/buildings/rural_cottage_01.tbx`, `assets/gardens/rural_plot_01.json` and
+`assets/gardens/RURAL_PLOT.md`. Deliver a smaller service yard, less regular
+planting and a more furnished interior while preserving house/access invariants.
+Lead owns integration, official export and game proof. Check live status before
+resuming; close this dispatch record when its result is integrated.
 
 ### Near-term acceptance checks and boundaries
 
@@ -163,7 +180,7 @@ verified; do not mark DATA-ACCESS-01 approved from the creator notification alon
 3. For a blocker, record failure, evidence, next distinct hypothesis and exit condition. After one focused diagnostic session without progress, choose the next ready independent task. Keep the failed gate open; do not transfer technical acceptance to the creator.
 4. Data delays block real-data integration only. Synthetic integration, reproducible extraction and small terrain prototypes continue. Pending visual/release approval does not stop unrelated reversible work.
 5. At each delivery, update this queue, evidence and the human overview. Report changes, actual passes, open checks and next action. Send Swedish updates and game screenshots at meaningful points during active work.
-6. Delegate specialist roles when explicitly authorized and useful, with bounded ownership, separate worktrees for concurrent writers and one operator for shared game/editor resources. A role label does not mean an agent is running. This plan creates no schedule or unattended execution.
+6. Delegate specialist roles when explicitly authorized and useful, with bounded ownership, separate worktrees for concurrent writers and one operator for shared game/editor resources. A role label does not mean an agent is running. The separately authorized hourly chat heartbeat resumes bounded work; verify current app schedule and worker state before reporting execution.
 
 ## Creator decisions and planning horizon
 

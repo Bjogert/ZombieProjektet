@@ -2,8 +2,9 @@
 
 Use these briefs with [AGENT_WORKFLOW](AGENT_WORKFLOW.md). The lead selects work
 from [ROADMAP](ROADMAP.md), fills in its task ID, bounded outcome, base commit,
-worktree, owned files and acceptance evidence, then dispatches the brief through
-the available subagent tools. These are reusable instructions, not running jobs.
+worktree, requested model/effort, owned files and acceptance evidence, then
+dispatches the brief through the available subagent tools. These are reusable
+instructions, not running jobs.
 
 ## Shared assignment contract
 
@@ -34,6 +35,8 @@ Before dispatch, record the outcome, writer ownership and resource owner. Review
 the returned diff and evidence, integrate sequentially, run the relevant checks
 and close the assignment. Report implementation, automated checks, game checks
 and creator acceptance separately. If there is no useful parallel task, work alone.
+Choose the lightest suitable model under AGENT_WORKFLOW's model policy; keep the
+same acceptance standard for every model and preserve active workers until handoff.
 
 ## World / data
 
@@ -96,4 +99,6 @@ an ended session cannot retain a live-running claim. A committed note records
 history, not a live monitor. A role brief alone proves no agent is active.
 
 During an active session the lead moves to the next ready approved task. This
-setup creates no recurring job or guarantee of work after the turn ends.
+role file creates no recurring job itself. The separately configured hourly
+heartbeat in AGENT_WORKFLOW resumes authorized work when the local app and
+computer are available; verify actual activity instead of assuming it.
