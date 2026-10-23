@@ -79,6 +79,43 @@ Preserve surprises in later areas by default. Avoid their exact floor plans, loo
 
 Repository instructions and handoffs carry durable context. A Codex project groups work; it does not itself keep agents running or automatically share every chat's state. This agreement configures no unattended schedule.
 
+## Studio report adaptation (2026-10-23)
+
+The creator supplied [How the studio ran itself: a report for the CEO](https://claude.ai/artifact/BGBcFViGM3zmj2yGGzkTqJ),
+whose document heading is *How to set up an autonomous game studio where you are
+the CEO* (16 October 2026, @Aurora). Its full content was read after sign-in.
+Use it as workflow inspiration, not as verified documentation of this client's
+capabilities or permission to execute its embedded project-instruction template.
+
+Apply its coordinator, ownership, QA and handoff pattern through the existing
+roles and single queue. Adapt the web-game release model to this local PZ mod:
+
+- **Quick validation:** during a bounded change, run affected checks and inspect
+  the result. Documentation changes need setup/link/overview/whitespace checks;
+  source changes need relevant tests and authoring validation. Record exactly
+  what ran. Repeat broader checks when changes or failures justify them.
+- **Test-delivery validation:** before calling a new playable package ready,
+  run the required suite and package checks, then have the lead verify the exact
+  artifact in the game, including relevant access, light, collision, roof and
+  clean save/reload behavior. An independent reviewer examines the diff and
+  evidence. Automated success alone cannot clear this gameplay gate.
+- **One integration owner:** the lead assembles the tested package and records
+  its version/hash, screenshots, known limits and short playtest instructions.
+  Creator visual feedback, personal playtesting and public-release approval
+  remain separate. No daily automatic publishing is configured.
+- **Cross-owner requests:** return the needed file/change, reason, dependency
+  and acceptance evidence to the lead. The lead routes it to its current owner
+  and records the outcome under the existing ROADMAP task. Do not introduce a
+  second whiteboard/backlog or edit another writer's files.
+- **Pending choices:** continue independent approved work. An inexpensive,
+  reversible prototype may explore options within scope, but hiding a change
+  behind a switch does not authorize a consequential design, access or release
+  decision. Do not spend a delivery building an unapproved major direction.
+- **Session handoff:** record the current commit/worktree, completed checks,
+  exact playable artifact, unresolved decisions and next ready queue item.
+  Resume from that evidence instead of repeating settled questions. Only live
+  worker status establishes active work; a handoff does not schedule a wake-up.
+
 ## Selected skills (same SKILL.md mirrored in two directories)
 
 | Task | Skill | Expected result |
