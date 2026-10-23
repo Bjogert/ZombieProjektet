@@ -1,6 +1,6 @@
 # Roadmap — Getaboda first, then a growing Swedish world
 
-Updated 2026-10-19. This is the canonical execution queue and delivery plan. The creator owns design, scale, major scope and release decisions; the lead owns implementation, integration and technical QA. Conversation is Swedish; project material is English.
+Updated 2026-10-23. This is the canonical execution queue and delivery plan. The creator owns design, scale, major scope and release decisions; the lead owns implementation, integration and technical QA. Conversation is Swedish; project material is English.
 
 **Product:** a Project Zomboid Build 42 Stable map mod. **Scale:** 1:1, including connecting roads. The eventual municipality is a planning horizon, not the next build. Compression requires new evidence and a new creator decision.
 
@@ -10,8 +10,9 @@ Updated 2026-10-19. This is the canonical execution queue and delivery plan. The
 fictional rural dwelling and lived-in plot, replacing Getaboda likeness as the
 immediate acceptance target. The environment-library direction is accepted.
 The r5 build now has actual game screenshots, 23/23 runtime probes, manual
-light/door/walk/roof checks and clean restart/reload. Creator visual acceptance
-remains open. See [the evidence](RURAL_SHOWCASE_TEST.md) and
+light/door/walk/roof checks and clean restart/reload. The creator has positively
+reviewed the displayed result and requested continued refinement. This accepts
+the visual direction; a personal playtest and final milestone acceptance remain open. See [the evidence](RURAL_SHOWCASE_TEST.md) and
 [the specification](specs/rural-showcase.md).
 Historical geographic milestones below remain preserved, not prerequisites for this test.
 
@@ -93,18 +94,28 @@ States: **Ready** = no known blocker; **Waiting** = named dependency; **Technica
 
 | Order / ID | State and owner role | Deliverable | Dependency / next action |
 | --- | --- | --- | --- |
-| 0 · RURAL-SHOWCASE-01 | Technical evidence recorded; lead/buildings | Complete fictional dwelling, deck, garden, props and woodland edge | Official export, 72 tests, 23/23 runtime probes, manual light/door/walk/roof inspection and clean restart/reload pass. See RURAL_SHOWCASE_TEST.md. Creator judges actual screenshots; refine planting rhythm, gravel edges and entrance/interior before wider reuse. |
+| 0 · RURAL-SHOWCASE-01 | Technical evidence recorded; lead/buildings | Complete fictional dwelling, deck, garden, props and woodland edge | Official export, 72 tests, 23/23 runtime probes, manual light/door/walk/roof inspection and clean restart/reload pass. See RURAL_SHOWCASE_TEST.md. Creator positively reviewed the screenshots and requested continuation. Ready follow-up: refine planting rhythm, gravel edges and entrance/interior, then obtain fresh game evidence before wider reuse. |
 | 1 · DRIVE-INPUT-01 | Diagnostic attempted; waiting for supported sustained control; QA/lead | Reliable sustained input and steering for an actual driving check | Native API exposes key taps and the new Escape trial did not work. No held accelerate/steer/stop path verified. Retain the gate; do not repeat tap loops. |
 | 2 · INTEGRATE-01 | Technical evidence recorded; lead/buildings | Cottage, deck/garden and road access in one synthetic playable fixture | 25/25 runtime probes, manual light/door/roof checks and clean save/reload pass after the bounded metadata stage. Original export remains rejected. Creator acceptance separate; see INTEGRATION_TEST.md. |
 | 3 · DATA-ACCESS-01 | Waiting for access outcome; world/data | Current access outcome and smallest permitted acquisition plan | Fresh authenticated Geotorget check on 2026-10-18 shows both applications as Behandlas. A separate Microsoft open-footprint pilot supplies 13 local candidates; see research/getaboda-building-register-2026-10-18.md. No duplicate applications; continue ready work. |
 | 4 · PIPELINE-01 | Technical evidence recorded; world/data/lead | Reproduce the corridor from registered local source through maintained code | Bounded local command reproduces all 152 segments and 108 authoring inputs. Repeat output identical; source coverage/access limits documented in ROAD_PIPELINE.md. |
 | 5 · TERRAIN-01 | Technical evidence recorded for bounded prototype; buildings/world | Small road-edge/vegetation patch with clear cottage access | Seeded authoring, official export, visible runtime plants/edges, 25/25 fixture probes, 172 clear character adjacencies and clean reload. Vanilla replaces vegetation sprite names. Landscape direction approved on 2026-10-18; detailed visual acceptance and actual vehicle clearance remain open. Real land cover waits for permitted data. |
-| 6 · GETABODA-01 | In progress; world/data | Verify the selected G01–G04 starting batch and its building/road/land-cover subset | Creator selected G01–G04 on 2026-10-19; persistent IDs are saved in local choices. Preserve the approved 45° grid rotation and 1:1 scale. Verify identity, use and fitting together; selection does not confirm source accuracy. LM remains pending. |
-| 7 · HOUSE-FIT-01 | In progress; buildings/lead | One traceable real house in the game | Generic 8 x 12 variant passed official export, exterior inspection and 12/12 probes after full restart/reload. A roof gap found in r1 was repaired in r2; see [sized cottage evidence](COTTAGE_SIZE_TEST.md). One provisional 8 by 12 registered candidate now passes official export, 17/17 runtime probes, manual door/walk/roof checks and full restart/reload; see [candidate pilot](CANDIDATE_PILOT_TEST.md). The landscape follow-on passes 19/19 probes and clean reload. Creator finds the current silhouette barn-like. First deliver the [residential character revision](specs/residential-character.md); then return to required size/orientation variants while photos are pending. Review material footprint approximations with the creator. |
+| 6 · GETABODA-01 | Provisional register available; verification pending; world/data | Verify the selected G01–G04 starting batch and its building/road/land-cover subset | Creator selected G01–G04 on 2026-10-19; persistent IDs are saved in local choices. Preserve the approved 45° grid rotation and 1:1 scale. Verify identity, use and fitting together; selection does not confirm source accuracy. LM remains pending. |
+| 7 · HOUSE-FIT-01 | Provisional game evidence; residential refinement next; buildings/lead | One traceable real house in the game | Generic 8 x 12 variant passed official export, exterior inspection and 12/12 probes after full restart/reload. A roof gap found in r1 was repaired in r2; see [sized cottage evidence](COTTAGE_SIZE_TEST.md). One provisional 8 by 12 registered candidate now passes official export, 17/17 runtime probes, manual door/walk/roof checks and full restart/reload; see [candidate pilot](CANDIDATE_PILOT_TEST.md). The landscape follow-on passes 19/19 probes and clean reload. Creator finds the current silhouette barn-like. First deliver the [residential character revision](specs/residential-character.md); then return to required size/orientation variants while photos are pending. Review material footprint approximations with the creator. |
 | 8 · GETABODA-ASSEMBLE-01 | Waiting; lead | V1 candidate with the agreed buildings and surroundings | Verified subset, HOUSE-FIT-01, PIPELINE-01 and terrain/land-cover integration. Add only required variants. |
 | 9 · V1-QA-01 | Waiting; QA/lead | Reproducible, locally installable Getaboda package and creator playtest | GETABODA-ASSEMBLE-01; resolve technical failures before requesting acceptance. |
 | Conditional · ROAD-TEST-01 | Waiting for reliable control; QA/lead | Continuous 5.09 km road run | DRIVE-INPUT-01. Keep [existing evidence](ROAD_TEST.md); resume when control is available. |
 | Review · DESIGN-REVIEW-01 | Landscape direction accepted 2026-10-18; creator with lead | Exterior, garden and road-edge direction | Maintained residential plots with flowerbeds, freer road-edge/forest-margin vegetation outside, then vanilla gradual overgrowth. Apply within agreed scope without reopening this choice. Exterior likeness, exact detail and milestone acceptance remain separate reviews. |
+
+### Studio setup checkpoint — 2026-10-23
+
+The creator requested lead-directed specialist agents. Reusable briefs are in
+[AGENT_ROLES](AGENT_ROLES.md); the queue above remains authoritative. A read-only
+workflow review was completed by `studio_workflow_review`; it recommended reusing
+this queue and the existing resource-ownership rules. This is a completed review,
+not a running background job. The next implementation assignment remains
+RURAL-SHOWCASE-01 refinement. A new Lantmäteriet access outcome has not yet been
+verified; do not mark DATA-ACCESS-01 approved from the creator notification alone.
 
 ### Near-term acceptance checks and boundaries
 

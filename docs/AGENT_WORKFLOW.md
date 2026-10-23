@@ -24,6 +24,12 @@ for consequential creator decisions or a genuine external boundary. This does
 not claim that work continues between turns or configure unattended execution.
 
 ## Specialist roles
+Creator request, 2026-10-23: set up specialist agents directed by the lead. During
+active project sessions, delegate useful independent tasks using the reusable
+[studio assignments](AGENT_ROLES.md). This is standing authorization for bounded
+project delegation within accepted scope, not a new release, access or scheduling
+permission. Keep the current model unless the creator requests a change.
+
 Use a small team structure when parallel work is explicitly authorized and useful. These are task roles, not installed agents or a claim of distinct model expertise. The lead can perform any role without spawning another agent.
 
 | Role | Responsibility | Required handoff |
@@ -52,6 +58,10 @@ Return: changed files/commit, checks, unresolved risks and next action.
 ```
 
 Workers report to the lead. The lead reviews the actual diff and evidence, integrates one result at a time, and runs the affected checks. Read-only reviewers do not edit the implementation. Shared documentation, packaging, mod installation, mapping-tool UI and game execution remain with the lead unless explicitly handed over. Record a new owner before transferring those resources.
+
+Use the [role briefs and dispatch states](AGENT_ROLES.md) for repeat assignments.
+Show actual worker activity separately from roadmap readiness. Do not leave a
+historical assignment marked Running after it returns or the session ends.
 
 For each delivery, report separately what is implemented, what has passed automated/editor/game checks, and what still needs creator acceptance. If a dependency blocks one task, choose another ready task rather than repeatedly polling or inventing success. Raw Lantmäteriet data must not enter agent prompts or model-visible tool output under the current local-processing decision.
 

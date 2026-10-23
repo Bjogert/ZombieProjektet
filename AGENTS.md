@@ -22,6 +22,11 @@ Use the current execution queue in [ROADMAP](docs/ROADMAP.md) to select the next
 
 Specialist roles and delegation rules are described in the workflow. Keep one integration owner. These instructions do not authorize unrestricted background execution, purchases, public releases or PR merges.
 
+The creator requested lead-directed specialists on 2026-10-23. Use bounded
+subagent delegation for useful independent work during active project sessions,
+following [the reusable role briefs](docs/AGENT_ROLES.md). Report actual activity;
+available roles and ready tasks are not running agents.
+
 ## Engineering principles
 1. Choose the simplest complete, verifiable solution. Avoid speculative architecture and dependencies without a demonstrated need.
 2. Preserve original coordinates, identifiers, licenses and verified properties. Record assumptions separately; never invent verified real building placements or footprints.
@@ -39,8 +44,10 @@ house, deck, foundation planting, props and surroundings, with fresh game proof.
 Preserve existing geographic work separately; it is not this showcase's acceptance gate.
 The [r5 showcase](docs/RURAL_SHOWCASE_TEST.md) now passes 23/23 runtime probes,
 manual light/door/walk/roof inspection and clean restart/reload without QA.
-The 72-test suite passes. Creator visual acceptance remains open; use the actual
-game evidence and documented visual follow-up before multiplying this layout.
+The recorded 72-test suite passes. The creator positively reviewed the displayed
+r5 result and requested continuation. Refine the accepted visual direction using
+fresh game evidence before multiplying this layout. Personal playtesting and
+final milestone acceptance remain open.
 
 Use [ROADMAP](docs/ROADMAP.md) for the next bounded delivery and dependencies. The [synthetic roadside integration](docs/INTEGRATION_TEST.md) has 25/25 runtime probes, manual light/door/roof checks and clean save/reload evidence after a bounded metadata compatibility step. Packaging still rejects the original defective export. [Local road extraction](docs/ROAD_PIPELINE.md) reproduces the registered corridor and authoring inputs. The [small terrain prototype](docs/TERRAIN_TEST.md) is verified in-game with clear character access and clean reload; the creator approved maintained residential plots with flowerbeds, wilder vegetation outside and vanilla gradual overgrowth on 2026-10-18. This approves direction, not every prototype detail. A frozen Microsoft open-footprint sample now supplies 13 local Getaboda candidates, with preserved IDs and source bytes. The creator approved a 45° grid rotation at 1:1; the creator selected G01–G04 as the starting batch on 2026-10-19; real-house identity, use and fitting remain unverified. See `docs/research/getaboda-building-register-2026-10-18.md`. Creator acceptance and continuous driving remain separate gates. Do not turn a control or access blocker into an indefinite stop on independent work. No broad municipality exporter or completed milestone is implied by successful builds alone.
 
