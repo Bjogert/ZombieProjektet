@@ -1,9 +1,7 @@
 # Claude Code — ZombieProjektet
 
-**Läs [AGENTS.md](AGENTS.md) först.** Den är gemensam källa för Codex och Claude Code. Läs inte om dessa två filer i en loop.
+Read [AGENTS.md](AGENTS.md) first. It is the shared authority for Codex and Claude Code; do not read these entry points in a loop.
 
-Project Zomboid **Build 42 Stable-kartmod** är beslutad. Ingen fristående motor utreds eller byggs nu.
+The chosen product is a **Project Zomboid Build 42 Stable map mod**. Read the relevant specification, decisions, roadmap and current Build 42 evidence before starting work. Project skills are in `.claude/skills/`; matching Codex instructions are in `.agents/skills/`.
 
-Läs [docs/PROJECT_SPEC.md](docs/PROJECT_SPEC.md), [docs/ROADMAP.md](docs/ROADMAP.md) och den aktuella [Build 42-spiken](docs/BUILD42_SPIKE.md) före arbetet. Projekt-skills finns i `.claude/skills/<name>/SKILL.md`; Codex har motsvarande filer i `.agents/skills/`.
-
-Skriv agentplaner och reviews i Markdown. Håll `docs/HUMAN_OVERVIEW.md` och den manuellt utformade `docs/PROJECT_OVERVIEW.html` i takt; `python tools/render_dashboard.py --check` kontrollerar bara utvalda nyckelord, inte full synkronisering. Utge aldrig unit tests för faktiska speltester. Installera inte externa agenter, hooks eller pluginpaket utan godkännande.
+Communicate with the creator in Swedish; write all project material in English. Follow the autonomy, decision and spoiler rules in `AGENTS.md` and `docs/AGENT_WORKFLOW.md`. Keep Markdown documentation and the manually maintained HTML overview consistent. Never represent unit tests as gameplay evidence. Do not install external agents, hooks or plugin bundles without authorization.

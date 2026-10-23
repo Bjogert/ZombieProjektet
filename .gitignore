@@ -2,6 +2,7 @@ __pycache__/
 *.py[cod]
 .venv/
 build/
+local-data/
 *.log
 .DS_Store
 .vscode/

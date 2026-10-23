@@ -1,0 +1,388 @@
+{
+  "format": "zombieprojektet-source-audit-v1",
+  "checked_on": "2026-10-17",
+  "status": "discovery_only_no_real_building_import",
+  "search_center": {
+    "longitude": 14.0837009,
+    "latitude": 56.7325969,
+    "crs": "EPSG:4326",
+    "source": "osm:node/7465414578",
+    "role": "settlement_label_not_address_or_game_origin"
+  },
+  "osm_radius_m": 750,
+  "stac_bbox_wgs84": [
+    14.0717009,
+    56.7265969,
+    14.0957009,
+    56.7385969
+  ],
+  "sources": [
+    {
+      "name": "osm-place",
+      "provenance": {
+        "endpoint": "https://overpass-api.de/api/interpreter",
+        "query": "[out:json][timeout:25];nwr[\"place\"][\"name\"=\"Getaboda\"];out center tags;",
+        "retrieved_at": "2026-10-17T14:10:32.141259+00:00",
+        "sha256": "b197b1963612bd0416b81ac8bfb73ac1c3521ff92b98b82d02f84fa0de814706",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors",
+        "license_url": "https://www.openstreetmap.org/copyright"
+      },
+      "osm_base_timestamp": "2026-10-17T14:09:06Z",
+      "elements": [
+        {
+          "type": "node",
+          "id": 7465414578,
+          "lat": 56.7325969,
+          "lon": 14.0837009,
+          "tags": {
+            "name": "Getaboda",
+            "place": "hamlet"
+          }
+        }
+      ],
+      "building_object_count": 0,
+      "geometry_included": false
+    },
+    {
+      "name": "osm-area",
+      "provenance": {
+        "endpoint": "https://overpass-api.de/api/interpreter",
+        "query": "[out:json][timeout:25];(nwr[\"building\"](around:750,56.7325969,14.0837009);way[\"highway\"](around:750,56.7325969,14.0837009););out body geom;",
+        "retrieved_at": "2026-10-17T14:12:06.736720+00:00",
+        "sha256": "1dcd28fcdae6b4e99df4389f95178957a1e78afe9d95af4fe7003ec65b89316a",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors",
+        "license_url": "https://www.openstreetmap.org/copyright"
+      },
+      "osm_base_timestamp": "2026-10-17T14:11:06Z",
+      "elements": [
+        {
+          "type": "way",
+          "id": 58601063,
+          "tags": {
+            "highway": "unclassified",
+            "surface": "gravel"
+          }
+        },
+        {
+          "type": "way",
+          "id": 549226405,
+          "tags": {
+            "highway": "track",
+            "tracktype": "grade4"
+          }
+        }
+      ],
+      "building_object_count": 0,
+      "geometry_included": false
+    },
+    {
+      "name": "lm-building-items",
+      "query_url": "https://api.lantmateriet.se/stac-vektor/v1/collections/byggnader/items?bbox=14.0717009,56.7265969,14.0957009,56.7385969&limit=5",
+      "response_cached_at": "2026-10-17T14:15:59.310018+00:00",
+      "cached_response_sha256": "8160abb54a55717e789a5a6cc59df1a3bd6a2c87db7f757b1bb22f727a00d532",
+      "response_item_count": 2,
+      "next_page_available": false,
+      "all_pages_inspected": true,
+      "selected_items": [
+        {
+          "id": "0781",
+          "collection": "byggnader",
+          "metadata_url": "https://api.lantmateriet.se/stac-vektor/v1/collections/byggnader/items/0781",
+          "properties": {
+            "title": "Byggnader för Ljungby kommun",
+            "created": "2025-02-03T00:00:00Z",
+            "lanskod": "07",
+            "updated": "2026-10-16T23:08:02.987000Z",
+            "datetime": "2026-10-16T23:08:02.987000Z",
+            "proj:bbox": [
+              396592.484,
+              6273673.715,
+              457355.606,
+              6323394.767
+            ],
+            "proj:epsg": 3006,
+            "description": "En geopackagefil som innehåller alla byggnader för Ljungby kommun."
+          },
+          "bbox_wgs84": [
+            13.295718790284464,
+            56.59590001836962,
+            14.305339645273923,
+            57.05200798101874
+          ],
+          "catalog_geometry_contains_search_center": true,
+          "asset_size_bytes": 6620460,
+          "assets_downloaded": false,
+          "catalog_license": "CC-BY-4.0",
+          "attribution": "Lantmäteriet; product identified by collection and item; selected metadata reproduced here"
+        },
+        {
+          "id": "0765",
+          "collection": "byggnader",
+          "metadata_url": "https://api.lantmateriet.se/stac-vektor/v1/collections/byggnader/items/0765",
+          "properties": {
+            "title": "Byggnader för Älmhults kommun",
+            "created": "2025-02-03T00:00:00Z",
+            "lanskod": "07",
+            "updated": "2026-10-16T23:07:48.164000Z",
+            "datetime": "2026-10-16T23:07:48.164000Z",
+            "proj:bbox": [
+              420759.266,
+              6255340.018,
+              475285.547,
+              6290940.952
+            ],
+            "proj:epsg": 3006,
+            "description": "En geopackagefil som innehåller alla byggnader för Älmhults kommun."
+          },
+          "bbox_wgs84": [
+            13.704016254393245,
+            56.43593316281361,
+            14.599143050869264,
+            56.761772242090316
+          ],
+          "catalog_geometry_contains_search_center": true,
+          "asset_size_bytes": 2874708,
+          "assets_downloaded": false,
+          "catalog_license": "CC-BY-4.0",
+          "attribution": "Lantmäteriet; product identified by collection and item; selected metadata reproduced here"
+        }
+      ]
+    },
+    {
+      "name": "lm-image-search-simple",
+      "query_url": "https://api.lantmateriet.se/stac-bild/v1/search?bbox=14.0717009,56.7265969,14.0957009,56.7385969&limit=5",
+      "response_cached_at": "2026-10-17T14:15:59.745693+00:00",
+      "cached_response_sha256": "2bf777a23c501398af0e37d796041eb3caefd9e4a286ca0c8ae1cc7dcc09ee8c",
+      "response_item_count": 5,
+      "next_page_available": true,
+      "all_pages_inspected": false,
+      "selected_items": [
+        {
+          "id": "o62875_4425_25_mr25",
+          "collection": "orto-e2-2025",
+          "metadata_url": "https://api.lantmateriet.se/stac-bild/v1/collections/orto-e2-2025/items/o62875_4425_25_mr25",
+          "properties": {
+            "flygar": 2025,
+            "created": "2025-12-23T00:39:33Z",
+            "datetime": "2025-07-01T12:05:59Z",
+            "flyghojd": 3000,
+            "proj:bbox": [
+              442500.0,
+              6287500.0,
+              445000.0,
+              6290000.0
+            ],
+            "proj:code": "EPSG:3006",
+            "upplosning": 0.16,
+            "spektraltyp": "rgbi",
+            "end_datetime": "2025-07-01T12:06:07Z",
+            "start_datetime": "2025-07-01T11:45:00Z"
+          },
+          "bbox_wgs84": [
+            14.059733047571509,
+            56.727972502634564,
+            14.101144636388774,
+            56.75073067074738
+          ],
+          "catalog_geometry_contains_search_center": true,
+          "asset_size_bytes": 728877749,
+          "assets_downloaded": false,
+          "catalog_license": "CC-BY-4.0",
+          "attribution": "Lantmäteriet; product identified by collection and item; selected metadata reproduced here"
+        },
+        {
+          "id": "o62850_4425_25_mr25",
+          "collection": "orto-e2-2025",
+          "metadata_url": "https://api.lantmateriet.se/stac-bild/v1/collections/orto-e2-2025/items/o62850_4425_25_mr25",
+          "properties": {
+            "flygar": 2025,
+            "created": "2025-12-23T00:39:32Z",
+            "datetime": "2025-07-01T11:44:44Z",
+            "flyghojd": 3000,
+            "proj:bbox": [
+              442500.0,
+              6285000.0,
+              445000.0,
+              6287500.0
+            ],
+            "proj:code": "EPSG:3006",
+            "upplosning": 0.16,
+            "spektraltyp": "rgbi",
+            "end_datetime": "2025-07-01T12:06:30Z",
+            "start_datetime": "2025-07-01T11:44:36Z"
+          },
+          "bbox_wgs84": [
+            14.060293665377708,
+            56.70551577650776,
+            14.101680114476876,
+            56.72827377354875
+          ],
+          "catalog_geometry_contains_search_center": false,
+          "asset_size_bytes": 711002919,
+          "assets_downloaded": false,
+          "catalog_license": "CC-BY-4.0",
+          "attribution": "Lantmäteriet; product identified by collection and item; selected metadata reproduced here"
+        },
+        {
+          "id": "o62875_4425_25_mr23",
+          "collection": "orto-e2-2023",
+          "metadata_url": "https://api.lantmateriet.se/stac-bild/v1/collections/orto-e2-2023/items/o62875_4425_25_mr23",
+          "properties": {
+            "flygar": 2023,
+            "created": "2025-01-31T01:21:35Z",
+            "datetime": "2023-04-20T13:47:02Z",
+            "flyghojd": 3000,
+            "proj:bbox": [
+              442500.0,
+              6287500.0,
+              445000.0,
+              6290000.0
+            ],
+            "proj:code": "EPSG:3006",
+            "upplosning": 0.16,
+            "spektraltyp": "rgbi",
+            "end_datetime": "2023-04-20T13:59:14Z",
+            "start_datetime": "2023-04-20T13:46:54Z"
+          },
+          "bbox_wgs84": [
+            14.059733047571509,
+            56.727972502634564,
+            14.101144636388774,
+            56.75073067074738
+          ],
+          "catalog_geometry_contains_search_center": true,
+          "asset_size_bytes": 728599142,
+          "assets_downloaded": false,
+          "catalog_license": "CC-BY-4.0",
+          "attribution": "Lantmäteriet; product identified by collection and item; selected metadata reproduced here"
+        }
+      ]
+    },
+    {
+      "name": "lm-height-search-simple",
+      "query_url": "https://api.lantmateriet.se/stac-hojd/v1/search?bbox=14.0717009,56.7265969,14.0957009,56.7385969&limit=5",
+      "response_cached_at": "2026-10-17T14:15:59.858881+00:00",
+      "cached_response_sha256": "d46020d84586bba9259fc6690a960ce80ae9071cb30b17be8325be71e78afd08",
+      "response_item_count": 5,
+      "next_page_available": true,
+      "all_pages_inspected": false,
+      "selected_items": [
+        {
+          "id": "25a021-62875_4425_25",
+          "collection": "dsm-skoglig-copc",
+          "metadata_url": "https://api.lantmateriet.se/stac-hojd/v1/collections/dsm-skoglig-copc/items/25a021-62875_4425_25",
+          "properties": {
+            "pc:type": "other",
+            "updated": "2026-10-14T12:10:57Z",
+            "datetime": "2025-03-27T12:00:00Z",
+            "flyghojd": 2000,
+            "pc:count": 19775737,
+            "proj:bbox": [
+              442500.0,
+              6287500.0,
+              445000.0,
+              6290000.0
+            ],
+            "proj:code": "EPSG:5845",
+            "pc:density": 0.5605700442,
+            "pc:encoding": "application/vnd.laszip+copc",
+            "punkttathet": 1.4,
+            "end_datetime": "2025-04-02T00:00:00Z",
+            "data_modified": "2025-11-11T00:00:00Z",
+            "start_datetime": "2025-03-22T00:00:00Z",
+            "skanningsomrade": "25A021"
+          },
+          "bbox_wgs84": [
+            14.059733047571509,
+            56.727972502634564,
+            14.101144636388774,
+            56.75073067074738
+          ],
+          "catalog_geometry_contains_search_center": true,
+          "asset_size_bytes": 108375647,
+          "assets_downloaded": false,
+          "catalog_license": "other",
+          "attribution": "Lantmäteriet; product identified by collection and item; selected metadata reproduced here",
+          "product_terms_license": "CC-BY-4.0",
+          "product_terms_url": "https://www.lantmateriet.se/globalassets/geodata/geodataprodukter/anvandningsvillkor-for-laserdata-nedladdning-skog.pdf",
+          "product_terms_version": "1.0, 2026-05-20"
+        },
+        {
+          "id": "628_44",
+          "collection": "dtm-cog",
+          "metadata_url": "https://api.lantmateriet.se/stac-hojd/v1/collections/dtm-cog/items/628_44",
+          "properties": {
+            "updated": "2026-09-15T13:54:38Z",
+            "datetime": "2023-09-20T00:00:00Z",
+            "proj:code": "EPSG:5845",
+            "brytgeometri": true,
+            "end_datetime": "2025-04-02T00:00:00Z",
+            "andringsdatum": "2025-11-07",
+            "data_modified": "2025-11-07T00:00:00Z",
+            "gridproducent": "Lantmäteriet",
+            "hojdmodelltyp": "markhöjdmodell",
+            "start_datetime": "2022-03-09T00:00:00Z",
+            "lagesosakerhethojd": 0.1,
+            "lagesosakerhetplan": 0.3,
+            "geometriskupplosning": 1.0,
+            "ursprungligtmatdatum": "2025-04-01",
+            "huvudsakliglagesbestamningsmetod": "Luftburen laserskanning"
+          },
+          "bbox_wgs84": [
+            14.01885852712568,
+            56.66028821327777,
+            14.184307214436986,
+            56.75129353228926
+          ],
+          "catalog_geometry_contains_search_center": true,
+          "asset_size_bytes": 220512644,
+          "assets_downloaded": false,
+          "catalog_license": "CC-BY-4.0",
+          "attribution": "Lantmäteriet; product identified by collection and item; selected metadata reproduced here"
+        }
+      ]
+    }
+  ],
+  "facade_image_check": {
+    "method": "visual_inspection_of_public_Mapillary_web_viewer",
+    "url": "https://www.mapillary.com/app/?lat=56.7325969&lng=14.0837009&z=17",
+    "result": "no_green_image_sequences_visible_in_inspected_view",
+    "coverage_proven_absent": false,
+    "usable_images_verified": 0
+  },
+  "unverified": [
+    "individual_building_footprints",
+    "house_dimensions",
+    "facade_colors",
+    "roof_materials",
+    "building_heights",
+    "exact_Getaboda_3_building_match",
+    "local_NVDB_attributes",
+    "local_NMD_release"
+  ],
+  "limitations": [
+    "Catalog item geometry is product coverage, not a building footprint.",
+    "Imagery pixel size is not positional accuracy.",
+    "No protected product asset was requested or downloaded.",
+    "Queries with sortby=-datetime returned HTTP 500; unsorted bbox queries succeeded.",
+    "TLS verification remained enabled. PowerShell used the system trust store.",
+    "Metadata retains original time fields; creation/update times are not automatically capture times.",
+    "Laser density fields pc:density and punkttathet differ; their semantics require checking before using either as a per-building quality claim."
+  ],
+  "rights": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "© OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/copyright"
+    },
+    "lantmateriet": {
+      "license": "CC-BY-4.0 as cataloged, subject to product-specific terms",
+      "attribution": "© Lantmäteriet; selected product metadata has been extracted and summarized",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "terms_url": "https://www.lantmateriet.se/sv/geodata/vara-produkter/Villkor-och-avgifter/"
+    },
+    "note": "External source facts are not relicensed under the repository MIT license."
+  }
+}
