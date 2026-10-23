@@ -23,7 +23,32 @@ SHA-256: `6db8488b265ecc40f7535a943bd1730175f1ea536ba57561e06537b78584bd45`.
 Installed mod ID: `ZombieProjektetRural`; map: `RuralShowcase`.
 Game: **42.21.0, 4a0e9546ec, Steam**.
 
-## Build and export
+## Source follow-up — 2026-10-23
+
+Source revision `05b9948` refines the accepted composition: a smaller service
+pad, a separate paved seating area, less regular shrub/flower groups and a more
+furnished interior. It preserves the dwelling geometry, roof, openings and deck.
+See [source checks and exact placements](../assets/gardens/RURAL_PLOT.md).
+The optional rural probe now checks both tiles of the moved wood stack.
+
+The next authoring input is `build/rural-showcase-r6/authoring/cottage.pzw`.
+It still requires official export, a fresh test save, interaction/visual checks
+and clean restart/reload. The r5 package, screenshots and runtime results below
+remain the last verified playable artifact; they do not validate this follow-up.
+Inspect table/wardrobe seams, chair facing, containers, bed, switches and all
+window approaches as well as the revised garden before requesting creator review.
+
+The clean worker checkout passed 72/72 tests. The canonical working directory
+ran 72 tests with one failure in the pre-existing local edit to
+`assets/buildings/cottage_rotations/cottage_270.tbx`: the ceiling layer is not
+found where `test_all_variant_sources_keep_ceiling_furniture_and_room_counts`
+expects it. That path is unchanged by this delivery; the tracked version passes
+the same test. Preserve the local file and backup and investigate the editor
+representation before altering it. Do not report the canonical suite as green.
+Local evidence: `build/rural-showcase-r6/evidence/lead-checks.txt` and
+`worker-source-checks.json` in the same directory.
+
+## Build and export (r5 evidence)
 
 From the repository, with the locally installed official tools/tiles:
 

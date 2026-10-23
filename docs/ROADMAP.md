@@ -125,14 +125,29 @@ as `gpt-6.1-sol` / high for independent review, returned no blocking findings on
 the six-document workflow change. Setup, overview-marker, local-link and scoped
 whitespace checks passed. This was documentation review, not new game evidence.
 
-Current RURAL-SHOWCASE-01 assignment (2026-10-23): `rural_plot_polish` was
-confirmed Running at dispatch in `C:/PZModding/worktrees/zombie-rural-polish`,
-branch `codex/rural-showcase-polish`, base `77f9452`. It owns only
-`assets/buildings/rural_cottage_01.tbx`, `assets/gardens/rural_plot_01.json` and
-`assets/gardens/RURAL_PLOT.md`. Deliver a smaller service yard, less regular
-planting and a more furnished interior while preserving house/access invariants.
-Lead owns integration, official export and game proof. Check live status before
-resuming; close this dispatch record when its result is integrated.
+RURAL-SHOWCASE-01 source assignment completed (2026-10-23): `rural_plot_polish`
+returned `3b8db3b` from `C:/PZModding/worktrees/zombie-rural-polish`, branch
+`codex/rural-showcase-polish`, base `77f9452`; integrated as `05b9948`. Only the
+assigned rural TBX, garden JSON and RURAL_PLOT.md changed. The worker used the
+inherited model/effort, before the new selection policy. Its worktree is clean;
+this is a completed assignment, not an ongoing job. The smaller service pad,
+varied planting and fuller interior preserve the dwelling/access invariants.
+The clean worker suite passed 72/72; canonical suite passed 71/72 because of a
+pre-existing dirty `cottage_270.tbx` ceiling-layer test failure. Preserve that
+file and its backup; do not reset it or report the canonical suite as green.
+Source and check evidence are described in RURAL_SHOWCASE_TEST.md.
+Independent `studio_delivery_review` (requested `gpt-6.1-sol` / high) returned
+no blocking findings on the source commit and updated wood-stack probe. It
+verified complete official furniture entries, tile references, interior access,
+four garden rotations and preserved building invariants; no game check was run.
+
+Next ready lead step: export `build/rural-showcase-r6/authoring/cottage.pzw`
+through official WorldEd, validate/package the rural profile, then inspect a
+fresh save and clean restart/reload. The wood-stack probe was aligned to both
+new tiles. Check new furniture seams and interaction/access, seven windows,
+foundation planting, service/seating areas and roof; capture actual screenshots.
+r5 remains the last verified playable package. Do not multiply this layout or
+claim the new sources have passed the game gate before that evidence exists.
 
 ### Near-term acceptance checks and boundaries
 
