@@ -146,13 +146,21 @@
   <entry orient="W"><tile x="0" y="0" name="lighting_indoor_01_001"/></entry>
   <entry orient="N"><tile x="0" y="0" name="lighting_indoor_01_000"/></entry>
  </furniture>
- <furniture><entry orient="W"><tile x="0" y="0" name="furniture_tables_low_01_000"/></entry></furniture>
- <furniture><entry orient="W"><tile x="0" y="0" name="furniture_seating_indoor_01_056"/></entry></furniture>
+ <furniture><entry orient="W"><tile x="0" y="0" name="furniture_tables_low_01_001"/><tile x="0" y="1" name="furniture_tables_low_01_000"/></entry></furniture>
+ <furniture>
+  <entry orient="W"><tile x="0" y="0" name="furniture_seating_indoor_01_056"/></entry>
+  <entry orient="E"><tile x="0" y="0" name="furniture_seating_indoor_01_058"/></entry>
+ </furniture>
  <furniture><entry orient="N"><tile x="0" y="0" name="furniture_bedding_01_001"/><tile x="0" y="1" name="furniture_bedding_01_000"/></entry></furniture>
  <furniture><entry orient="N"><tile x="0" y="0" name="appliances_refrigeration_01_000"/></entry></furniture>
  <furniture><entry orient="N"><tile x="0" y="0" name="appliances_cooking_01_001"/></entry></furniture>
  <furniture><entry orient="N"><tile x="0" y="0" name="fixtures_sinks_01_002"/></entry></furniture>
  <furniture><entry orient="N"><tile x="0" y="0" name="fixtures_bathroom_01_000"/></entry></furniture>
+ <furniture><entry orient="W"><tile x="0" y="0" name="furniture_seating_indoor_01_008"/></entry></furniture>
+ <furniture><entry orient="W"><tile x="0" y="0" name="furniture_shelving_01_041"/></entry></furniture>
+ <furniture><entry orient="W"><tile x="0" y="0" name="furniture_storage_01_057"/><tile x="0" y="1" name="furniture_storage_01_056"/></entry></furniture>
+ <furniture><entry orient="N"><tile x="0" y="0" name="furniture_storage_01_048"/></entry></furniture>
+ <furniture><entry orient="W"><tile x="0" y="0" name="vegetation_indoor_01_010"/></entry></furniture>
  <user_tiles>
   <tile tile="walls_exterior_wooden_01_018"/>
   <tile tile="walls_exterior_wooden_01_020"/>
@@ -179,14 +187,20 @@
   <object type="furniture" x="0" y="4" orient="W" FurnitureTiles="0"/>
   <object type="furniture" x="2" y="6" orient="N" FurnitureTiles="0"/>
   <object type="furniture" x="5" y="6" orient="N" FurnitureTiles="0"/>
-  <object type="furniture" x="3" y="2" orient="W" FurnitureTiles="1"/>
-  <object type="furniture" x="3" y="4" orient="W" FurnitureTiles="2"/>
-  <object type="furniture" x="2" y="8" orient="N" FurnitureTiles="3"/>
+  <object type="furniture" x="3" y="3" orient="W" FurnitureTiles="1"/>
+  <object type="furniture" x="4" y="4" orient="W" FurnitureTiles="2"/>
+  <object type="furniture" x="2" y="3" orient="E" FurnitureTiles="2"/>
+  <object type="furniture" x="2" y="7" orient="N" FurnitureTiles="3"/>
   <object type="furniture" x="3" y="0" orient="N" FurnitureTiles="4"/>
   <object type="furniture" x="4" y="0" orient="N" FurnitureTiles="5"/>
   <object type="furniture" x="5" y="0" orient="N" FurnitureTiles="6"/>
   <object type="furniture" x="5" y="6" orient="N" FurnitureTiles="6"/>
   <object type="furniture" x="5" y="8" orient="N" FurnitureTiles="7"/>
+  <object type="furniture" x="0" y="5" orient="W" FurnitureTiles="8"/>
+  <object type="furniture" x="0" y="0" orient="W" FurnitureTiles="9"/>
+  <object type="furniture" x="0" y="8" orient="W" FurnitureTiles="10"/>
+  <object type="furniture" x="3" y="7" orient="N" FurnitureTiles="11"/>
+  <object type="furniture" x="1" y="0" orient="W" FurnitureTiles="12"/>
   <rooms>
 1,1,1,1,1,1,
 1,1,1,1,1,1,
@@ -214,17 +228,17 @@
   </tiles>
   <!-- Exterior planting at the lot boundary must travel with the building. -->
   <tiles layer="Furniture">
-0,0,0,0,0,0,5,
+0,0,0,0,0,0,6,
 0,0,0,0,0,0,6,
 0,0,0,0,0,0,0,
 0,0,0,0,0,0,7,
-0,0,0,0,0,0,5,
-0,0,0,0,0,0,6,
+0,0,0,0,0,0,7,
+0,0,0,0,0,0,7,
 0,0,0,0,0,0,7,
 0,0,0,0,0,0,0,
-0,0,0,0,0,0,5,
 0,0,0,0,0,0,6,
-7,5,0,6,7,0,0
+0,0,0,0,0,0,6,
+7,7,0,6,6,0,0
   </tiles>
  </floor>
  <floor>
