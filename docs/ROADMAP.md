@@ -1,222 +1,178 @@
 # Roadmap — Getaboda first, then a growing Swedish world
 
-Updated 2026-10-23. This is the canonical execution queue and delivery plan. The creator owns design, scale, major scope and release decisions; the lead owns implementation, integration and technical QA. Conversation is Swedish; project material is English.
+Updated 2026-10-25. **This is the only execution queue.** Rows are plans/evidence,
+not running jobs. Product: PZ Build 42 Stable map mod, modern geography with Swedish
+1990s styling, 1:1 including roads and the creator-approved 45-degree Getaboda grid.
+Municipality coverage is a horizon, not the next delivery. Compression needs a new
+creator decision backed by driving/performance evidence.
 
-**Product:** a Project Zomboid Build 42 Stable map mod. **Scale:** 1:1, including connecting roads. The eventual municipality is a planning horizon, not the next build. Compression requires new evidence and a new creator decision.
+The creator authorizes the bounded [studio/household direction](decisions/0002-studio-and-households.md).
+It does not replace the existing showcase, introduce an engine, increase V1 scope,
+change release permissions or approve actual loot frequencies.
 
 ## Next delivery and current position
 
-**Active creator-directed priority (2026-10-18): RURAL-SHOWCASE-01.** Build a complete
-fictional rural dwelling and lived-in plot, replacing Getaboda likeness as the
-immediate acceptance target. The environment-library direction is accepted.
-The r5 build now has actual game screenshots, 23/23 runtime probes, manual
-light/door/walk/roof checks and clean restart/reload. The creator has positively
-reviewed the displayed result and requested continued refinement. This accepts
-the visual direction; a personal playtest and final milestone acceptance remain open. See [the evidence](RURAL_SHOWCASE_TEST.md) and
-[the specification](specs/rural-showcase.md).
-Historical geographic milestones below remain preserved, not prerequisites for this test.
+**First playable priority remains RURAL-SHOWCASE-01.** r5 has recorded official
+export, 23/23 runtime probes, manual light/door/walk/roof checks and clean
+restart/reload. The creator accepted the displayed visual direction; personal
+playtesting/final milestone acceptance remain open. r6 source refinement is
+integrated, but still needs fresh official export and game/reload proof. See
+[RURAL_SHOWCASE_TEST](RURAL_SHOWCASE_TEST.md) and [the spec](specs/rural-showcase.md).
+Do not rebuild the basic house, multiply r6 yet or treat the new design planner
+as game content.
 
-**Starting Getaboda batch selected (2026-10-19): G01–G04.** The creator chose
-these four review candidates and will correct details with the lead. Persistent
-IDs are recorded in local choices. Identity, use, accuracy and likeness remain
-unverified; this selection does not replace the current rural showcase priority.
+The last source handoff recorded 72/72 tests in a clean worker checkout and 71/72
+in the local canonical checkout due to a pre-existing dirty `cottage_270.tbx`
+ceiling-layer change. Preserve the file and backup; investigate the local diff
+before declaring that checkout green. No cloud/documentation task can establish
+that an uncommitted local change has been repaired.
 
-The cottage, deck and garden now connect to the road prototype in a separate synthetic fixture. A bounded metadata compatibility step resolved the official export defect: 25/25 runtime probes, manual light/door/roof checks and clean save/reload pass. Packaging still rejects the defective original export. See [integration evidence](INTEGRATION_TEST.md). The maintained local extraction command reproduces the road and authoring inputs. A small seeded road-edge/vegetation patch now has [game and clean-reload evidence](TERRAIN_TEST.md), including all 172 driveway adjacencies clear for characters. The creator approved **maintained residential plots with flowerbeds, wilder vegetation outside, and vanilla gradual overgrowth** on 2026-10-18. Next is **the first permitted real building and applying this direction to its surroundings**. The open-source building pilot now supplies 13 locally registered candidate outlines; creator-approved 45° grid rotation keeps 1:1 scale. Real-house verification, final selection and vehicle driving remain separate gates.
+Next game step: export `build/rural-showcase-r6/authoring/cottage.pzw` with official
+WorldEd, validate/package the rural profile, inspect a fresh save and clean
+restart/reload. Check furniture seams and interaction, seven windows, routes,
+foundation planting, service/seating areas and roof. Keep r5 as the restore point.
+The reviewed source assignment `rural_plot_polish` returned `3b8db3b`, integrated
+as `05b9948`; its earlier review is not a review of this new studio change.
 
-The [provisional candidate pilot](CANDIDATE_PILOT_TEST.md) now places an 8 by 12 house on one registered candidate, with garden and assumed access to about 266 m of village road. Official export and 17/17 game probes pass, also after full restart/reload; the suite has 72 tests. Its bounded landscape follow-on passes 19/19 probes and clean reload, adding 92 shoulder squares and 43 vegetation placements while preserving access. Better photos are pending, so likeness and residential use remain unknown. Latest creator feedback: the enlarged house reads as a barn. Next ready work is a compact residential revision guided by the [Småland pattern study](research/smaland-houses-2026-10-18.md), before more size variants. Final V1 selection remains with the creator.
-
-The compact residential revision follows the creator's confirmed gable-roof
-direction: two slopes and vertical gable ends for Getaboda/Agunnaryd dwellings.
-The corrected pattern sketch is not a new game build or full design acceptance.
-
-The [environment and building library](design/ENVIRONMENT_LIBRARY.md) records the
-creator's four proposed environment contexts, overlapping house families and
-reusable plot/detail kits. A first original concept board supports discussion.
-This is design preparation for the same compact playable slice; it adds no
-whole-town modelling gate before Getaboda and installs no mod dependencies.
-
-The unfinished continuous road drive remains a separate technical gate. Give its control problem one focused diagnostic attempt with a new, testable hypothesis; do not repeat unsuccessful input methods while other work is ready. Do not count teleportation as a driving pass.
-
-| Existing result | Evidence | Still open |
-| --- | --- | --- |
-| Minimal house loads; daylight, switch, walls and roof checked in 42.21.0 | [M0](BUILD42_SPIKE.md), [report](test-reports/M0-BUILD42.md) | Creator acceptance and independent game reproduction |
-| Furnished cottage, deck, seating and flowerbeds; four orientations | [Cottage](COTTAGE_TEST.md), [garden](GARDEN_TEST.md), [placements](PLACEMENT_TEST.md) | Creator visual review; library has one rectangular cottage and one optional garden |
-| Stable-ID house/orientation/garden choices survive playable regeneration | [Placements](PLACEMENT_TEST.md), [style contract](specs/building-style-overrides.md) | Broader style palette and real-footprint fitting are not connected |
-| Cottage/garden/driveway joined to road; seeded small terrain patch, 25/25 fixture probes, 172 clear driveway edges and clean reload; suite now has 72 tests | [Roadside integration](INTEGRATION_TEST.md), [terrain](TERRAIN_TEST.md), [road pipeline](ROAD_PIPELINE.md) | Bounded metadata compatibility stage required; creator review and continuous driving open |
-| Separate 5.09 km OSM road prototype; 37 automated tests; 52 runtime road samples across 25 cells | [Road test](ROAD_TEST.md) | Continuous driving, handling through bends and populated-map performance; observed vehicle motion was only 66.47 m |
-| Municipality overview, source audit and 1:1 scale decision | [World draft](research/ljungby-world-draft-2026-10-17.md), [scale study](research/road-first-scale-study-2026-10-17.md) | Whole-municipality production is not approved or performance-tested |
-| Building/orthophoto applications submitted; alternative sources documented | [Geodata workflow](GEODATA_WORKFLOW.md) | Authenticated portal check on 2026-10-18 shows both applications under review; download approval pending |
-| Local source-coverage comparison: 0 Getaboda and 190 Agunnaryd OSM building areas in equal 750 m samples; three Agunnaryd candidates registered reproducibly | [Data feasibility test](research/getaboda-agunnaryd-pilot-2026-10-18.md) | Appearance and residential identity remain unverified. A later Microsoft sample provides 13 Getaboda candidates; both portal applications are under review. No real-house gate passed. |
-
-Existing task IDs remain valid: COTTAGE-01, COTTAGE-02, TOOLS-01 and REVIEW-01 have the technical evidence above and open creator review; OVERRIDE-01 is implemented and reviewed; WORLD-DRAFT-01 remains a planning draft; ROAD-SCALE-01 has an accepted 1:1 pilot. Evidence is not creator approval.
-
-## Test Version 1 — explicit scope
-
-**V1 is the existing Getaboda proof of concept (M3), delivered first as a local/private test package.** It is not the full municipality or a finished survival campaign.
-
-Required:
-
-1. Approximately 4–5 source-confirmed Getaboda buildings, with checked positions/footprints, stable IDs and provenance. Confirm the exact building list with the creator after source review.
-2. Connected nearby roads and driveways at 1:1, plus basic source-backed forest/open land/water where present. Unknown measurements and invented details stay labelled assumptions.
-3. At least one usable, furnished house with verified entrance, collision, daylight/lighting and roof behavior. Other buildings may be simpler but must be valid and traversable where intended.
-4. Swedish 1990s presentation, including a reviewed representative exterior and varied decks/gardens with flowerbeds where appropriate. Generic interiors remain the default.
-5. One manual correction survives regeneration, a fresh official export, packaging and an in-game check. Preserve original source data and unrelated building choices.
-6. A fresh-save install, save/reload and local walk/drive test pass on a recorded game version. The creator receives a short playtest request, screenshots, instructions and known limitations after agent QA.
-
-The full 5.09 km corridor can accompany V1 once its own driving gate passes; it does not require building Agunnaryd. It stays a separate experimental package if unfinished. Multiplayer, public release, custom survival systems, a large tile catalog and municipality-wide generation are not V1 requirements. A synthetic fixture cannot substitute for source-confirmed Getaboda.
-
-## Phases and exit gates
-
-M0–M4 retain their historical meanings; M5–M7 describe later expansion. Preparation can overlap when dependencies allow. A phase does not finish merely because code or screenshots exist.
-
-| Phase | Outcome and main steps | Exit evidence | Creator involvement / dependency |
-| --- | --- | --- | --- |
-| **M0 — Technical foundation** | Maintain known-good house, cottage and road fixtures. Resolve control/QA limitations; pin versions; verify clean packages and protect saves. | Recorded game checks, repeatable build/export steps and explicit failures. House checks passed; continuous road driving remains open. | Creator acceptance remains separate. Use proven fixtures for bounded work while closing remaining checks. |
-| **M1 — Traceable Getaboda data** | Refresh access; register permitted datasets; select the small area; normalize metric geometry; reconcile roads/buildings/land cover; record gaps and stable identity. Prove one real building first. | Source/CRS/license/hash records; checked first building and agreed building list; local processing; no invented precise footprints. | Data access and handling terms. Creator confirms selection and can supply owned exterior references. |
-| **M2 — Reusable Swedish building tools** | Combine cottage/garden with roads; fit the first verified footprint; connect saved choices to playable output; add only Getaboda's required house/outbuilding variants; improve road edges and landscaping. | Integrated fixture, then one real house; usable access, roof and collision; deterministic variation and separate overrides. | Synthetic inputs are usable now. Real fitting depends on M1; creator reviews representative exterior/landscaping. |
-| **M3 — Getaboda / Test Version 1** | Assemble 4–5 buildings, roads and basic surroundings; regenerate after an individual correction; run installation, walk/drive, save/reload and visual QA; fix defects. | All V1 requirements above have evidence, followed by recorded creator feedback. | M1 data and sufficient M2 tools. Technical defects remain the lead's responsibility. |
-| **M4 — Shareable test and release preparation** | Stabilize V1 after feedback; independently reproduce installation; document package/rights/version support; test private multiplayer separately if selected; prepare GitHub distribution, then Workshop later. | Reproducible package/install; supported compatibility claims; attribution and known issues. Multiplayer requires an actual host/client test. | Creator approves distribution and public release. Singleplayer need not wait for multiplayer. |
-| **M5 — Nearby settlements and repeatable expansion** | Select the next bounded area toward Agunnaryd/Södra Ljunga; extend roads, nature and necessary building types; automate demonstrated repeated steps; test regional streaming/travel. | A second area built through the same workflow, preserved overrides, documented manual steps and measured travel/performance. | Getaboda slice and repeatable pipeline; creator selects expansion order and consequential design choices. |
-| **M6 — Ljungby pilot** | Select a small urban district; handle denser streets, varied footprints and larger buildings; measure performance and effort before wider city coverage. | Playable district, dense-scene measurements, required urban templates and a reviewed expansion estimate. | Regional workflow proven; creator selects district/scope. Do not build the whole town in one delivery. |
-| **M7 — Municipality coverage** | Expand in validated geographic batches; audit road/water continuity and coverage; address gaps; package and maintain supported versions. | Each batch has source, gameplay and regression evidence; a coverage ledger distinguishes complete, simplified and missing areas. | Long-term horizon, gated by capacity and creator priorities. Full coverage and completion date are not promised. |
-
-## Dependency path
-
-`DATA-ACCESS-01 → GETABODA-01 → HOUSE-FIT-01 → GETABODA-ASSEMBLE-01 → V1-QA-01`
-
-`INTEGRATE-01 → HOUSE-FIT-01`; `PIPELINE-01 → GETABODA-ASSEMBLE-01`; `TERRAIN-01 → GETABODA-ASSEMBLE-01`.
-
-`DRIVE-INPUT-01 → ROAD-TEST-01` is a separate validation path. It gates declaring the full corridor tested and regional road expansion, not unrelated building-tool work. Local V1 driving still requires its own actual check.
+**Getaboda G01–G04 remain the selected starting batch (2026-10-19).** Selection is
+not confirmation of identity, use, appearance or final fitting. Existing source
+geometry, unknown properties, provenance and overrides remain separate.
 
 ## Prioritized execution queue
 
-States: **Ready** = no known blocker; **Waiting** = named dependency; **Technical evidence recorded** = specified checks passed, not creator acceptance; **Proposed later** = planning only. Rows are plans, not running agents/background jobs. The lead owns integration throughout.
+States: Ready = actionable within scope; Waiting = named dependency;
+Source checked = limited source/automated evidence; Game evidence recorded =
+specified artifact checks, not creator acceptance; Proposed later = not current work.
+The lead is integration owner. A task blocked by local UI can coexist with one
+small independent source task; this is not permission for uncontrolled parallelism.
 
-| Order / ID | State and owner role | Deliverable | Dependency / next action |
+| Order / ID | State / responsibility | Bounded result | Dependency / next action |
 | --- | --- | --- | --- |
-| 0 · RURAL-SHOWCASE-01 | Technical evidence recorded; lead/buildings | Complete fictional dwelling, deck, garden, props and woodland edge | Official export, 72 tests, 23/23 runtime probes, manual light/door/walk/roof inspection and clean restart/reload pass. See RURAL_SHOWCASE_TEST.md. Creator positively reviewed the screenshots and requested continuation. Ready follow-up: refine planting rhythm, gravel edges and entrance/interior, then obtain fresh game evidence before wider reuse. |
-| 1 · DRIVE-INPUT-01 | Diagnostic attempted; waiting for supported sustained control; QA/lead | Reliable sustained input and steering for an actual driving check | Native API exposes key taps and the new Escape trial did not work. No held accelerate/steer/stop path verified. Retain the gate; do not repeat tap loops. |
-| 2 · INTEGRATE-01 | Technical evidence recorded; lead/buildings | Cottage, deck/garden and road access in one synthetic playable fixture | 25/25 runtime probes, manual light/door/roof checks and clean save/reload pass after the bounded metadata stage. Original export remains rejected. Creator acceptance separate; see INTEGRATION_TEST.md. |
-| 3 · DATA-ACCESS-01 | Waiting for access outcome; world/data | Current access outcome and smallest permitted acquisition plan | Fresh authenticated Geotorget check on 2026-10-18 shows both applications as Behandlas. A separate Microsoft open-footprint pilot supplies 13 local candidates; see research/getaboda-building-register-2026-10-18.md. No duplicate applications; continue ready work. |
-| 4 · PIPELINE-01 | Technical evidence recorded; world/data/lead | Reproduce the corridor from registered local source through maintained code | Bounded local command reproduces all 152 segments and 108 authoring inputs. Repeat output identical; source coverage/access limits documented in ROAD_PIPELINE.md. |
-| 5 · TERRAIN-01 | Technical evidence recorded for bounded prototype; buildings/world | Small road-edge/vegetation patch with clear cottage access | Seeded authoring, official export, visible runtime plants/edges, 25/25 fixture probes, 172 clear character adjacencies and clean reload. Vanilla replaces vegetation sprite names. Landscape direction approved on 2026-10-18; detailed visual acceptance and actual vehicle clearance remain open. Real land cover waits for permitted data. |
-| 6 · GETABODA-01 | Provisional register available; verification pending; world/data | Verify the selected G01–G04 starting batch and its building/road/land-cover subset | Creator selected G01–G04 on 2026-10-19; persistent IDs are saved in local choices. Preserve the approved 45° grid rotation and 1:1 scale. Verify identity, use and fitting together; selection does not confirm source accuracy. LM remains pending. |
-| 7 · HOUSE-FIT-01 | Provisional game evidence; residential refinement next; buildings/lead | One traceable real house in the game | Generic 8 x 12 variant passed official export, exterior inspection and 12/12 probes after full restart/reload. A roof gap found in r1 was repaired in r2; see [sized cottage evidence](COTTAGE_SIZE_TEST.md). One provisional 8 by 12 registered candidate now passes official export, 17/17 runtime probes, manual door/walk/roof checks and full restart/reload; see [candidate pilot](CANDIDATE_PILOT_TEST.md). The landscape follow-on passes 19/19 probes and clean reload. Creator finds the current silhouette barn-like. First deliver the [residential character revision](specs/residential-character.md); then return to required size/orientation variants while photos are pending. Review material footprint approximations with the creator. |
-| 8 · GETABODA-ASSEMBLE-01 | Waiting; lead | V1 candidate with the agreed buildings and surroundings | Verified subset, HOUSE-FIT-01, PIPELINE-01 and terrain/land-cover integration. Add only required variants. |
-| 9 · V1-QA-01 | Waiting; QA/lead | Reproducible, locally installable Getaboda package and creator playtest | GETABODA-ASSEMBLE-01; resolve technical failures before requesting acceptance. |
-| Conditional · ROAD-TEST-01 | Waiting for reliable control; QA/lead | Continuous 5.09 km road run | DRIVE-INPUT-01. Keep [existing evidence](ROAD_TEST.md); resume when control is available. |
-| Review · DESIGN-REVIEW-01 | Landscape direction accepted 2026-10-18; creator with lead | Exterior, garden and road-edge direction | Maintained residential plots with flowerbeds, freer road-edge/forest-margin vegetation outside, then vanilla gradual overgrowth. Apply within agreed scope without reopening this choice. Exterior likeness, exact detail and milestone acceptance remain separate reviews. |
+| 0 · BASELINE-RECONCILE-01 | Ready on local checkout; lead/QA | Understand the dirty `cottage_270.tbx` test regression without discarding edits | Preserve backup, inspect diff and rerun affected/full checks with exact results. Clean-branch results cannot clear a dirty checkout. |
+| 1 · RURAL-SHOWCASE-01 | r5 game evidence; r6 awaiting game check; lead/buildings | Export and verify the already-authored complete rural dwelling/plot | Follow next step above. No more variants until access/roof/light/reload pass. |
+| 2 · EVIDENCE-01 | Ready with local evidence; lead/QA | Curated accessible showcase screenshots and artifact index | Locate actual r5/r6 captures. Review rights/privacy; commit a small fictional-showcase selection or approved attachment, not all of ignored build/. Identify missing images explicitly. |
+| 3 · STUDIO-01 | Source implementation in review; lead | Lean routing, role definitions, two focused skills, dynamic skill-parity checks and static overview | Check the full checkout and native agent discovery. No workers/schedules started by configuration. See STUDIO_WORKFLOW.md. |
+| 4 · ART-01 | Ready for bounded assessment; Art Director/Technical Artist | One compact style brief and stock-resource audit for high-value Swedish details | Use actual showcase views. First candidates: faluröd panel, white corners/trim and white bargeboards; retain working roof tiles. New images/assets require game and rights proof. |
+| 5 · HOUSEHOLD-01 | Offline prototype source checked; interior designer/QA | 20 fictional seeds plus deterministic, frozen design briefs | New tests cover design behavior only. Run full-checkout CI/client checks. No actual item IDs, layout, loot or claim of better in-game visuals. |
+| 6 · ROOM-01 | Waiting for verified baseline and scoped design; interior/technical artist | One reusable room recipe, three coherent variants, then reuse in a second compatible room | Consume the brief through existing TBX/placement tools. Preserve access, all object parts and one correction. Official export/game/reload plus independent review and measured manual effort. |
+| 7 · INTEGRATE-01 | Game evidence recorded; lead/buildings | Maintain cottage/garden/road synthetic fixture | Existing 25/25 probes, manual checks and clean reload after bounded metadata correction; defective original export still rejected. Recheck after shared changes. |
+| 8 · DATA-ACCESS-01 | Waiting for verified access outcome; world/data | Smallest permitted source acquisition | Last authenticated check 2026-10-18: both Geotorget applications under review. Verify current outcome, do not assume approval or submit duplicates. Independent source work continues. |
+| 9 · PIPELINE-01 | Technical evidence recorded; world/data | Reproduce registered corridor and authoring inputs | Existing 152 segments/108 authoring inputs repeat identically; preserve local processing, provenance and coverage limits. |
+| 10 · TERRAIN-01 | Bounded game evidence; buildings/world | Maintain road-edge/vegetation pattern with clear access | Existing 172 clear character adjacencies and clean reload. Maintained plots/wilder edges/vanilla overgrowth accepted; exact visual details and vehicle clearance remain separate. |
+| 11 · GETABODA-01 | Provisional register; verification pending; world/data | Verify selected G01–G04 and the small source subset | Microsoft snapshot supplies 13 candidates; OSM absence is not empty land. Preserve IDs, raw geometry and the approved rotation/scale. Identity/use/appearance still need evidence. |
+| 12 · HOUSE-FIT-01 | Provisional game evidence; residential refinement; buildings/lead | One traceable real house using proven components | 8 x 12 sized cottage and candidate have recorded checks; candidate 17/17, landscape 19/19 with reload. Improve barn-like residential silhouette, not more scaled copies. Real likeness remains unverified. |
+| 13 · GETABODA-ASSEMBLE-01 | Waiting; lead | V1 with about 4–5 source-confirmed buildings and surroundings | Verified subset, required fitting, roads and land cover. Only necessary variants; not a whole-town personality catalogue. |
+| 14 · V1-QA-01 | Waiting; QA/lead | Fresh-install/regeneration/walk-drive/reload package and creator playtest | Assemble first, resolve technical failures, preserve one correction and attach evidence/known limits. |
+| Conditional · DRIVE-INPUT-01 | Waiting for supported sustained control; QA/lead | Reliable accelerate/turn/brake/stop input | Earlier native key-tap and Escape attempts did not establish held input. One new testable diagnostic, not repeated tap loops. No teleportation-as-driving claim. |
+| Conditional · ROAD-TEST-01 | Waiting for DRIVE-INPUT-01; QA/lead | Actual continuous 5.09 km run | Keep existing 52 road samples/66.47 m motion evidence, but neither proves the full drive. Check bends, boundaries, travel time and stutter. |
+| Review · DESIGN-REVIEW-01 | Direction accepted; creator with lead | Representative visual choices and acceptance | Preserve 2026-10-18 landscape/gable decisions. 2026-10-25 prioritizes Swedish trim/material details. Exact assets, likeness and milestones remain separately reviewed. |
+| Later · LOOT-01 | Proposed later; lead/QA | Small compatible household-to-container loot experiment | Requires ROOM-01 proof, inspected current-build APIs/item IDs, rarity/value budget and explicit balance review. No politics/gender/geography-to-crime shortcuts. Never rebuild the vanilla loot system by default. |
 
-### Studio setup checkpoint — 2026-10-23
+The new household prototype is preparation inside M2. ROOM-01 may simplify or stop
+if it does not demonstrate practical reuse. A complete population model, biography
+for every house and new loot system are **not** new V1 requirements.
 
-The creator requested lead-directed specialist agents. Reusable briefs are in
-[AGENT_ROLES](AGENT_ROLES.md); the queue above remains authoritative. A read-only
-workflow review was completed by `studio_workflow_review`; it recommended reusing
-this queue and the existing resource-ownership rules. This is a completed review,
-not a running background job. The creator then confirmed the report and requested
-continued work without repeated start prompts. Hourly chat heartbeat
-`zombieprojektet-studio` was created ACTIVE; see AGENT_WORKFLOW for boundaries.
-The creator corrected the mail report: there is no new Lantmäteriet decision.
-DATA-ACCESS-01 remains waiting on verified access.
+## Dependency path
 
-The creator prefers Astra for the lead and task-based models for specialists;
-the selection policy is in AGENT_WORKFLOW. `studio_delivery_review`, requested
-as `gpt-6.1-sol` / high for independent review, returned no blocking findings on
-the six-document workflow change. Setup, overview-marker, local-link and scoped
-whitespace checks passed. This was documentation review, not new game evidence.
+`BASELINE-RECONCILE-01 → RURAL-SHOWCASE-01 (r6 proof) → ROOM-01`
 
-RURAL-SHOWCASE-01 source assignment completed (2026-10-23): `rural_plot_polish`
-returned `3b8db3b` from `C:/PZModding/worktrees/zombie-rural-polish`, branch
-`codex/rural-showcase-polish`, base `77f9452`; integrated as `05b9948`. Only the
-assigned rural TBX, garden JSON and RURAL_PLOT.md changed. The worker used the
-inherited model/effort, before the new selection policy. Its worktree is clean;
-this is a completed assignment, not an ongoing job. The smaller service pad,
-varied planting and fuller interior preserve the dwelling/access invariants.
-The clean worker suite passed 72/72; canonical suite passed 71/72 because of a
-pre-existing dirty `cottage_270.tbx` ceiling-layer test failure. Preserve that
-file and its backup; do not reset it or report the canonical suite as green.
-Source and check evidence are described in RURAL_SHOWCASE_TEST.md.
-Independent `studio_delivery_review` (requested `gpt-6.1-sol` / high) returned
-no blocking findings on the source commit and updated wood-stack probe. It
-verified complete official furniture entries, tile references, interior access,
-four garden rotations and preserved building invariants; no game check was run.
+`EVIDENCE-01 + ART-01 + HOUSEHOLD-01 → ROOM-01 → optional LOOT-01 proposal`
 
-Next ready lead step: export `build/rural-showcase-r6/authoring/cottage.pzw`
-through official WorldEd, validate/package the rural profile, then inspect a
-fresh save and clean restart/reload. The wood-stack probe was aligned to both
-new tiles. Check new furniture seams and interaction/access, seven windows,
-foundation planting, service/seating areas and roof; capture actual screenshots.
-r5 remains the last verified playable package. Do not multiply this layout or
-claim the new sources have passed the game gate before that evidence exists.
+`DATA-ACCESS-01 → GETABODA-01 → HOUSE-FIT-01 → GETABODA-ASSEMBLE-01 → V1-QA-01`
 
-### Near-term acceptance checks and boundaries
+`INTEGRATE-01 + PIPELINE-01 + TERRAIN-01 → GETABODA-ASSEMBLE-01`
 
-**DRIVE-INPUT-01**
-- Demonstrate repeated accelerate, turn, brake and stop actions in the actual game through supported tools; record method/version and position/heading evidence.
-- Use ordinary vehicle physics. Teleporting or directly setting position/orientation is not a steering test.
-- If unsuccessful, record the blocker, hypothesis and condition to resume. No indefinite input experiments or general automation framework.
+`DRIVE-INPUT-01 → ROAD-TEST-01` remains a separate path. It gates claiming the full
+corridor tested/regional road expansion, not unrelated fixture or source work.
+Local V1 driving still needs its own actual check. Permitted alternative data can
+advance provisional fitting without claiming that the LM access gate passed.
 
-**INTEGRATE-01**
-- Fresh map contains one explicitly fictional cottage, its saved orientation/garden choice, a clear driveway and connection to the road.
-- Walk between road, garden and house; verify entrance, collision, lighting and roof after integration. Preserve existing separate fixtures/saves.
-- Change one placement choice, regenerate/export and verify it without altering source geometry. Capture game screenshots. No verified-real-location claim.
+## Test Version 1 — unchanged scope
 
-**DATA-ACCESS-01 / GETABODA-01**
-- Record access outcome, permitted use and local storage. No raw geodata/source imagery enters cloud/model output under the current handling decision.
-- Retain source IDs, snapshot, CRS, license and hashes; validate one building against its source and record unknown appearance separately.
-- Confirm the bounded building list/coverage before assembly. No new paid service, duplicate application or interpretation of missing OSM buildings as empty land.
+V1 is M3: a local/private Getaboda proof of concept, not the municipality or a
+complete survival campaign. Required:
 
-**PIPELINE-01**
-- Reproduce corridor/provenance from the same registered local snapshot with a documented command; preserve raw input bytes.
-- Test connectivity, projection, missing attributes, access/direction handling and unsupported crossings with synthetic fixtures; report uncertain source completeness.
-- Keep official export explicit and package validation mandatory. No all-Sweden importer, hidden cloud transfer or replacement for the official exporter.
+1. Approximately 4–5 source-confirmed buildings with checked positions/footprints,
+   stable IDs and provenance; G01–G04 are starting candidates, not verified facts.
+2. Connected nearby roads/driveways at 1:1 and basic source-backed land cover;
+   unknown measurements and invented details stay labelled.
+3. At least one usable furnished house with entrance/collision/light/roof proof;
+   others may be simpler but valid and traversable where intended.
+4. Swedish 1990s character, representative exterior and varied appropriate plots;
+   generic fictional interiors remain the default.
+5. One manual correction survives regeneration, official export and game checks
+   without changing source geometry or unrelated building choices.
+6. Fresh install/spawn, local walk/drive, save/reload and recorded package/version
+   evidence; technical QA precedes a short creator playtest request.
 
-**TERRAIN-01**
-- Produce one deterministic playable patch with softened road edges, grass/vegetation and unobstructed driveway/door access using permitted assets.
-- Inspect vehicle/character clearance and the actual game view; record the seed and distinguish synthetic styling from source-backed land cover.
-- Show representative before/after images for design review. No whole-corridor decoration before the small pattern works.
+The 5.09 km corridor can accompany V1 after its own driving gate; otherwise it
+remains experimental. Agunnaryd buildings, multiplayer, public release, custom
+survival mechanics, a large Swedish tile catalogue and whole-municipality generation
+remain outside V1. A synthetic showcase does not replace real Getaboda validation.
 
-**HOUSE-FIT-01 / GETABODA-ASSEMBLE-01**
-- Creator authorization on 2026-10-18: continue reversible provisional candidates and generic details while owned photos are pending. This does not approve the final subset or convert assumptions into verified appearance.
-- Creator selection on 2026-10-19: start with G01–G04 and correct details together. This resolves the starting batch; identity and appearance still require evidence.
-- Preserve source footprint, stable ID and provenance separately from grid approximation; document fitting limits instead of forcing every house into the current rectangle.
-- Prove the first house's access, interior and roof before adapting the remaining buildings. Unverified decks/gardens remain varied design choices.
-- Assemble source-backed roads/land cover, clear access and only required variants; inspect seams in-game. No detailed private interiors without review.
+## Phases and exit gates
 
-**ROAD-TEST-01 / V1-QA-01**
-- Road gate: drive the whole route without teleports; check surfaces, bends and cell boundaries; record elapsed time and loading/stutter observations. Investigate stalls rather than hiding them behind average FPS.
-- V1 gate: fresh install/spawn, required house checks, local walk/drive and save/reload; record version, artifact hash, logs, screenshots and defects. Demonstrate one surviving correction in the regenerated playable artifact.
-- Remove QA helpers, verify installed/package parity and provide known limits plus a short creator playtest. No public release, multiplayer claim or save-compatibility guarantee from singleplayer checks.
-
-## Working rhythm and blocker policy
-
-1. At the start of an active development session, inspect Git and this queue; select one bounded result and its evidence. Keep one active integration task and at most one secondary ready task.
-2. Implement, test, officially export where needed, verify in-game and review. Each delivery should leave a playable improvement or necessary reproducible tool result, not only another planning document.
-3. For a blocker, record failure, evidence, next distinct hypothesis and exit condition. After one focused diagnostic session without progress, choose the next ready independent task. Keep the failed gate open; do not transfer technical acceptance to the creator.
-4. Data delays block real-data integration only. Synthetic integration, reproducible extraction and small terrain prototypes continue. Pending visual/release approval does not stop unrelated reversible work.
-5. At each delivery, update this queue, evidence and the human overview. Report changes, actual passes, open checks and next action. Send Swedish updates and game screenshots at meaningful points during active work.
-6. Delegate specialist roles when explicitly authorized and useful, with bounded ownership, separate worktrees for concurrent writers and one operator for shared game/editor resources. A role label does not mean an agent is running. The separately authorized hourly chat heartbeat resumes bounded work; verify current app schedule and worker state before reporting execution.
-
-## Creator decisions and planning horizon
-
-The creator clarified the personal goal on 2026-10-18: a surprise reunion for a former PZ group from Ljungby/Agunnaryd. Approximately ten selected homes across the expanding world deserve extra exterior/interior care; ordinary houses use plausible templates. Select those homes and their recognition details with the creator as the relevant areas enter scope. The V1 building count and next integration delivery remain unchanged.
-
-Rural hunting firearms are accepted fictional gameplay direction, with loot frequency and balance still to be designed. Tractors are desired conditional content; [initial research](PROJECT_SPEC.md#tractor-feasibility-check) found a mod candidate, not a validated dependency. Schedule a bounded vehicle test before adoption. Private multiplayer remains the eventual friends-play goal and requires the M4 host/client evidence before claiming readiness.
-
-| When | Creator decision | Independent work that continues |
+| Phase | Outcome | Exit / dependency |
 | --- | --- | --- |
-| Representative previews | Exterior palette, recognizable likeness, garden/road-edge character | Reversible prototypes, geometry validation and QA |
-| Selected source subset | G01–G04 selected on 2026-10-19; review identities, material footprint approximations and any replacements together | Tool tests and supported fixture improvements |
-| V1 passes agent QA | Playtest feedback/acceptance and next bounded area | Defect fixes and packaging preparation |
-| Before distribution | Private/public release scope, then any Workshop publication | Local tests and release preparation |
-| Measured regional/urban pilots | Expansion order, travel feel/performance, any reconsideration of 1:1 | Source preservation and measured prototypes |
+| M0 | Maintain proven house/road fixtures and exact tool chain; close QA gaps | Game proof and restoration path; continuous driving still open, creator acceptance separate |
+| M1 | Traceable Getaboda sources, first building and agreed subset | Source/CRS/license/hash, local-processing compliance, verified facts vs assumptions |
+| M2 | Reusable Swedish houses/plots/room recipes through existing tools | One working case then repeat use, deterministic choices/overrides and actual game evidence; household briefs alone are not completion |
+| M3 | Getaboda / V1 | All six V1 checks, then recorded creator feedback |
+| M4 | Stabilize/shareable test, independent installation and release preparation | Approved distribution, attribution/support claims; private multiplayer needs actual host/client checks |
+| M5 | Nearby settlements, repeatable regional batches | Existing slice proven; creator selects next area; preserved choices and measured travel/performance/effort |
+| M6 | Small Ljungby urban pilot | Selected district, denser scenes and suitable templates; measured capacity before wider city scope |
+| M7 | Municipality coverage | Separate validated batches, source/gameplay/regression evidence and honest coverage ledger; no completion date promised |
 
-Do not assign a calendar release date from task count. Re-estimate V1 after the first real house works and the data-access outcome is known, using observed effort and remaining blockers. Later-phase dates stay unset until their representative pilot exists. Listing future options does not authorize purchases, new regions or new design commitments.
+## Evidence index and retained history
 
-## Completion and regression rules
+The detailed pre-update checkpoint remains in Git history at
+[3f29483](https://github.com/Bjogert/ZombieProjektet/blob/3f2948315622100c6fd8bfd2a6f540defee841c4/docs/ROADMAP.md).
+This current file alone owns task order/status. Existing test reports and sources
+are not replaced by the new design prototype:
 
-- Distinguish implementation, automated checks, official export, game verification, creator acceptance and release approval. Do not collapse these into one done marker.
-- Run relevant tests and required project checks for game/source changes. Documentation updates need link/status/overview and whitespace checks, not a new gameplay claim.
-- Preserve tested artifacts/versions. Recheck affected fixtures after shared building/road/export changes; a game update requires compatibility checks before claiming support.
-- Do not expand coverage to hide correctness, performance or rights issues. Keep a small known-good fixture and restore path.
-- GitHub issues may hold approved discussions using these IDs; this file remains the ordered queue. Do not create a second unsynchronized backlog or auto-close parent issues.
+- [M0](BUILD42_SPIKE.md), [M0 report](test-reports/M0-BUILD42.md), [cottage](COTTAGE_TEST.md), [garden](GARDEN_TEST.md), [placements](PLACEMENT_TEST.md).
+- [Integration](INTEGRATION_TEST.md), [terrain](TERRAIN_TEST.md), [road pipeline](ROAD_PIPELINE.md), [road drive](ROAD_TEST.md).
+- [Sized cottage](COTTAGE_SIZE_TEST.md), [candidate pilot](CANDIDATE_PILOT_TEST.md), [rural showcase](RURAL_SHOWCASE_TEST.md).
+- [Building register](research/getaboda-building-register-2026-10-18.md), [data feasibility](research/getaboda-agunnaryd-pilot-2026-10-18.md), [geodata workflow](GEODATA_WORKFLOW.md).
+- [Residential revision](specs/residential-character.md), [environment library](design/ENVIRONMENT_LIBRARY.md), [Småland patterns](research/smaland-houses-2026-10-18.md).
+
+Older task IDs remain valid: COTTAGE-01/02, TOOLS-01, REVIEW-01, OVERRIDE-01,
+WORLD-DRAFT-01 and ROAD-SCALE-01 retain their recorded scope/evidence and separate
+creator acceptance. The earlier model-policy/documentation review and source
+review are historical completed assignments, not live workers or a review of this
+revision. Last portal/source statements are dated records, not fresh access checks.
+
+## Working rhythm, acceptance and boundaries
+
+Read Git, current queue and actual live worker/resource state. Select one bounded
+result, implement, run relevant checks, obtain official export/game proof when
+needed, then review. Continue ready authorized work within an active session.
+After one focused unsuccessful diagnostic, record a distinct next hypothesis and
+resume condition; choose useful independent work rather than poll or hide a failed
+gate. Local UI/data delays do not block all synthetic source work.
+
+Keep one integration owner, disjoint writer worktrees and one editor/game operator.
+The existing hourly heartbeat is a dated creation record; verify its current
+scheduler state. This file starts no job and grants no merge/release/purchase access.
+Report exact commands/output scope, implemented vs unverified behavior and a next
+action. Screenshots in ignored folders require an accessible curated evidence path.
+Use Swedish progress reports; project artifacts remain English. Later-area spoilers
+stay out of routine updates, while defects/risks are always disclosed.
+
+Do not infer whole-suite success from a subset or independent review from self-review.
+Preserve versions/known-good artifacts and recheck affected fixtures after shared
+changes or game updates. Stable sources, saved choices and user edits must survive
+regeneration. Never use scope expansion to hide correctness, rights or performance
+problems. GitHub issues may hold discussion by these IDs, not a second backlog.
+
+Creator decisions still cover significant art/world/balance choices, actual
+personal-home fidelity, new regions, purchases and distribution. Approximately ten
+personally important homes and a friends' multiplayer reunion remain later priorities.
+Rural hunting firearms are accepted fictional direction but frequency/ammunition/
+balance still need design and playtests. Tractors remain an untested compatibility
+candidate, not an installed dependency or V1 blocker; see PROJECT_SPEC.
+
+Re-estimate from observed work after representative proof and data readiness. Do
+not promise dates or declining per-house cost before measuring a second compatible
+case. The studio overview is [here](STUDIO_OVERVIEW.html); it is static guidance,
+not an agent launcher or an additional authority.

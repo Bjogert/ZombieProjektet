@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "building_id": "fictional-showcase-01",
+  "seed": 7341,
+  "context": "countryside",
+  "resident_ids": [
+    "nils",
+    "birgitta"
+  ],
+  "spaces": [
+    "kitchen",
+    "living_room",
+    "bedroom",
+    "storage",
+    "garden"
+  ],
+  "theme_limit": 3,
+  "resources": "modest",
+  "life_event": "established_home",
+  "theme_overrides": [
+    "reading_corner"
+  ]
+}

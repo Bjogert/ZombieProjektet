@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZombieProjektet — studio workflow</title>
+<style>
+:root{color-scheme:dark;--bg:#151b19;--panel:#202a25;--ink:#eef1e9;--muted:#b7c5b9;--line:#415448;--accent:#dfbc86}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,sans-serif}main{max-width:1080px;margin:auto;padding:40px 22px 70px}h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;max-width:800px}h2{margin-top:2.4rem}h3{margin:.15rem 0}a{color:var(--accent)}.eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}.muted{color:var(--muted)}.notice,.card,details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}.notice{border-left:4px solid var(--accent);margin:24px 0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card p{margin:.5rem 0}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:step;list-style:none;padding:0}.flow li{background:var(--panel);padding:18px;border-radius:10px;border-top:2px solid var(--accent);counter-increment:step}.flow li:before{content:counter(step,decimal-leading-zero);display:block;color:var(--accent);font-weight:bold;margin-bottom:8px}.flow small{display:block;color:var(--muted)}details{margin:12px 0}summary{font-weight:650;cursor:pointer}footer{margin-top:40px;border-top:1px solid var(--line);padding-top:20px;font-size:.9rem}code{overflow-wrap:anywhere}a:focus,summary:focus{outline:2px solid var(--accent);outline-offset:4px}@media(max-width:750px){.grid,.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:480px){.grid,.flow{grid-template-columns:1fr}main{padding:24px 16px}}
+</style>
+</head>
+<body><main>
+<div class="eyebrow">ZombieProjektet / production guide / 25 October 2026</div>
+<h1>A small studio.<br>A world worth discovering.</h1>
+<p class="muted">The creator sets the direction. A lead coordinates bounded work, reusable recipes and evidence. Not every responsibility needs a separate agent.</p>
+<div class="notice"><strong>Static guide, not a live control panel.</strong> No agents, jobs or game processes are started here. <a href="ROADMAP.md">ROADMAP</a> is the only task queue. The recorded r5 showcase is the game-tested baseline; r6 still needs fresh export/game checks. Household briefs are an offline design prototype, not generated game interiors.</div>
+<h2>Responsibilities, not permanent departments</h2>
+<div class="grid">
+<section class="card"><h3>Creator</h3><p>Atmosphere, significant choices, representative feedback and final acceptance. Later areas can retain their surprises.</p></section>
+<section class="card"><h3>Lead / integration</h3><p>One queue, bounded assignments, sequential integration and one operator for shared editor/game resources.</p></section>
+<section class="card"><h3>Art Director</h3><p>A coherent Swedish visual brief. Reuse first; judge actual normal-zoom game views rather than concept renders.</p></section>
+<section class="card"><h3>Interior / environment</h3><p>Fictional households, usable rooms, set dressing and plots. Reusable relationships between objects, not random clutter.</p></section>
+<section class="card"><h3>Technical Artist / world data</h3><p>Distinct responsibilities: verified asset/placement contracts, or traceable geometry and sources. Never infer inhabitants from an address.</p></section>
+<section class="card"><h3>Independent QA</h3><p>Exact diff and evidence, preserved corrections, access and repeatability. Missing checks remain missing.</p></section>
+</div>
+<p class="muted">Normal team: lead + one worker + one independent reviewer. Project Codex configuration caps spawned threads at two; compatible-client loading still needs checking. No pinned worker model or changed permission mode.</p>
+<h2>Production loop</h2>
+<ol class="flow">
+<li><strong>Choose a slice</strong><small>One outcome, base, owner, files and acceptance criteria.</small></li>
+<li><strong>Set the intent</strong><small>Visual brief and a small fictional household story.</small></li>
+<li><strong>Compose a recipe</strong><small>Plan shell, openings, room needs and clearances together.</small></li>
+<li><strong>Validate references</strong><small>Rights, orientations, complete objects and compatible spaces.</small></li>
+<li><strong>Export officially</strong><small>Use the existing PZ authoring and packaging path.</small></li>
+<li><strong>Test in the game</strong><small>Fresh save, access, light/roof and clean reload.</small></li>
+<li><strong>Review independently</strong><small>Inspect actual changes and before/after evidence.</small></li>
+<li><strong>Promote and reuse</strong><small>Version the tested recipe, preserve choices, measure the next use.</small></li>
+</ol>
+<h2>Small choices, coherent variation</h2>
+<div class="grid">
+<section class="card"><h3>Person</h3><p>Interests and habits. Twenty fictional seeds; names and pronouns do not control selection.</p></section>
+<section class="card"><h3>Household</h3><p>Shared resources, history and compromise. Each resident retains individual needs.</p></section>
+<section class="card"><h3>Place</h3><p>Rooms, storage, garden and local context. Constraints precede weighted selection.</p></section>
+</div>
+<details><summary>What the household tool actually does</summary><p>It validates a synthetic request, selects compatible motifs deterministically and writes a separate frozen design brief. It records reasons, omissions, versions and explicit choices. Habits, resources and life events are designer inputs, not implemented placement effects.</p><p>It does not spawn furniture, loot, NPCs or weapons, edit TBX sources, or change the game. Existing different outputs—including human edits—are not overwritten.</p></details>
+<details><summary>How houses become reusable</summary><p>Asset reference → object group → room recipe → house family → plot kit. First prove one room with three variants and reuse it in a second compatible case. Measure manual fixes and actual visual differences before scaling.</p></details>
+<details><summary>What counts as evidence</summary><p>A concept is not a game screenshot. A passing Python test is not a playable map. An ignored build-folder path is not a remotely accessible picture. Record artifact identity and versions, and curate a small rights-checked fictional-showcase image set.</p></details>
+<details><summary>How the creator remains a player</summary><p>Use Getaboda and representative fixtures for open design reviews. Later-area floor plans, loot, seeds and discoveries stay out of routine updates unless requested. Bugs, costs and limits are never hidden.</p></details>
+<footer><strong>Canonical references:</strong> <a href="AGENT_ROLES.md">roles</a> · <a href="STUDIO_WORKFLOW.md">production gates</a> · <a href="design/HOUSEHOLD_DESIGN.md">household contract</a> · <a href="ROADMAP.md">single queue</a> · <a href="decisions/0002-studio-and-households.md">decision</a><p>This page contains no telemetry, remote resources, credentials or write controls. It is not evidence that any agent is running.</p></footer>
+</main></body></html>

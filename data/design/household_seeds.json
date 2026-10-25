@@ -1,0 +1,534 @@
+{
+  "schema_version": 1,
+  "version": "0.1.0",
+  "status": "experimental_design",
+  "provenance": "Original fictional design seeds, authored for ZombieProjektet. Not demographic data or descriptions of real residents. Weights are tunable design assumptions.",
+  "contexts": [
+    "countryside",
+    "rural_village",
+    "planned_neighbourhood",
+    "town_centre"
+  ],
+  "people": [
+    {
+      "id": "nils",
+      "name": "Nils",
+      "pronouns": "he/him",
+      "background": "A practical shift worker who repairs things, hunts with friends and keeps technical manuals.",
+      "interests": [
+        "hunting",
+        "repairs",
+        "reading"
+      ],
+      "habits": {
+        "orderliness": "relaxed",
+        "repair_preference": "repair",
+        "social_style": "small_circle",
+        "cooking_style": "simple"
+      }
+    },
+    {
+      "id": "goran",
+      "name": "Göran",
+      "pronouns": "he/him",
+      "background": "A bus driver who fishes, grows berries and invites neighbours for coffee.",
+      "interests": [
+        "fishing",
+        "gardening",
+        "hosting"
+      ],
+      "habits": {
+        "orderliness": "mixed",
+        "repair_preference": "reuse",
+        "social_style": "hosting",
+        "cooking_style": "batch"
+      }
+    },
+    {
+      "id": "lars",
+      "name": "Lars",
+      "pronouns": "he/him",
+      "background": "A retired shop assistant who bakes, sews and keeps a carefully arranged reading corner.",
+      "interests": [
+        "cooking",
+        "sewing",
+        "reading"
+      ],
+      "habits": {
+        "orderliness": "tidy",
+        "repair_preference": "repair",
+        "social_style": "small_circle",
+        "cooking_style": "enthusiastic"
+      }
+    },
+    {
+      "id": "sven",
+      "name": "Sven",
+      "pronouns": "he/him",
+      "background": "A school caretaker who fixes radios and plays records after work.",
+      "interests": [
+        "repairs",
+        "music",
+        "collecting"
+      ],
+      "habits": {
+        "orderliness": "mixed",
+        "repair_preference": "repair",
+        "social_style": "private",
+        "cooking_style": "simple"
+      }
+    },
+    {
+      "id": "bengt",
+      "name": "Bengt",
+      "pronouns": "he/him",
+      "background": "A keen club volunteer whose home mixes sports gear, coffee visits and family photographs.",
+      "interests": [
+        "sport",
+        "hosting",
+        "family"
+      ],
+      "habits": {
+        "orderliness": "relaxed",
+        "repair_preference": "buy_used",
+        "social_style": "hosting",
+        "cooking_style": "daily"
+      }
+    },
+    {
+      "id": "arne",
+      "name": "Arne",
+      "pronouns": "he/him",
+      "background": "A former farm worker who preserves produce and builds small useful things.",
+      "interests": [
+        "gardening",
+        "preserving",
+        "crafts"
+      ],
+      "habits": {
+        "orderliness": "mixed",
+        "repair_preference": "reuse",
+        "social_style": "small_circle",
+        "cooking_style": "batch"
+      }
+    },
+    {
+      "id": "kent",
+      "name": "Kent",
+      "pronouns": "he/him",
+      "background": "An industrial worker who restores an old car and reads crime novels.",
+      "interests": [
+        "repairs",
+        "collecting",
+        "reading"
+      ],
+      "habits": {
+        "orderliness": "relaxed",
+        "repair_preference": "repair",
+        "social_style": "private",
+        "cooking_style": "simple"
+      }
+    },
+    {
+      "id": "anders",
+      "name": "Anders",
+      "pronouns": "he/him",
+      "background": "A librarian who enjoys camping, fishing and ambitious weekend cooking.",
+      "interests": [
+        "reading",
+        "fishing",
+        "cooking"
+      ],
+      "habits": {
+        "orderliness": "tidy",
+        "repair_preference": "buy_used",
+        "social_style": "small_circle",
+        "cooking_style": "enthusiastic"
+      }
+    },
+    {
+      "id": "leif",
+      "name": "Leif",
+      "pronouns": "he/him",
+      "background": "A travelling salesperson who keeps music equipment and hosts informal dinners.",
+      "interests": [
+        "music",
+        "hosting",
+        "cooking"
+      ],
+      "habits": {
+        "orderliness": "mixed",
+        "repair_preference": "buy_new",
+        "social_style": "hosting",
+        "cooking_style": "enthusiastic"
+      }
+    },
+    {
+      "id": "erik",
+      "name": "Erik",
+      "pronouns": "he/him",
+      "background": "A young apprentice who cycles, makes things and keeps hand-me-down family furniture.",
+      "interests": [
+        "sport",
+        "crafts",
+        "family"
+      ],
+      "habits": {
+        "orderliness": "relaxed",
+        "repair_preference": "buy_used",
+        "social_style": "small_circle",
+        "cooking_style": "simple"
+      }
+    },
+    {
+      "id": "birgitta",
+      "name": "Birgitta",
+      "pronouns": "she/her",
+      "background": "A school cook who grows flowers, reads novels and hosts a regular coffee afternoon.",
+      "interests": [
+        "gardening",
+        "reading",
+        "hosting"
+      ],
+      "habits": {
+        "orderliness": "tidy",
+        "repair_preference": "reuse",
+        "social_style": "hosting",
+        "cooking_style": "daily"
+      }
+    },
+    {
+      "id": "kerstin",
+      "name": "Kerstin",
+      "pronouns": "she/her",
+      "background": "An office administrator who repairs bicycles and goes fishing on weekends.",
+      "interests": [
+        "repairs",
+        "fishing",
+        "sport"
+      ],
+      "habits": {
+        "orderliness": "mixed",
+        "repair_preference": "repair",
+        "social_style": "small_circle",
+        "cooking_style": "simple"
+      }
+    },
+    {
+      "id": "ingrid",
+      "name": "Ingrid",
+      "pronouns": "she/her",
+      "background": "A retired nurse who sews, preserves berries and keeps family keepsakes.",
+      "interests": [
+        "sewing",
+        "preserving",
+        "family"
+      ],
+      "habits": {
+        "orderliness": "tidy",
+        "repair_preference": "repair",
+        "social_style": "small_circle",
+        "cooking_style": "batch"
+      }
+    },
+    {
+      "id": "lena",
+      "name": "Lena",
+      "pronouns": "she/her",
+      "background": "A factory technician who plays guitar and enjoys repairing old audio equipment.",
+      "interests": [
+        "music",
+        "repairs",
+        "reading"
+      ],
+      "habits": {
+        "orderliness": "relaxed",
+        "repair_preference": "repair",
+        "social_style": "hosting",
+        "cooking_style": "simple"
+      }
+    },
+    {
+      "id": "eva",
+      "name": "Eva",
+      "pronouns": "she/her",
+      "background": "A postal worker who runs, grows vegetables and cooks for visiting relatives.",
+      "interests": [
+        "sport",
+        "gardening",
+        "cooking"
+      ],
+      "habits": {
+        "orderliness": "mixed",
+        "repair_preference": "buy_used",
+        "social_style": "hosting",
+        "cooking_style": "enthusiastic"
+      }
+    },
+    {
+      "id": "gun",
+      "name": "Gun",
+      "pronouns": "she/her",
+      "background": "A forestry worker who hunts, maintains equipment and collects local-history books.",
+      "interests": [
+        "hunting",
+        "repairs",
+        "reading"
+      ],
+      "habits": {
+        "orderliness": "mixed",
+        "repair_preference": "repair",
+        "social_style": "small_circle",
+        "cooking_style": "batch"
+      }
+    },
+    {
+      "id": "ulla",
+      "name": "Ulla",
+      "pronouns": "she/her",
+      "background": "A shop owner who enjoys pottery, records and informal visits.",
+      "interests": [
+        "crafts",
+        "music",
+        "hosting"
+      ],
+      "habits": {
+        "orderliness": "relaxed",
+        "repair_preference": "buy_new",
+        "social_style": "hosting",
+        "cooking_style": "daily"
+      }
+    },
+    {
+      "id": "karin",
+      "name": "Karin",
+      "pronouns": "she/her",
+      "background": "A teacher who repairs furniture and collects second-hand books and ceramics.",
+      "interests": [
+        "reading",
+        "crafts",
+        "collecting"
+      ],
+      "habits": {
+        "orderliness": "tidy",
+        "repair_preference": "reuse",
+        "social_style": "small_circle",
+        "cooking_style": "daily"
+      }
+    },
+    {
+      "id": "anita",
+      "name": "Anita",
+      "pronouns": "she/her",
+      "background": "A gardener who fishes and keeps supplies for preserving seasonal produce.",
+      "interests": [
+        "gardening",
+        "fishing",
+        "preserving"
+      ],
+      "habits": {
+        "orderliness": "mixed",
+        "repair_preference": "reuse",
+        "social_style": "private",
+        "cooking_style": "batch"
+      }
+    },
+    {
+      "id": "margareta",
+      "name": "Margareta",
+      "pronouns": "she/her",
+      "background": "A transport dispatcher who enjoys football, baking and family gatherings.",
+      "interests": [
+        "sport",
+        "cooking",
+        "family"
+      ],
+      "habits": {
+        "orderliness": "relaxed",
+        "repair_preference": "buy_used",
+        "social_style": "hosting",
+        "cooking_style": "enthusiastic"
+      }
+    }
+  ],
+  "themes": [
+    {
+      "id": "reading_corner",
+      "interests": [
+        "reading"
+      ],
+      "requires_any_space": [
+        "living_room",
+        "bedroom"
+      ],
+      "base_weight": 1,
+      "context_bonus": {},
+      "notes": "Books, magazines or manuals; no profile implies a home without reading material."
+    },
+    {
+      "id": "music_corner",
+      "interests": [
+        "music"
+      ],
+      "requires_any_space": [
+        "living_room",
+        "bedroom"
+      ],
+      "base_weight": 0,
+      "context_bonus": {},
+      "notes": "Period-compatible listening or playing equipment; exact assets remain unverified."
+    },
+    {
+      "id": "sewing_corner",
+      "interests": [
+        "sewing"
+      ],
+      "requires_any_space": [
+        "living_room",
+        "bedroom",
+        "spare_room"
+      ],
+      "base_weight": 0,
+      "context_bonus": {},
+      "notes": "A sewing work surface and organised supplies, subject to available space."
+    },
+    {
+      "id": "coffee_visits",
+      "interests": [
+        "hosting"
+      ],
+      "requires_any_space": [
+        "kitchen",
+        "living_room"
+      ],
+      "base_weight": 1,
+      "context_bonus": {},
+      "notes": "A usable table, seating and restrained signs of regular visitors."
+    },
+    {
+      "id": "kitchen_hobby",
+      "interests": [
+        "cooking",
+        "preserving"
+      ],
+      "requires_any_space": [
+        "kitchen"
+      ],
+      "base_weight": 1,
+      "context_bonus": {},
+      "notes": "Cooking or preserving storage; food freshness follows scenario and vanilla systems."
+    },
+    {
+      "id": "garden_hobby",
+      "interests": [
+        "gardening"
+      ],
+      "requires_any_space": [
+        "garden"
+      ],
+      "base_weight": 0,
+      "context_bonus": {
+        "countryside": 1,
+        "rural_village": 1
+      },
+      "notes": "Garden supplies and a maintained growing area, not an automatic derelict plot."
+    },
+    {
+      "id": "repair_storage",
+      "interests": [
+        "repairs",
+        "crafts"
+      ],
+      "requires_any_space": [
+        "storage",
+        "garage",
+        "workshop"
+      ],
+      "base_weight": 0,
+      "context_bonus": {},
+      "notes": "Modest tool or repair storage; large machinery needs a separate asset and space check."
+    },
+    {
+      "id": "hunting_storage",
+      "interests": [
+        "hunting"
+      ],
+      "requires_any_space": [
+        "storage",
+        "garage",
+        "wardrobe"
+      ],
+      "base_weight": 0,
+      "context_bonus": {},
+      "notes": "Outdoor clothing and maintenance cues. Firearms are NOT spawned; rare loot needs separate balancing."
+    },
+    {
+      "id": "fishing_storage",
+      "interests": [
+        "fishing"
+      ],
+      "requires_any_space": [
+        "storage",
+        "garage",
+        "wardrobe"
+      ],
+      "base_weight": 0,
+      "context_bonus": {},
+      "notes": "Compact fishing equipment storage; no rural-only eligibility rule."
+    },
+    {
+      "id": "sports_corner",
+      "interests": [
+        "sport"
+      ],
+      "requires_any_space": [
+        "hallway",
+        "storage",
+        "bedroom"
+      ],
+      "base_weight": 0,
+      "context_bonus": {},
+      "notes": "Sports equipment suited to a limited storage area."
+    },
+    {
+      "id": "family_keepsakes",
+      "interests": [
+        "family"
+      ],
+      "requires_any_space": [
+        "living_room",
+        "bedroom"
+      ],
+      "base_weight": 1,
+      "context_bonus": {},
+      "notes": "A few invented mementos; never claims about an actual household."
+    },
+    {
+      "id": "collection_display",
+      "interests": [
+        "collecting"
+      ],
+      "requires_any_space": [
+        "living_room",
+        "bedroom"
+      ],
+      "base_weight": 0,
+      "context_bonus": {},
+      "notes": "A restrained display rather than unrestricted valuable loot."
+    },
+    {
+      "id": "craft_corner",
+      "interests": [
+        "crafts"
+      ],
+      "requires_any_space": [
+        "spare_room",
+        "workshop",
+        "garage"
+      ],
+      "base_weight": 0,
+      "context_bonus": {},
+      "notes": "A small practical workspace; omit when the home cannot support it."
+    }
+  ]
+}

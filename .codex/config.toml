@@ -1,0 +1,3 @@
+# Project scope only. No model, permissions, external services or schedules changed.
+[agents]
+max_concurrent_threads_per_session = 2
