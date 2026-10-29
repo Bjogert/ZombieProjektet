@@ -11,6 +11,12 @@ inputs, exclusions, requested model/effort and acceptance evidence. Read the
 checkout's AGENTS.md; communicate through the lead. Author project material in
 English. Read only task-relevant files, not the whole conversation or catalogue.
 
+For household/interior work, the lead must include the accepted
+[household strategy](design/HOUSEHOLD_DESIGN.md) in the assignment. Its default is
+believable everyday homes with occasional discoveries, not a mandatory elaborate
+story per house. The target strategy is separate from the offline planner's actual
+capabilities. Apply it through existing ART-01, HOUSEHOLD-01 and ROOM-01 tasks.
+
 Inspect existing changes. Concurrent writers need separate worktrees and disjoint
 ownership; never reset another worker's work. Shared integration documents,
 mod installation, mapping UI and game execution belong to the lead unless
@@ -58,6 +64,11 @@ Plan exterior, rooms and furniture clearances together. Do not require a full ti
 catalogue, engine rewrite or a permanently running design department. Route concrete
 implementation to the lead; do not spawn a team or edit TBX files during review.
 
+For interiors, read HOUSEHOLD_DESIGN.md via the shared strategy link above. Protect
+ordinary domestic plausibility and restrained exceptions. Judge activity groups
+and realized visual cues, not biography length. Work with QA on the comparison
+without biographies; revise recipes if variation is visible only in prose.
+
 ## Buildings / art — compatibility role
 Existing assignments using this role remain valid. The lead selects the relevant
 responsibility below rather than duplicating the work across several agents.
@@ -74,6 +85,13 @@ household resources from per-person tastes. A story is a design cause, not a man
 to add an object for every sentence. Prefer a few coherent cues over clutter.
 Keep story text fictional, period-compatible and separate from real inhabitants.
 No invented item IDs, actual loot changes, new NPC system or unbounded biographies.
+
+Read HOUSEHOLD_DESIGN.md and use the mirrored household-design skill. Own a short
+household intent and the mapping from intended to realized cues. Explain shared
+and personal areas through tenure, space and habits, not inventory addition or
+averaged personalities. Select compatible activity groups before individual props.
+Ground final narrative in saved placements. Keep the pre-outbreak household apart
+from later scenario/loot effects; no new adapter is authorized by a good story.
 
 ### Environment / props
 Usually part of the same worker assignment. Own the assigned plot/detail kit,
@@ -109,6 +127,13 @@ not drive selection; rural does not mean guaranteed guns and urban does not mean
 crime. No new loot-frequency approval from a visual check. Compare before/after
 in-game images; an AI concept render is not game evidence. Never label the author's
 own review independent. Return game steps to the designated operator.
+
+For ROOM-01, apply HOUSEHOLD_DESIGN.md's promotion gate: inspect three household
+variants without their biographies first, with the same shell, asset pool,
+approximate loot budget and matched views. Record inferred activities and visible
+cues, then compare intent with realized content. Exact character identification
+is not required. Check practical access and second-case reuse as well as visual
+coherence; more prose or guaranteed valuable loot must not pass as better variation.
 
 ## Runtime setup and dispatch states
 Project-scoped `.codex/agents/*.toml` expose Art Director, interior designer,
